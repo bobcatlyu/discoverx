@@ -1,7 +1,79 @@
 
 import { BlogPost, Product, Resource } from './types';
 
+export const DEFAULT_PINNED_BLOG_ID = '20260304-eurofins-discoverx-intro';
+
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: '20260304-eurofins-discoverx-intro',
+    title: '走进 Eurofins DiscoverX：从靶点到机制验证的一站式能力',
+    category: 'Marketing',
+    date: '2026-03-04',
+    summary: '依托 EFC 专利技术，DiscoverX 提供覆盖多靶点与多 MOA 的 Assay 产品和开发服务，支持从早期研发到上市后放行的全流程决策。',
+    imageUrl: '/pic/discoverx.png',
+    author: 'DiscoverX Team',
+    tags: ['Eurofins', 'DiscoverX', 'Assay', 'MOA', 'Drug Discovery'],
+    content: `
+      <h2>DiscoverX 是做什么的？</h2>
+      <p>DiscoverX 隶属于 Eurofins Discovery，专注于药物研发所需的 Assay 产品与开发服务，并通过 ISO 9001:2015 质量体系认证。</p>
+      <p>公司总部位于美国加州 Fremont，在法国 Poitiers 设有生产基地。</p>
+
+      <h3>技术平台与代表产品</h3>
+      <p>依托酶片段互补技术（Enzyme Fragment Complementation, EFC），DiscoverX 构建了覆盖不同靶点和不同作用机制（MOA）的产品体系，包括：</p>
+      <ul>
+        <li>PathHunter&reg;</li>
+        <li>HitHunter&reg;</li>
+        <li>InCELL</li>
+        <li>SPRINTer&trade;</li>
+        <li>KILR&reg;</li>
+        <li>PrecisION&trade;</li>
+        <li>ChemiSCREEN&trade; / ChemiBRIGHT&trade;</li>
+      </ul>
+
+      <h3>核心产品与服务</h3>
+      <ul>
+        <li>商业化稳转细胞株</li>
+        <li>即用型 eXpress&reg; Kit</li>
+        <li>优化和验证的 Bioassay Kit</li>
+        <li>工具箱产品、细胞培养与检测试剂</li>
+        <li>重组激酶 / 磷酸酶 / 解旋酶</li>
+        <li>膜制品与高纯度天然构象膜蛋白</li>
+        <li>细胞株定制开发与 Bioassay 开发验证</li>
+      </ul>
+
+      <h3>覆盖靶点群</h3>
+      <ul>
+        <li>GPCR</li>
+        <li>Cytokine Receptors</li>
+        <li>Checkpoint Receptors</li>
+        <li>RTK / CTK</li>
+        <li>NHR</li>
+        <li>Ion Channels</li>
+        <li>Epigenetic Proteins</li>
+      </ul>
+
+      <h3>可支持的作用机制（MOA）</h3>
+      <ul>
+        <li>受体二聚化（Dimerization）</li>
+        <li>受体内吞（Internalization）</li>
+        <li>蛋白间相互作用（PPI）</li>
+        <li>信号通路（Reporter / Degradation / Translocation）</li>
+        <li>细胞毒性效应（Cytotoxicity）</li>
+        <li>靶向蛋白降解（Targeted Protein Degradation）</li>
+        <li>靶标结合（Target Engagement）</li>
+      </ul>
+
+      <h3>能力积累</h3>
+      <ul>
+        <li>25+ 年行业经验</li>
+        <li>300 亿+ 验证数据点</li>
+        <li>2000+ 篇同行评审文献引用</li>
+        <li>1500+ 稳定细胞株</li>
+      </ul>
+
+      <p>无论是大分子还是小分子，无论是早期研发、CMC 开发还是上市后产品放行，DiscoverX 都可为研发决策与风险控制提供可靠依据。</p>
+    `
+  },
   {
     id: '1',
     title: 'New Launch: High-Affinity GPCR Screening Kit',

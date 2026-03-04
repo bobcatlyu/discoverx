@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
-import { BLOG_POSTS } from '../constants';
+import React, { useState } from 'react';
+import { BLOG_POSTS, DEFAULT_PINNED_BLOG_ID } from '../constants';
 import { BlogPost, Page } from '../types';
 
 interface HomeProps {
@@ -11,9 +11,10 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const [pinnedPostId, setPinnedPostId] = useState<string | null>(() => {
     return localStorage.getItem('pinnedPostId');
   });
+  const effectivePinnedPostId = pinnedPostId || DEFAULT_PINNED_BLOG_ID;
 
   const togglePin = (id: string) => {
-    const newPinnedId = pinnedPostId === id ? null : id;
+    const newPinnedId = effectivePinnedPostId === id ? null : id;
     setPinnedPostId(newPinnedId);
     if (newPinnedId) {
       localStorage.setItem('pinnedPostId', newPinnedId);
@@ -24,8 +25,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
   // Sort posts: pinned one first, then the rest in original order
   const sortedPosts = [...BLOG_POSTS].sort((a, b) => {
-    if (a.id === pinnedPostId) return -1;
-    if (b.id === pinnedPostId) return 1;
+    if (a.id === effectivePinnedPostId) return -1;
+    if (b.id === effectivePinnedPostId) return 1;
     return 0;
   });
 
@@ -69,7 +70,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               key={post.id}
               onClick={() => onNavigate?.(Page.BlogDetail, post.id)}
               className={`group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border cursor-pointer ${
-                post.id === pinnedPostId ? 'border-[#4B827E] ring-1 ring-[#4B827E]/20 ring-inset' : 'border-slate-200'
+                post.id === effectivePinnedPostId ? 'border-[#4B827E] ring-1 ring-[#4B827E]/20 ring-inset' : 'border-slate-200'
               }`}
             >
               <div className="relative h-48 overflow-hidden">
@@ -80,7 +81,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <span className="bg-[#4B827E] text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest">
                     {post.category}
                   </span>
-                  {post.id === pinnedPostId && (
+                  {post.id === effectivePinnedPostId && (
                     <span className="bg-[#1C2C5E] text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest flex items-center">
                       <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -96,14 +97,14 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     e.stopPropagation();
                     togglePin(post.id);
                   }}
-                  title={post.id === pinnedPostId ? "取消置顶" : "置顶该文章"}
+                  title={post.id === effectivePinnedPostId ? "取消置顶" : "置顶该文章"}
                   className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition-all z-20 ${
-                    post.id === pinnedPostId
+                    post.id === effectivePinnedPostId
                     ? 'bg-[#4B827E] text-white scale-110'
                     : 'bg-white/40 text-white hover:bg-white/80 hover:text-[#4B827E] opacity-0 group-hover:opacity-100'
                   }`}
                 >
-                  <svg className="w-4 h-4" fill={post.id === pinnedPostId ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" fill={post.id === effectivePinnedPostId ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                   </svg>
                 </button>
@@ -121,7 +122,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <span className="text-[#4B827E] font-bold text-xs flex items-center group-hover:translate-x-1 transition-transform uppercase tracking-wider">
                     READ MORE <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                   </span>
-                  {post.id === pinnedPostId && (
+                  {post.id === effectivePinnedPostId && (
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -165,3 +166,4 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 };
 
 export default Home;
+

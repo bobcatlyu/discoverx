@@ -246,7 +246,7 @@ const App: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                 </svg>
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest">返回上一级 / Back to Parent</span>
+              <span className="text-xs font-bold uppercase tracking-widest">返回上一级</span>
             </button>
           </div>
         )}
