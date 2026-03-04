@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(C:/Users/lyuyi/AppData/Local/Python/bin/python.exe -c \"import pandas as pd; df = pd.read_excel\\(r''D:\\\\Bob\\\\OneDrive\\\\建站资料\\\\enzyme.xlsx''\\); print\\(df.to_string\\(\\)\\)\")",
+      "Bash(C:/Users/lyuyi/AppData/Local/Python/bin/python.exe -c \"import sys; sys.stdout.reconfigure\\(encoding=''utf-8''\\); import pandas as pd; df = pd.read_excel\\(r''D:\\\\Bob\\\\OneDrive\\\\建站资料\\\\enzyme.xlsx''\\); print\\(df.to_string\\(\\)\\)\")",
+      "Bash(C:/Users/lyuyi/AppData/Local/Python/bin/python.exe -c \"import sys; sys.stdout.reconfigure\\(encoding=''utf-8''\\); import pandas as pd; import json; df = pd.read_excel\\(''enzyme.xlsx''\\); data = df.fillna\\(''''\\).to_dict\\(''records''\\); print\\(json.dumps\\(data, ensure_ascii=False, indent=2\\)\\)\")",
+      "Bash(C:/Users/lyuyi/AppData/Local/Python/bin/python.exe -c \":*)",
+      "Bash(python -c \":*)",
+      "Bash(python -c \"import pandas as pd; df = pd.read_excel\\(''enzyme.xlsx''\\); print\\(''Columns:'', df.columns.tolist\\(\\)[:10]\\); print\\(''\\\\nShape:'', df.shape\\); print\\(''\\\\nFirst row:'', df.iloc[0].tolist\\(\\)[:10]\\)\")",
+      "Bash(python -c \"import pandas; print\\(''pandas version:'', pandas.__version__\\)\")",
+      "Bash(ls -la Enzyme*)",
+      "Bash(ls -la *.tsx *.ts)",
+      "Read(//d/Bob/OneDrive/建站资料/discoverx/**)",
+      "Bash(wc -l echo \"个页面组件\" echo \"\" echo \"### 组件文件 \\(components/\\)：\" find ./components -name \"*.tsx\")",
+      "Read(//tmp/**)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(ls -d node_modules/*/)",
+      "Bash(ls -lh dist/assets/*.js)"
+    ]
+  }
+}
