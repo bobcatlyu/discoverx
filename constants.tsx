@@ -19,7 +19,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>公司总部位于美国加州 Fremont，在法国 Poitiers 设有生产基地。</p>
 
       <h3>技术平台与代表产品</h3>
-      imageUrl: '/pic/EFC.jpg',
+      
       <p>依托酶片段互补技术（Enzyme Fragment Complementation, EFC），</p>
       <p>DiscoverX 构建了覆盖不同靶点和不同作用机制（MOA）的产品体系，包括：</p>
       <ul>
