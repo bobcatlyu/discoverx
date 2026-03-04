@@ -69,20 +69,24 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[#4B827E] rounded-full"></span>
-                      AssayComplete™ 培养试剂、消化、冻存、复苏、铺板等全套配套试剂
+                      AssayComplete™ 培养基、消化、冻存、复苏和铺板等配套试剂
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[#4B827E] rounded-full"></span>
-                      高灵敏度检测试剂盒
+                      高灵敏度检测试剂盒（10 plates）
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-[#4B827E] rounded-full"></span>
-                      配套抗生素与标准化实验方案
+                      配套抗生素
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span className="w-2 h-2 bg-[#4B827E] rounded-full"></span>
+                      标准化实验方案
                     </li>
                   </ul>
                 </div>
                 <div className="flex flex-wrap gap-3 mt-8">
-                  <span className="text-[11px] font-bold text-[#4B827E] bg-teal-50 px-4 py-2 rounded-xl border border-teal-100">10代稳定性验证</span>
+                  <span className="text-[11px] font-bold text-[#4B827E] bg-teal-50 px-4 py-2 rounded-xl border border-teal-100">至少10代稳定性验证</span>
                   <span className="text-[11px] font-bold text-[#4B827E] bg-teal-50 px-4 py-2 rounded-xl border border-teal-100">HTS兼容</span>
                 </div>
               </div>
@@ -103,7 +107,7 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
                 <div className="w-16 h-16 bg-[#4B827E] text-white rounded-2xl flex items-center justify-center font-black text-2xl shrink-0 shadow-lg group-hover:scale-105 transition-transform">03</div>
                 <div>
                   <h4 className="text-xl font-bold text-[#1C2C5E] mb-2">即用型冻存细胞</h4>
-                  <p className="text-sm text-slate-500 leading-relaxed">不可传代。仅针对钙离子检测细胞系提供。旨在消除传代带来的生物学变异，解冻后直接铺板，适合 HTS 极速应用。</p>
+                  <p className="text-sm text-slate-500 leading-relaxed">不可传代，仅针对钙离子检测细胞系提供。旨在消除传代带来的生物学变异，解冻后直接铺板，适合 HTS 极速应用。</p>
                 </div>
               </div>
             </div>
@@ -130,11 +134,12 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
             </div>
             <div className="p-10 bg-white grid md:grid-cols-2 gap-10">
               {[
-                { n: 'β-arrestin 招募分析', d: '通用的非 G 蛋白依赖性分析，量化几乎所有已知 GPCR 的激活，支持偏向性配体研究。' },
-                { n: '均相 cAMP 分析 (HitHunter®)', d: '定量监测 Gs 或 Gi 偶联受体引起的 cAMP 水平变化，具有极高灵敏度和大检测窗口。' },
-                { n: '钙动员分析 (Calcium No Wash)', d: '测量 Gq 偶联受体激活诱导的胞内钙库释放或胞外流入，适合极速自动化筛选。' },
-                { n: 'GPCR 内化分析 (Internalization)', d: '次级正交筛选，定量追踪受体从质膜向内体室的移动，捕捉受体脱敏过程。' },
-                { n: 'GPCR 药物转运 (Pharmacotrafficking)', d: '定量识别药理伴侣分子，用于稳定或挽救与疾病相关的错折叠突变受体。' }
+                { n: '\u0063AMP\u68C0\u6D4B\u5206\u6790', d: '\u5B9A\u91CF\u76D1\u6D4B Gs \u6216 Gi \u5076\u8054\u53D7\u4F53\u5F15\u8D77\u7684 cAMP \u6C34\u5E73\u53D8\u5316\u3002' },
+                { n: '\u9499\u6D41\u68C0\u6D4B\u5206\u6790', d: '\u76D1\u6D4B Gq \u5076\u8054\u53D7\u4F53\u6FC0\u6D3B\u89E6\u53D1\u7684\u80DE\u5185\u9499\u4FE1\u53F7\u53D8\u5316\uFF0C\u9002\u7528\u4E8E\u9AD8\u901A\u91CF\u81EA\u52A8\u5316\u7B5B\u9009\u3002' },
+                { n: '\u03B2-arrestin\u62DB\u52DF\u5206\u6790', d: '\u901A\u7528\u7684\u975E G \u86CB\u767D\u4F9D\u8D56\u6027\u5206\u6790\uFF0C\u9002\u5408\u504F\u5411\u6027\u914D\u4F53\u7814\u7A76\u3002' },
+                { n: 'GPCR\u5185\u5316\u5206\u6790', d: '\u5B9A\u91CF\u8FFD\u8E2A\u53D7\u4F53\u4ECE\u8D28\u819C\u5411\u5185\u4F53\u5BA4\u7684\u8F6C\u79FB\uFF0C\u7528\u4E8E\u8BC4\u4F30\u53D7\u4F53\u8131\u654F\u8FC7\u7A0B\u3002' },
+                { n: '\u836F\u7269\u8F6C\u8FD0 (Pharmacotrafficking)', d: '\u5B9A\u91CF\u8BC6\u522B\u836F\u7406\u4F34\u4FA3\u5206\u5B50\uFF0C\u7528\u4E8E\u7A33\u5B9A\u6216\u632F\u6551\u9519\u6298\u53E0\u53D7\u4F53\u3002' },
+                { n: '\u7ADE\u4E89\u6027\u914D\u4F53\u7ED3\u5408\u548CGTP\u03B3S\u529F\u80FD\u5B9E\u9A8C', d: '\u7ED3\u5408\u7ADE\u4E89\u6027\u914D\u4F53\u7ED3\u5408\u6D4B\u5B9A\u4E0E GTP\u03B3S \u529F\u80FD\u8BFB\u51FA\uFF0C\u652F\u6301\u53D7\u4F53\u7ED3\u5408\u548C G \u86CB\u767D\u6FC0\u6D3B\u8BC4\u4F30\u3002' }
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 group">
                   <div className="shrink-0 w-12 h-12 bg-teal-50 text-[#4B827E] rounded-2xl flex items-center justify-center font-black group-hover:bg-[#4B827E] group-hover:text-white transition-all shadow-sm">{i+1}</div>
@@ -161,7 +166,7 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
                 { n: '受体酪氨酸激酶 (RTK) 功能活性', d: '通过监测配体诱导的 SH2 结构域蛋白招募来量化受体活化。' },
                 { n: '胞内酪氨酸激酶 (CTK) 功能活性', d: '直接监测胞内激酶的蛋白-蛋白相互作用及激活状态。' },
                 { n: '受体酪氨酸激酶 (RTK) 内化', d: '内吞监测，用于评估 ADC 候选物或诱导受体下调的治疗手段。' },
-                { n: '信号通路分析', d: '定量追踪激活后的下游磷酸化级联反应。' },
+                { n: '受体二聚化分析', d: '直接监测配体或抗体诱导的受体组装与二聚化状态。' },
                 { n: 'InCELL 靶标结合分析 (Target Engagement)', d: '在生理环境中直接测量化合物与胞内激酶的结合 EC50 及占位率。' },
                 { n: 'SPRINTer™ 靶向蛋白降解 (TPD)', d: 'CRISPR 标记内源蛋白，实时追踪 PROTAC 等药物诱导的降解动力学。' }
               ].map((item, i) => (
@@ -180,7 +185,7 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
           <div className="rounded-[3rem] border border-slate-200 overflow-hidden shadow-2xl">
             <div className="bg-[#4B827E] p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
-                <h3 className="text-3xl font-black mb-2">3. 免疫检查点检测细胞系</h3>
+                <h3 className="text-3xl font-black mb-2">3. 免疫检查点受体检测细胞系</h3>
                 <p className="opacity-90 font-medium">肿瘤免疫创新药评估</p>
               </div>
               <button onClick={() => navigateTo(Page.CheckpointReceptors)} className="bg-white text-[#4B827E] px-8 py-3 rounded-full font-bold transition-all hover:bg-teal-50 shadow-xl">进入免疫检查点目录</button>
@@ -190,7 +195,8 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
                 { n: '受体信号分析', d: '量化检查点分子介导的抑制或共刺激信号强度。' },
                 { n: '受体二聚化分析', d: '直接监测单抗或双抗诱导的受体组装。' },
                 { n: '受体内化分析', d: 'ADC 药物筛选及抗体诱导受体降解效率评价。' },
-                { n: 'KILR® 受体细胞毒性', d: '高效测定 ADCC/ADCP 及免疫杀伤效率。' }
+                { n: 'KILR® 受体细胞毒性', d: '高效测定 ADCC/ADCP 及免疫杀伤效率。' },
+                { n: 'NFAT 报告基因法', d: '通过 NFAT 报告基因读出定量评估 T 细胞活化及检查点阻断后的功能恢复。' }
               ].map((item, i) => (
                 <div key={i} className="flex gap-6 group">
                   <div className="shrink-0 w-12 h-12 bg-teal-50 text-[#4B827E] rounded-2xl flex items-center justify-center font-black group-hover:bg-[#4B827E] group-hover:text-white transition-all shadow-sm">{i+1}</div>

@@ -12,7 +12,7 @@ const ToolboxDetail: React.FC = () => {
     "简化流程 —— 提供详细的分步操作说明、流程图与信息图示，轻松构建检测体系",
     "灵活方案 —— 可使用任意表达载体构建突变体、修饰型蛋白或研究特异性同源物/亚型",
     "适用于任意细胞背景 —— 通过 PathHunter® 或 KILR® 逆转录病毒颗粒，在任意可分裂细胞类型中建立稳定的 β-arrestin 招募或细胞毒性检测体系",
-    "完整试剂盒 —— 即用型 InCELL Pulse™ 入门套装包含构建靶点结合检测所需的全部试剂"
+    "完整试剂盒 —— 所有自构建用亲本细胞株均配备检测EFC技术发光信号所需的试剂"
   ];
 
   const vectorsData = [
@@ -140,8 +140,8 @@ const ToolboxDetail: React.FC = () => {
           <h4 className="text-[#4B827E] font-bold text-lg mb-4">技术说明</h4>
           <ul className="list-disc list-inside text-slate-600 space-y-2 text-sm leading-relaxed">
             <li><strong>Vectors:</strong> 包含 ProLink™ (PK) 和 Enzyme Acceptor (EA) 标签载体，适用于构建 EFC 检测系统。</li>
-            <li><strong>Retroparticles:</strong> 预包装的病毒颗粒，可直接用于瞬时或稳定转染，快速引入检测组件。</li>
-            <li><strong>Parental Cell Lines:</strong> 已稳定表达 EA 融合蛋白的细胞系，只需转入 PK 标记的靶点受体即可进行功能检测。</li>
+            <li><strong>Retroparticles:</strong> 预包装的病毒颗粒，可直接用于稳定转染，快速引入检测组件。</li>
+            <li><strong>Parental Cell Lines:</strong> 已稳定表达 EA 融合蛋白的细胞系，只需转入 ED 标记的靶点受体即可进行功能检测。</li>
           </ul>
         </div>
       </section>

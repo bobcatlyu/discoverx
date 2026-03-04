@@ -56,14 +56,14 @@ const GpcrDetail: React.FC = () => {
               {[
                 {
                   id: "1",
-                  title: "cAMP 监测",
-                  desc: "直接定量监测 Gs 或 Gi 偶联受体引起的细胞内 second messenger cAMP 水平的变化。使用 HitHunter® 专有技术，提供极高灵敏度的均相化学发光检测，是小分子和生物药筛选的标准方法。",
+                  title: "cAMP 检测",
+                  desc: "直接定量检测 Gs 或 Gi 偶联受体引起的细胞内 second messenger cAMP 水平的变化。使用 HitHunter® 专有技术，提供极高灵敏度的均相化学发光检测，是小分子和生物药筛选的标准方法。",
                   image: "/pic/cAMP.png",
                   maxWidth: "max-w-xl"
                 },
                 {
                   id: "2",
-                  title: "Ca 离子动员",
+                  title: "钙流检测",
                   desc: "针对 Gq 偶联通路，利用高灵敏度荧光染料（如 Calcium No Wash 技术）实时监测受体激活激发的胞内钙库释放或胞外钙流入，完美适配 HTS 自动化流程。",
                   image: "/pic/Calcium.png",
                   maxWidth: "max-w-md"
@@ -71,7 +71,7 @@ const GpcrDetail: React.FC = () => {
                 {
                   id: "3",
                   title: "β-arrestin 招募",
-                  desc: "利用专有的 EFC 技术监测几乎所有 GPCR 激活后招募 β-arrestin 的物理过程。该方法不依赖 G 蛋白通路，是研究偏向性配体 (Biased Ligands) 和孤儿受体的核心工具。",
+                  desc: "利用专有的 EFC 技术检测几乎所有 GPCR 激活后招募 β-arrestin 的物理过程。该方法不依赖 G 蛋白通路，是研究偏向性配体 (Biased Ligands) 和孤儿受体的核心工具。",
                   image: "/pic/GPCR-β-arrestin.png",
                   maxWidth: "max-w-xl"
                 },
@@ -130,7 +130,7 @@ const GpcrDetail: React.FC = () => {
       {/* 4. Product List Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-4 text-center">GPCR 产品组合 / Product Portfolio</h2>
+          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-4 text-center">GPCR 产品组合</h2>
           <p className="text-slate-500 max-w-2xl mx-auto">
             覆盖超过 290+ 靶点，包含稳转细胞株、eXpress® Kit、Bioassay Kit、膜制品及转运/内吞检测方案。
           </p>

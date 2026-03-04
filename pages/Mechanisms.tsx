@@ -26,20 +26,20 @@ const MechanismsPage: React.FC<MechanismsPageProps> = ({ onNavigate }) => {
       id: 'm3',
       title: '蛋白间相互作用 PPI',
       description: '检测蛋白质复合物的形成与解离，解析信号通路的分子基础。',
-      imageUrl: 'https://picsum.photos/seed/ppi/400/300',
+      imageUrl: '/pic/PPI.jpg',
       action: () => onNavigate(Page.PpiDetail)
     },
     {
       id: 'm4',
       title: '信号通路 Signaling Pathways',
-      description: '监测关键信号分子（如 NF-κB、STAT、MAPK）的活化与核转位。',
+      description: '监测关键信号分子（如 NF-κB、STAT、MAPK）的活化、转录、降解与向核内转位。',
       imageUrl: '/pic/Signaling-Pathways_Small-Card-Image.jpg',
       action: () => onNavigate(Page.SignalPathwayDetail)
     },
     {
       id: 'm5',
       title: '细胞毒性效应 Cytotoxicity',
-      description: '评估免疫细胞介导的靶细胞杀伤，适用于 ADC、CAR-T 及双抗药物开发。',
+      description: '评估免疫细胞介导的靶细胞杀伤，适用于 单抗、ADC、CAR-T 及双抗药物开发。',
       imageUrl: '/pic/Cytotoxicity_Small-Card-Image.jpg',
       action: () => onNavigate(Page.CytotoxicityDetail)
     },
@@ -53,7 +53,7 @@ const MechanismsPage: React.FC<MechanismsPageProps> = ({ onNavigate }) => {
     {
       id: 'm7',
       title: '靶标结合 Target Engagement',
-      description: '利用 InCELL Pulse™ 技术，在活细胞中实时监测小分子与靶蛋白的结合。',
+      description: '利用 InCELL 技术，在活细胞中检测测小分子与靶蛋白的结合。',
       imageUrl: '/pic/Target-Engagement_Large-Card-Image.jpg',
       action: () => onNavigate(Page.TargetEngagementDetail)
     },

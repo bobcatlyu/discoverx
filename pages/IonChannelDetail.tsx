@@ -106,13 +106,13 @@ const IonChannelDetail: React.FC = () => {
 
   return (
     <TargetDetailTemplate
-      title="离子通道解决方案 Ion Channels"
+      title="离子通道 Ion Channels Assays"
       introText={intro}
       introImageUrl="https://picsum.photos/seed/ion_channel_banner/800/600"
       highlights={highlights}
       moaItems={moas}
       productData={data}
-      productTableTitle="离子通道产品列表 (Ion Channel Portfolio)"
+      productTableTitle="离子通道产品列表"
       customTypeHeaders={ION_CHANNEL_HEADERS}
     />
   );

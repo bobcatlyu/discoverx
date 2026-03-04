@@ -57,7 +57,7 @@ const CalixarDetail: React.FC = () => {
         
         <div className="space-y-6 text-slate-600 leading-relaxed max-w-4xl mb-12">
           <p>
-            Eurofins CALIXAR 是 Eurofins DiscoverX 的一部分，是一家领先的生物技术公司，专注于生产和稳定完全天然（Fully Native）、功能完备的重组蛋白。凭借专利技术，我们为广泛的应用提供高纯度和稳定的蛋白质。
+            Eurofins CALIXAR 是 Eurofins DiscoverX 的一部分，是一家领先的生物技术公司，专注于生产和稳定完全天然、功能完备的重组蛋白。凭借专利技术，我们为广泛的应用提供高纯度和稳定的蛋白质。
           </p>
           <p>
             通过保留复杂蛋白质的结构完整性和功能性，我们提供定制化解决方案，加速研究和治疗药物的开发。无论是用于筛选、机制研究还是结构生物学，我们的服务都能量身定制，以满足最苛刻的研究需求。
@@ -78,7 +78,7 @@ const CalixarDetail: React.FC = () => {
 
       {/* Technical Description - Fully Native Process */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 border-l-4 border-[#4B827E] pl-4">定制蛋白生产：完全天然流程 / Fully Native Process</h2>
+        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 border-l-4 border-[#4B827E] pl-4">定制蛋白生产：完整流程</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {technicalSteps.map((step, idx) => (
             <div key={idx} className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
@@ -130,7 +130,7 @@ const CalixarDetail: React.FC = () => {
 
       {/* Workflow */}
       <div className="mb-20">
-        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 border-l-4 border-[#4B827E] pl-4">定制蛋白的卓越流程 / Tailored Excellence for Custom Proteins</h2>
+        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 border-l-4 border-[#4B827E] pl-4">定制蛋白的卓越流程</h2>
         <div className="relative border-l-2 border-slate-200 ml-4 space-y-12">
           {workflow.map((step, idx) => (
             <div key={idx} className="relative pl-8">

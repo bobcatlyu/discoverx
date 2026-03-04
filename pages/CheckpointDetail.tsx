@@ -86,7 +86,7 @@ const CheckpointDetail: React.FC = () => {
     { target: 'FcγRIIb', moa: 'Clustering', statuses: ['✓', '', ''] },
     { target: 'mFcγRIIb', moa: 'Clustering', statuses: ['✓', '', ''] }
   ];
-  return <TargetDetailTemplate title="免疫检查点受体 Checkpoint Receptors" introText={intro} highlights={highlights} introImageUrl="https://picsum.photos/seed/checkpoint_lab/800/600" moaItems={moas} productData={data} productTableTitle="免疫检查点产品列表 (Checkpoint Portfolio)" customTypeHeaders={CHECKPOINT_HEADERS} />;
+  return <TargetDetailTemplate title="免疫检查点受体 Checkpoint Receptors Assays" introText={intro} highlights={highlights} introImageUrl="https://picsum.photos/seed/checkpoint_lab/800/600" moaItems={moas} productData={data} productTableTitle="免疫检查点产品列表 (Checkpoint Portfolio)" customTypeHeaders={CHECKPOINT_HEADERS} />;
 };
 
 export default CheckpointDetail;

@@ -41,7 +41,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         />
         <div className="relative z-20 text-center px-4 max-w-5xl -mt-4">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-xl leading-tight tracking-tight">
-            DiscoverX 中文官方网站
+            DiscoverX 中文网站
           </h1>
           <h2 className="text-xl md:text-2xl font-bold text-teal-100 mb-2 uppercase tracking-wide opacity-95">
             Product Solutions For Your Success
@@ -56,7 +56,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10 border-b border-slate-200 pb-4">
           <div>
-            <h2 className="text-2xl font-bold text-slate-800 uppercase tracking-tight">最新动态 / News & Events</h2>
+            <h2 className="text-2xl font-bold text-slate-800 uppercase tracking-tight">最新动态</h2>
           </div>
           <button className="text-[#4B827E] font-bold text-sm hover:underline flex items-center">
             查看全部 <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>

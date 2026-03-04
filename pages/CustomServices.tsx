@@ -18,7 +18,7 @@ const CustomServicesPage: React.FC<CustomServicesPageProps> = ({ onNavigate }) =
     {
       id: 's2',
       title: 'Bioassay 开发',
-      description: '针对生物药效价检测需求，开发符合 ICH Q6B 指南的细胞功能性检测方法。',
+      description: '针对生物药效价检测需求，开发符合 ICH 指南的细胞功能性检测方法。',
       badge: 'GMP-Ready',
       action: () => onNavigate(Page.BioassayDevelopment)
     },

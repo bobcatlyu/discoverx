@@ -132,7 +132,7 @@ const KinaseDetail: React.FC = () => {
 
   return (
     <TargetDetailTemplate
-      title="激酶受体检测 (Receptor Tyrosine Kinase Assays)"
+      title="激酶受体 Receptor Tyrosine Kinase Assays"
       subtitle="用于分析 RTK 二聚化、磷酸化、内吞及 SH2 招募的细胞水平检测"
       introText={intro}
       highlights={highlights}

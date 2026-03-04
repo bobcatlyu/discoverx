@@ -29,11 +29,7 @@ const CustomCellLineDev: React.FC = () => {
             </div>
           </div>
           <div className="md:w-1/2">
-            <img 
-              src="https://picsum.photos/seed/custom-cell-dev/800/600" 
-              alt="Custom Development Capabilities" 
-              className="rounded-2xl shadow-2xl border border-slate-100 w-full h-auto"
-            />
+            
           </div>
         </div>
       </section>

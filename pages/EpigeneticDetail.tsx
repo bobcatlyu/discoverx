@@ -81,13 +81,13 @@ const EpigeneticDetail: React.FC = () => {
 
   return (
     <TargetDetailTemplate
-      title="表观遗传蛋白产品 Epigenetic Solutions"
+      title="表观遗传蛋白 Epigenetic Proteins Assays"
       introText={intro}
       introImageUrl="https://picsum.photos/seed/epigenetic_research/800/600"
       highlights={highlights}
       moaItems={moas}
       productData={data}
-      productTableTitle="表观遗传类产品列表 (Epigenetics Portfolio)"
+      productTableTitle="表观遗传类产品列表"
       customTypeHeaders={EPIGENETIC_HEADERS}
     />
   );

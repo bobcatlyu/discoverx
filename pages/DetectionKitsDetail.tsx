@@ -83,7 +83,7 @@ const DetectionKitsDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left: Introduction */}
           <div>
-            <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-6">检测试剂盒（Detection Kits）</h1>
+            <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-6">检测试剂盒 Detection Kits</h1>
             <div className="h-1 w-20 bg-[#4B827E] mb-8"></div>
             <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
               <p>

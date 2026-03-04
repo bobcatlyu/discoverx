@@ -23,7 +23,7 @@ const ExpressKitDetail: React.FC<ExpressKitDetailProps> = ({ onNavigate }) => {
       {/* 1. Introduction Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div>
-          <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-6">eXpress® kit 介绍</h1>
+          <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-6">即用型 eXpress® kit</h1>
           <div className="h-1 w-20 bg-[#4B827E] mb-8"></div>
           <div className="space-y-4 text-slate-600 leading-relaxed text-lg text-justify">
             <p>
@@ -52,8 +52,8 @@ const ExpressKitDetail: React.FC<ExpressKitDetailProps> = ({ onNavigate }) => {
             {[
               { title: '靶点表征', desc: '在早期药物发现项目中识别靶点并验证区分靶点特异性变异，如物种、同源物、同型等。' },
               { title: '功能和结合分析', desc: '对您的小分子化合物或生物制剂进行快速、高通量的基于细胞的分析结合和机制 (MOA) 评估。' },
-              { title: '筛选和命中 Hit', desc: '识别 Hit 化合物；运行初筛、次筛和正交筛选；并对命中进行排序。' },
-              { title: '先导优化', desc: '确定最佳先导化合物；优化先导化合物的效价、疗效和特异性；并进行 SAR 和配体偏向研究。' }
+              { title: '高通量筛选和 Hit finding', desc: '识别 Hit 化合物；运行初筛、次筛和正交筛选；并对命中进行排序。' },
+              { title: '先导化合物优化', desc: '确定最佳先导化合物；优化先导化合物的效价、疗效和特异性；并进行 SAR 和配体偏向研究。' }
             ].map((app, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-all">
                 <div className="w-10 h-10 bg-teal-50 text-[#4B827E] rounded-lg flex items-center justify-center mb-6">
@@ -122,7 +122,7 @@ const ExpressKitDetail: React.FC<ExpressKitDetailProps> = ({ onNavigate }) => {
       {/* 4. Product List - Simplified Grid with Links */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-2">产品列表 / eXpress Portfolio</h2>
+          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-2">产品列表</h2>
           <p className="text-slate-500">eXpress® kit 适用于以下核心靶点与应用类别：</p>
         </div>
 

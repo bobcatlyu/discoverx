@@ -41,7 +41,7 @@ const EnzymeDetail: React.FC = () => {
   // 5. 激酶活性检测试剂盒产品列表
   const kinaseKitData = [
     { target: 'Any Kinase, ATPase, GTPase or UTPase', catalog: '90-0083', description: 'ADP Hunter™ Plus' },
-    { target: '', catalog: '90-0071', description: 'ADP Quest™' },
+    { target: 'Any Kinase, ATPase, GTPase or UTPase', catalog: '90-0071', description: 'ADP Quest™' },
   ];
 
   // 6. 预装激酶、ATP、试剂的激酶检测试剂盒套装产品列表
@@ -704,7 +704,7 @@ const EnzymeDetail: React.FC = () => {
         <div className="bg-slate-50 rounded-3xl p-8 border border-slate-100 mb-16">
           <h2 className="text-2xl font-bold text-[#1C2C5E] mb-8 flex items-center">
             <div className="w-2 h-8 bg-[#4B827E] mr-4 rounded-full"></div>
-            产品亮点 / Product Highlights
+            产品亮点
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="space-y-2">
@@ -736,7 +736,7 @@ const EnzymeDetail: React.FC = () => {
       </div>
 
       <div className="space-y-12">
-        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-8">产品分类 / Product Categories</h2>
+        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-8">产品分类</h2>
 
         {/* 1. 重组激酶 - 仅显示描述和下载链接 */}
         <div className="mb-12">
@@ -756,7 +756,7 @@ const EnzymeDetail: React.FC = () => {
                 </svg>
                 下载完整重组激酶产品列表
               </a>
-              <span className="text-sm text-slate-500">共 {kinaseProducts.length} 种产品</span>
+              <span className="text-sm text-slate-500"></span>
             </div>
           </div>
         </div>
@@ -811,7 +811,7 @@ const EnzymeDetail: React.FC = () => {
 
         {/* 5. 激酶活性检测试剂盒 */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-[#1C2C5E] mb-6">5. 激酶活性检测试剂盒 / Kinase Activity Assay Kits</h3>
+          <h3 className="text-2xl font-bold text-[#1C2C5E] mb-6">5. 激酶活性检测试剂盒 / ADP Accumulation Assays</h3>
           <div className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
             <table className="w-full">
               <thead className="bg-[#4B827E]">
@@ -836,7 +836,7 @@ const EnzymeDetail: React.FC = () => {
 
         {/* 6. 预装激酶、ATP、试剂的激酶检测试剂盒套装 */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-[#1C2C5E] mb-6">6. 预装激酶、ATP、试剂的激酶检测试剂盒套装 / Pre-loaded Kinase Assay Kit Sets</h3>
+          <h3 className="text-2xl font-bold text-[#1C2C5E] mb-6">6. 预装激酶、ATP、试剂的激酶检测试剂盒套装 / Hithunter Kinase Assay Kit</h3>
           <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
             <div className="grid grid-cols-3 gap-x-12 gap-y-4">
               {preloadedKitData.map((row, idx) => (

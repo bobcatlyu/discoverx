@@ -60,7 +60,7 @@ const NhrDetail: React.FC = () => {
   ];
   return (
     <TargetDetailTemplate
-      title="核蛋白（核激素受体NHR）"
+      title="核激素受体 NHR Assays"
       subtitle="用于评估核蛋白激活与核转位的细胞水平检测"
       introText={intro}
       introImageUrl="https://picsum.photos/seed/nhr_structure/800/600"

@@ -243,7 +243,7 @@ const SignalPathwayDetail: React.FC = () => {
       {/* 3. MOA Section - 3 Core Modules Stacked Vertically */}
       <section className="bg-slate-50 py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">核心检测模块 (Core Pathway Modules)</h2>
+          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">作用机制</h2>
 
           <div className="max-w-6xl mx-auto space-y-8">
             {/* Module 1: Reporter Gene */}
@@ -312,7 +312,7 @@ const SignalPathwayDetail: React.FC = () => {
 
       {/* 3. Categorized Product Tables */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
-        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12">通路分析产品组合 / Pathway Portfolio</h2>
+        <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12">信号通路产品列表</h2>
         <div className="flex flex-col items-start gap-8">
           <ProductTable
             title="报告基因 (Pathway Reporter)"

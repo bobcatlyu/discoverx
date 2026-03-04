@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const BioassayKitDetail: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // 4.1 已验证 Bioassay Kit (Qualified Bioassay Kit) - From PDF Page 1 & 2
+  // 4.1 已验证 (Qualified) Bioassay Kit- From PDF Page 1 & 2
   const qualifiedKits = [
     { name: 'cAMP Hunter™ Tirzepatide (GIP RA) Bioassay Kit', drug: 'Tirzepatide', qualified: 'Tirzepatide', moa: 'GIPR Agonist', measure: 'cAMP Accumulation' },
     { name: 'cAMP Hunter™ Tirzepatide (GLP-1 RA) Bioassay Kit', drug: 'Tirzepatide', qualified: 'Tirzepatide', moa: 'GLP1R Agonist', measure: 'cAMP Accumulation' },
@@ -32,7 +32,7 @@ const BioassayKitDetail: React.FC = () => {
     { name: 'PathHunter® Sargramostim Bioassay Kit', drug: 'Sargramostim', qualified: 'Leukine®', moa: 'Recombinant GM-CSF (CSFR2 agonist)', measure: 'CSF2RB/CSF2R Dimerization' },
   ];
 
-  // 4.2 基于靶点的 Bioassay Kit (Target-based Bioassay Kit) - From PDF Page 3 & 4
+  // 4.2 基于靶点 (Target-based)的 Bioassay Kit  - From PDF Page 3 & 4
   const targetBasedKits = [
     { name: 'PathHunter® CALCRL-RAMP3 (AM2) Bioassay Kit', target: 'AM2', moa: 'CLR Agonist', measure: 'β-Arrestin Recruitment' },
     { name: 'cAMP Hunter™ GCGR Bioassay Kit', target: 'GCG', moa: 'GCG Agonist', measure: 'cAMP Accumulation' },
@@ -81,7 +81,7 @@ const BioassayKitDetail: React.FC = () => {
     { name: 'PathHunter® CHO-K1 VIPR2 Bioassay Kit', target: 'VIPR2', moa: 'Agonist drugs', measure: 'β-Arrestin Recruitment' },
   ];
 
-  // 4.3 早期 Bioassay Kit (Early Access Bioassay Kit) - From PDF Page 4
+  // 4.3 早期 (Early Access)Bioassay Kit - From PDF Page 4
   const earlyAccessKits = [
     { target: 'Denosumab', moa: 'Anti-RANKL mAb', measure: 'NF-κB transcriptional reporter' },
     { target: 'CXCR2', moa: 'Agonist drugs', measure: 'β-Arrestin recruitment' },
@@ -181,7 +181,7 @@ const BioassayKitDetail: React.FC = () => {
         <div className="mb-24">
           <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
             <div className="max-w-3xl">
-              <h3 className="text-2xl font-bold text-[#4B827E] mb-4">1. 已验证 Bioassay Kit (Qualified Bioassay Kit)</h3>
+              <h3 className="text-2xl font-bold text-[#4B827E] mb-4">1. 已验证 (Qualified)Bioassay Kit </h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 这些 Bioassay kit 已使用其相应的原研药或标准品进行了优化和验证，可轻松减少 12 个月以上的分析开发时间。主要产品包括：
               </p>
@@ -228,7 +228,7 @@ const BioassayKitDetail: React.FC = () => {
         {/* 4.2 基于靶点的 Bioassay Kit */}
         <div className="mb-24">
           <div className="max-w-3xl mb-10">
-            <h3 className="text-2xl font-bold text-[#4B827E] mb-4">2. 基于靶点的 Bioassay Kit (Target-based Bioassay Kit)</h3>
+            <h3 className="text-2xl font-bold text-[#4B827E] mb-4">2. 基于靶点(Target-based)的 Bioassay Kit</h3>
             <p className="text-slate-600 text-sm leading-relaxed mb-6">
               即用型基于靶点或基于 MOA 的 Bioassay Kit，使用标准品进行了优化。主要靶点包括：
             </p>
@@ -268,7 +268,7 @@ const BioassayKitDetail: React.FC = () => {
         {/* 4.3 早期 Bioassay Kit */}
         <div className="bg-slate-100 rounded-3xl p-10 border border-slate-200 shadow-inner">
           <div className="max-w-4xl">
-            <h3 className="text-2xl font-bold text-[#1C2C5E] mb-4">3. 早期 Bioassay Kit (Early Access Bioassay Kit)</h3>
+            <h3 className="text-2xl font-bold text-[#1C2C5E] mb-4">3. 早期 (Early Access) Bioassay Kit</h3>
             <p className="text-slate-600 text-sm leading-relaxed mb-10">
               Eurofins DiscoverX 提供部分处于开发早期的 Bioassay Kit，帮助您加速项目进展。这些开发早期的 Bioassay Kit 交货时间为 6-8 周，非常适合效价测试和中和抗体检测。可用靶点包括：
             </p>

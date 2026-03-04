@@ -225,7 +225,7 @@ const ReagentsDetail: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
-            <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-8">试剂耗材 / Reagents & Consumables</h1>
+            <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-8">试剂耗材 Reagents & Consumables</h1>
             <div className="h-1 w-20 bg-[#4B827E] mb-8"></div>
             <div className="space-y-6 text-slate-600 leading-relaxed">
               <p>

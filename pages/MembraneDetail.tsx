@@ -141,7 +141,7 @@ const MembraneDetail: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Left: Introduction */}
           <div>
-            <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-2">膜制备物</h1>
+            <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-2">膜制备物 Membrane Prep</h1>
             <h2 className="text-xl font-bold text-[#4B827E] mb-6">用于结合与功能分析的纯化 GPCR 与离子通道膜蛋白制备物</h2>
             <div className="h-1 w-20 bg-[#4B827E] mb-8"></div>
             {intro.map((paragraph, idx) => (

@@ -18,13 +18,7 @@ const BioassayDev: React.FC = () => {
               Eurofins DiscoverX 提供业内最丰富的即用型经确认（qualified）生物活性检测试剂盒组合，覆盖从 QC 批放行效价测试实施到生物药全生命周期支持的完整需求。
             </p>
           </div>
-          <div className="md:w-1/2">
-            <img
-              src="https://picsum.photos/seed/bioassay_lab/800/600"
-              alt="Bioassay Development"
-              className="rounded-2xl shadow-2xl border border-slate-100"
-            />
-          </div>
+          
         </div>
       </section>
 
