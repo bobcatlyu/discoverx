@@ -10,7 +10,14 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const [pinnedPostId, setPinnedPostId] = useState<string | null>(() => {
     return localStorage.getItem('pinnedPostId');
   });
-  const effectivePinnedPostId = pinnedPostId || DEFAULT_PINNED_BLOG_ID;
+
+  const latestPosts = [...BLOG_POSTS]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
+
+  const latestPostIds = new Set(latestPosts.map((post) => post.id));
+  const fallbackPinnedId = latestPostIds.has(DEFAULT_PINNED_BLOG_ID) ? DEFAULT_PINNED_BLOG_ID : latestPosts[0]?.id ?? null;
+  const effectivePinnedPostId = pinnedPostId && latestPostIds.has(pinnedPostId) ? pinnedPostId : fallbackPinnedId;
 
   const togglePin = (id: string) => {
     const newPinnedId = effectivePinnedPostId === id ? null : id;
@@ -22,7 +29,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     }
   };
 
-  const sortedPosts = [...BLOG_POSTS].sort((a, b) => {
+  const sortedPosts = [...latestPosts].sort((a, b) => {
     if (a.id === effectivePinnedPostId) return -1;
     if (b.id === effectivePinnedPostId) return 1;
     return 0;

@@ -2,7 +2,7 @@
 export interface BlogPost {
   id: string;
   title: string;
-  category: 'Product Launch' | 'Marketing' | 'Technical Article';
+  category: 'Product Launch' | 'Marketing' | 'Technical Article' | '技术讨论';
   date: string;
   summary: string;
   imageUrl: string;
