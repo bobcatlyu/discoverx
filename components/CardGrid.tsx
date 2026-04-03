@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface CardGridProps {
@@ -25,17 +24,17 @@ const CardGrid: React.FC<CardGridProps> = ({ title, subtitle, items }) => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.map((item) => (
-          <div 
-            key={item.id} 
+          <div
+            key={item.id}
             onClick={item.action}
             className={`group flex flex-col bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-[#4B827E] hover:shadow-xl transition-all duration-300 ${item.action ? 'cursor-pointer' : ''}`}
           >
             {item.imageUrl && (
               <div className="h-48 overflow-hidden bg-slate-100">
-                <img 
-                  src={item.imageUrl} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" 
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
               </div>
             )}
@@ -46,9 +45,7 @@ const CardGrid: React.FC<CardGridProps> = ({ title, subtitle, items }) => {
                 </span>
               )}
               <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
-                {item.description}
-              </p>
+              <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">{item.description}</p>
               <button className="text-[#4B827E] font-semibold text-sm inline-flex items-center hover:text-[#3d6b67]">
                 了解更多
                 <svg className="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

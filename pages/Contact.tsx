@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
@@ -7,8 +6,6 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would be an API call to a backend service.
-    // For this prototype, we simulate the "automatic send" logic.
     setSubmitted(true);
   };
 
@@ -18,9 +15,9 @@ const Contact: React.FC = () => {
         <div>
           <h2 className="text-3xl font-bold text-slate-900 mb-4">联系我们</h2>
           <p className="text-slate-600 mb-8 leading-relaxed">
-            如需获取报价、索取样本或咨询技术问题，请填写右侧表单。我们的区域销售团队或技术支持将在 24 小时内与您取得联系。
+            如需获取报价、索取样品或咨询技术问题，请填写右侧表单。我们的销售或技术支持团队会尽快与您联系。
           </p>
-          
+
           <div className="space-y-6">
             <div className="flex items-start">
               <div className="bg-teal-50 p-3 rounded-lg text-[#4B827E] mr-4 border border-teal-100">
@@ -30,11 +27,11 @@ const Contact: React.FC = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="font-bold text-slate-800">上海总部</h4>
-                <p className="text-slate-600 text-sm">上海市闵行区浦江镇陈行公路2168号18号楼</p>
+                <h4 className="font-bold text-slate-800">上海办公室</h4>
+                <p className="text-slate-600 text-sm">上海市闵行区浦江镇陈行公路 2168 号 8 号楼</p>
               </div>
             </div>
-            
+
             <div className="flex items-start">
               <div className="bg-teal-50 p-3 rounded-lg text-[#4B827E] mr-4 border border-teal-100">
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,14 +39,14 @@ const Contact: React.FC = () => {
                 </svg>
               </div>
               <div>
-                <h4 className="font-bold text-slate-800">电子邮件</h4>
+                <h4 className="font-bold text-slate-800">电子邮箱</h4>
                 <p className="text-slate-600 text-sm">{companyEmail}</p>
               </div>
             </div>
           </div>
 
           <div className="mt-12 rounded-2xl overflow-hidden bg-slate-50 shadow-lg border border-slate-200">
-            <img src="/pic/qrcode_for_gh_97a0bd4fdaad_430.jpg" className="w-full h-auto object-contain" alt="WeChat QR Code" />
+            <img src="/pic/qrcode_for_gh_97a0bd4fdaad_430.jpg" className="w-full h-auto object-contain" alt="DiscoverX 微信二维码" />
           </div>
         </div>
 
@@ -59,11 +56,11 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-500 uppercase mb-2">姓名 <span className="text-red-500">*</span></label>
-                  <input type="text" required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4B827E]/50 focus:bg-white transition-all" placeholder="输入您的姓名" />
+                  <input type="text" required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4B827E]/50 focus:bg-white transition-all" placeholder="请输入您的姓名" />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-slate-500 uppercase mb-2">公司/机构 <span className="text-red-500">*</span></label>
-                  <input type="text" required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4B827E]/50 focus:bg-white transition-all" placeholder="输入单位名称" />
+                  <input type="text" required className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4B827E]/50 focus:bg-white transition-all" placeholder="请输入单位名称" />
                 </div>
               </div>
               <div>
@@ -81,7 +78,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <label className="block text-xs font-bold text-slate-500 uppercase mb-2">留言信息</label>
-                <textarea rows={4} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4B827E]/50 focus:bg-white transition-all" placeholder="请写下您的问题或具体需求..."></textarea>
+                <textarea rows={4} className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#4B827E]/50 focus:bg-white transition-all" placeholder="请写下您的问题或具体需求"></textarea>
               </div>
               <button type="submit" className="w-full bg-[#4B827E] text-white font-bold py-4 rounded-lg hover:bg-[#3d6b67] transition shadow-lg shadow-teal-100 uppercase tracking-widest">
                 提交咨询
@@ -90,12 +87,14 @@ const Contact: React.FC = () => {
           ) : (
             <div className="text-center py-20">
               <div className="bg-teal-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-[#4B827E]">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
               </div>
               <h3 className="text-2xl font-bold text-slate-800 mb-2">感谢您的咨询</h3>
-              <p className="text-slate-600 mb-4">您的留言已自动发送至我们的官方邮箱：</p>
+              <p className="text-slate-600 mb-4">您的留言已经提交，我们也可通过以下邮箱直接联系：</p>
               <p className="font-bold text-[#4B827E] text-lg mb-6">{companyEmail}</p>
-              <button 
+              <button
                 onClick={() => setSubmitted(false)}
                 className="text-xs font-bold text-slate-400 hover:text-[#4B827E] transition-colors border-b border-slate-200 hover:border-[#4B827E]"
               >

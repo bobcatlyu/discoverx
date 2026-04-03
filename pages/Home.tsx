@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { BLOG_POSTS, DEFAULT_PINNED_BLOG_ID } from '../constants';
-import { BlogPost, Page } from '../types';
+import { Page } from '../types';
 
 interface HomeProps {
   onNavigate?: (page: Page, blogId?: string) => void;
@@ -23,7 +22,6 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     }
   };
 
-  // Sort posts: pinned one first, then the rest in original order
   const sortedPosts = [...BLOG_POSTS].sort((a, b) => {
     if (a.id === effectivePinnedPostId) return -1;
     if (b.id === effectivePinnedPostId) return 1;
@@ -32,11 +30,10 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
   return (
     <div className="space-y-12 pb-20">
-      {/* Hero Section - Updated gradient to theme green */}
       <section className="relative h-[250px] flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#4B827E] to-[#1a3d3a] z-10 opacity-90"></div>
         <img
-          src="/pic/DiscoverX Logo_Blue Discover Text w Blue  X.png"
+          src="/pic/DiscoverX Logo_Blue Discover Text w BlueOrange X.png"
           className="absolute inset-0 w-full h-full object-cover"
           alt="DiscoverX Logo"
         />
@@ -48,24 +45,23 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             Product Solutions For Your Success
           </h2>
           <p className="text-sm md:text-base text-white/80 font-medium opacity-90">
-            Global official website: <a href="https://www.discoverx.com" target="_blank" rel="noopener noreferrer" className="hover:underline transition-colors font-semibold">https://www.discoverx.com</a>
+            Global official website:{' '}
+            <a href="https://www.discoverx.com" target="_blank" rel="noopener noreferrer" className="hover:underline transition-colors font-semibold">
+              https://www.discoverx.com
+            </a>
           </p>
         </div>
       </section>
 
-      {/* Blog Feed */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10 border-b border-slate-200 pb-4">
           <div>
             <h2 className="text-2xl font-bold text-slate-800 uppercase tracking-tight">最新动态</h2>
           </div>
-          <button className="text-[#4B827E] font-bold text-sm hover:underline flex items-center">
-            查看全部 <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {sortedPosts.map(post => (
+          {sortedPosts.map((post) => (
             <div
               key={post.id}
               onClick={() => onNavigate?.(Page.BlogDetail, post.id)}
@@ -75,8 +71,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             >
               <div className="relative h-48 overflow-hidden">
                 <img src={post.imageUrl} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt={post.title} />
-                
-                {/* Modality Badges */}
+
                 <div className="absolute bottom-0 left-0 flex items-center">
                   <span className="bg-[#4B827E] text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest">
                     {post.category}
@@ -86,25 +81,24 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                       <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
-                      已置顶
+                      置顶
                     </span>
                   )}
                 </div>
 
-                {/* Pin Action Button */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     togglePin(post.id);
                   }}
-                  title={post.id === effectivePinnedPostId ? "取消置顶" : "置顶该文章"}
+                  title={post.id === effectivePinnedPostId ? '取消置顶' : '置顶该文章'}
                   className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition-all z-20 ${
                     post.id === effectivePinnedPostId
-                    ? 'bg-[#4B827E] text-white scale-110'
-                    : 'bg-white/40 text-white hover:bg-white/80 hover:text-[#4B827E] opacity-0 group-hover:opacity-100'
+                      ? 'bg-[#4B827E] text-white scale-110'
+                      : 'bg-white/40 text-white hover:bg-white/80 hover:text-[#4B827E] opacity-0 group-hover:opacity-100'
                   }`}
                 >
-                  <svg className="w-4 h-4" fill={post.id === effectivePinnedPostId ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" fill={post.id === effectivePinnedPostId ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                   </svg>
                 </button>
@@ -115,12 +109,13 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-[#4B827E] transition-colors leading-tight min-h-[3rem]">
                   {post.title}
                 </h3>
-                <p className="text-slate-600 text-sm line-clamp-3 mb-4 leading-relaxed">
-                  {post.summary}
-                </p>
+                <p className="text-slate-600 text-sm line-clamp-3 mb-4 leading-relaxed">{post.summary}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-[#4B827E] font-bold text-xs flex items-center group-hover:translate-x-1 transition-transform uppercase tracking-wider">
-                    READ MORE <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                    READ MORE
+                    <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </span>
                   {post.id === effectivePinnedPostId && (
                     <button
@@ -140,7 +135,6 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* Quick stats / Features */}
       <section className="bg-slate-50 border-y border-slate-200 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           <div>
@@ -166,4 +160,3 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 };
 
 export default Home;
-

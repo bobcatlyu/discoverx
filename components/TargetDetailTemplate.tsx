@@ -1,18 +1,17 @@
-
 import React from 'react';
 
 export interface MoaItem {
   title: string;
   description: string;
-  imageUrl?: string; // Optional image for specific mechanisms
-  imageUrl2?: string; // Optional second image for side-by-side display
-  maxWidth?: string; // Optional max-width class (e.g., "max-w-xl")
+  imageUrl?: string;
+  imageUrl2?: string;
+  maxWidth?: string;
 }
 
 export interface ProductRow {
   target: string;
   moa: string;
-  statuses: string[]; // Dynamically sized status array (e.g., ['✓', '-', '✓'])
+  statuses: string[];
 }
 
 interface TargetDetailTemplateProps {
@@ -24,24 +23,46 @@ interface TargetDetailTemplateProps {
   moaItems: MoaItem[];
   productData: ProductRow[];
   productTableTitle: string;
-  // Dynamic headers for the product type columns
-  customTypeHeaders: string[]; 
+  customTypeHeaders: string[];
 }
+
+const normalizeHighlight = (highlight: string) => {
+  const separators = ['——', ' - ', '–', '—'];
+  const matched = separators.find((separator) => highlight.includes(separator));
+
+  if (!matched) {
+    return {
+      heading: highlight,
+      description: '',
+    };
+  }
+
+  const [heading, ...rest] = highlight.split(matched);
+  return {
+    heading,
+    description: rest.join(matched),
+  };
+};
+
+const normalizeStatus = (status: string) => {
+  if (status === '鉁?' || status === '✔︎' || status === '✓') {
+    return '✔';
+  }
+  return status;
+};
 
 const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
   title,
   subtitle,
   introText,
-  introImageUrl,
   highlights,
   moaItems,
   productData,
   productTableTitle,
-  customTypeHeaders
+  customTypeHeaders,
 }) => {
   return (
     <div className="bg-white">
-      {/* 1. Introduction Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col gap-12 items-center">
           <div className="w-full">
@@ -57,15 +78,13 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
         </div>
       </section>
 
-      {/* 2. Highlights Section */}
       {highlights && highlights.length > 0 && (
         <section className="bg-white py-16 border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">产品亮点 (Product Highlights)</h2>
+            <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">产品亮点</h2>
             <div className={`grid grid-cols-1 md:grid-cols-2 ${highlights.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-8`}>
               {highlights.map((highlight, idx) => {
-                const [title, ...descParts] = highlight.split('——');
-                const description = descParts.join('——');
+                const { heading, description } = normalizeHighlight(highlight);
                 return (
                   <div key={idx} className="bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
                     <div className="w-10 h-10 rounded-lg bg-[#4B827E]/10 flex items-center justify-center text-[#4B827E] mb-6">
@@ -73,10 +92,8 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-[#1C2C5E] mb-4">{title}</h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      {description}
-                    </p>
+                    <h3 className="text-xl font-bold text-[#1C2C5E] mb-4">{heading}</h3>
+                    {description && <p className="text-slate-600 leading-relaxed">{description}</p>}
                   </div>
                 );
               })}
@@ -85,11 +102,10 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
         </section>
       )}
 
-      {/* 3. MOA Section */}
       <section className="bg-slate-50 py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">作用机制 (Mechanism of Action)</h2>
-          
+          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">作用机制</h2>
+
           <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="divide-y divide-slate-100">
               {moaItems.map((item, idx) => (
@@ -104,32 +120,16 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
                       <h3 className="text-2xl font-bold text-[#4B827E] mb-4">{item.title}</h3>
                       <div className="grid md:grid-cols-12 gap-8 items-start">
                         <div className="md:col-span-12">
-                          <p className="text-slate-600 leading-relaxed text-lg mb-6">
-                            {item.description}
-                          </p>
+                          <p className="text-slate-600 leading-relaxed text-lg mb-6">{item.description}</p>
                           {(item.imageUrl || item.imageUrl2) && (
                             <div className="mt-6">
                               {item.imageUrl2 ? (
-                                // Two images side by side
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                  <img
-                                    src={item.imageUrl}
-                                    alt={`${item.title} - 1`}
-                                    className="w-full rounded-xl shadow-lg border border-slate-200"
-                                  />
-                                  <img
-                                    src={item.imageUrl2}
-                                    alt={`${item.title} - 2`}
-                                    className="w-full rounded-xl shadow-lg border border-slate-200"
-                                  />
+                                  <img src={item.imageUrl} alt={`${item.title} - 1`} className="w-full rounded-xl shadow-lg border border-slate-200" />
+                                  <img src={item.imageUrl2} alt={`${item.title} - 2`} className="w-full rounded-xl shadow-lg border border-slate-200" />
                                 </div>
                               ) : (
-                                // Single image
-                                <img
-                                  src={item.imageUrl}
-                                  alt={item.title}
-                                  className={`w-full ${item.maxWidth || 'max-w-xl'} rounded-xl shadow-lg border border-slate-200`}
-                                />
+                                <img src={item.imageUrl} alt={item.title} className={`w-full ${item.maxWidth || 'max-w-xl'} rounded-xl shadow-lg border border-slate-200`} />
                               )}
                             </div>
                           )}
@@ -144,7 +144,6 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
         </div>
       </section>
 
-      {/* 4. Product List Table Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center md:text-left">{productTableTitle}</h2>
         <div className="flex justify-start">
@@ -155,7 +154,9 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
                   <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider whitespace-nowrap">靶点</th>
                   <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider whitespace-nowrap">作用机制</th>
                   {customTypeHeaders.map((header, idx) => (
-                    <th key={idx} className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider whitespace-nowrap">{header}</th>
+                    <th key={idx} className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider whitespace-nowrap">
+                      {header}
+                    </th>
                   ))}
                 </tr>
               </thead>
@@ -164,11 +165,14 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
                   <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/30 transition-colors'}>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 border-r border-slate-100">{row.target}</td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-600 border-r border-slate-100">{row.moa}</td>
-                    {row.statuses.map((status, statusIdx) => (
-                      <td key={statusIdx} className="px-6 py-4 whitespace-nowrap text-center text-sm text-slate-700">
-                        {status === '✓' ? <span className="text-[#4B827E] font-bold text-lg">✓</span> : status}
-                      </td>
-                    ))}
+                    {row.statuses.map((status, statusIdx) => {
+                      const normalizedStatus = normalizeStatus(status);
+                      return (
+                        <td key={statusIdx} className="px-6 py-4 whitespace-nowrap text-center text-sm text-slate-700">
+                          {normalizedStatus === '✔' ? <span className="text-[#4B827E] font-bold text-lg">✔</span> : normalizedStatus}
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>
@@ -176,9 +180,7 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
           </div>
         </div>
         <div className="mt-8 text-center">
-          <p className="text-slate-500 text-sm italic">
-            * 如未找到您的特定靶点，请联系我们的开发服务团队进行咨询。
-          </p>
+          <p className="text-slate-500 text-sm italic">* 如未找到您的特定靶点，欢迎联系我们的开发服务团队进一步沟通。</p>
         </div>
       </section>
     </div>
