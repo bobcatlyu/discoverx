@@ -46,7 +46,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         />
         <div className="relative z-20 text-center px-4 max-w-5xl -mt-4">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-xl leading-tight tracking-tight">
-            DiscoverX 中文网站
+            DiscoverX 中文资料站
           </h1>
           <h2 className="text-xl md:text-2xl font-bold text-teal-100 mb-2 uppercase tracking-wide opacity-95">
             Product Solutions For Your Success
