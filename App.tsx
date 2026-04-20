@@ -384,10 +384,10 @@ const App: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 -mb-4 relative z-10">
             <button
               onClick={goBackToUpperLevel}
-              className="group inline-flex items-center text-slate-500 hover:text-[#4B827E] transition-all"
+              className="group inline-flex items-center text-slate-500 transition-all hover:text-[#4B827E]"
               aria-label="返回上一级"
             >
-              <div className="mr-2.5 p-1.5 rounded-full bg-white shadow-sm border border-slate-200 group-hover:border-[#4B827E]/40 group-hover:bg-teal-50 transition-all transform group-active:scale-95">
+              <div className="mr-2.5 rounded-full border border-slate-200 bg-white p-1.5 shadow-sm transition-all transform group-hover:border-[#4B827E]/40 group-hover:bg-teal-50 group-active:scale-95">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                 </svg>
@@ -401,7 +401,7 @@ const App: React.FC = () => {
       <Footer />
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 bg-[#4B827E] text-white p-3 rounded-full shadow-lg hover:bg-[#3d6b67] transition z-40 transform hover:scale-110 active:scale-95"
+        className="fixed bottom-8 right-8 z-40 rounded-full bg-[#4B827E] p-3 text-white shadow-lg transition transform hover:scale-110 hover:bg-[#3d6b67] active:scale-95"
         aria-label="返回顶部"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
