@@ -28,6 +28,7 @@ const Contact: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
+
               <div>
                 <h4 className="font-bold text-slate-800">上海办公室</h4>
                 <p className="text-sm text-slate-600">上海市闵行区浦江镇陈行公路 2168 号 8 号楼</p>
@@ -60,26 +61,6 @@ const Contact: React.FC = () => {
               className="h-auto w-full object-contain"
               alt="DiscoverX 微信二维码"
             />
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-slate-100 bg-white p-8 shadow-xl">
-          <div className="rounded-2xl border border-teal-100 bg-gradient-to-br from-teal-50 via-white to-slate-50 p-8">
-            <h3 className="mb-4 text-2xl font-bold text-slate-900">邮件联系</h3>
-            <p className="mb-6 leading-relaxed text-slate-600">
-              当前页面不再提供在线提交表单。请使用您的邮件客户端，直接发送邮件到以下地址，我们会尽快回复。
-            </p>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">联系邮箱</div>
-              <a href={`mailto:${companyEmail}`} className="break-all text-lg font-semibold text-[#4B827E] transition hover:text-[#3d6b67]">
-                {companyEmail}
-              </a>
-            </div>
-
-            <div className="mt-6 text-sm leading-relaxed text-slate-500">
-              建议您在邮件中注明姓名、公司/机构、联系方式以及具体需求，以便我们更快处理。
-            </div>
           </div>
         </div>
       </div>
