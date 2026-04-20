@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
         <div>
           <h2 className="mb-4 text-3xl font-bold text-slate-900">联系我们</h2>
           <p className="mb-8 leading-relaxed text-slate-600">
-            欧陆科仪（上海）有限公司是 Eurofins 集团在中国的全资子公司，全面负责 DiscoverX 系列产品在中国的销售、市场推广和技术支持。
+            欧陆生物制品（上海）有限公司是 Eurofins 集团在中国的全资子公司，全面负责 DiscoverX 系列产品在中国的销售、市场推广和技术支持。
           </p>
           <p className="mb-8 leading-relaxed text-slate-600">
             如需获取报价、索取样品或咨询技术问题，请直接通过页面显示的邮箱地址发送邮件，我们会尽快与您联系。
@@ -54,8 +54,10 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-lg">
+        <div className="flex items-start justify-center md:justify-end">
+          <div className="w-full max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-lg">
             <img
               src="/pic/qrcode_for_gh_97a0bd4fdaad_430.jpg"
               className="h-auto w-full object-contain"
@@ -63,6 +65,7 @@ const Contact: React.FC = () => {
             />
           </div>
         </div>
+
       </div>
     </div>
   );
