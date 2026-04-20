@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
             欧陆生物制品（上海）有限公司是 Eurofins 集团在中国的全资子公司，全面负责 DiscoverX 系列产品在中国的销售、市场推广和技术支持。
           </p>
           <p className="mb-8 leading-relaxed text-slate-600">
-            如需获取报价、索取样品或咨询技术问题，请直接通过页面显示的邮箱地址发送邮件，我们会尽快与您联系。
+            如需获取报价、索取样品或咨询技术问题，请直接向下面邮箱地址发送邮件，或扫描右侧微信二维码，我们会尽快与您联系。
           </p>
 
           <div className="space-y-6">
