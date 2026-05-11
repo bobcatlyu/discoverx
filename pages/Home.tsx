@@ -11,9 +11,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     return localStorage.getItem('pinnedPostId');
   });
 
-  const latestPosts = [...BLOG_POSTS]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3);
+  const postsByDate = [...BLOG_POSTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const latestPosts = postsByDate.slice(0, 9);
 
   const latestPostIds = new Set(latestPosts.map((post) => post.id));
   const fallbackPinnedId = latestPostIds.has(DEFAULT_PINNED_BLOG_ID) ? DEFAULT_PINNED_BLOG_ID : latestPosts[0]?.id ?? null;
@@ -29,11 +28,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     }
   };
 
-  const sortedPosts = [...latestPosts].sort((a, b) => {
-    if (a.id === effectivePinnedPostId) return -1;
-    if (b.id === effectivePinnedPostId) return 1;
-    return 0;
-  });
+  const pinnedPost = latestPosts.find((post) => post.id === effectivePinnedPostId);
+  const sortedPosts = pinnedPost ? [pinnedPost, ...latestPosts.filter((post) => post.id !== effectivePinnedPostId)] : latestPosts;
 
   return (
     <div className="space-y-12 pb-20">
