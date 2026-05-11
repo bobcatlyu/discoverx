@@ -2,13 +2,16 @@
 export interface BlogPost {
   id: string;
   title: string;
-  category: 'Product Launch' | 'Marketing' | 'Technical Article' | '技术讨论';
+  category: 'Product Launch' | 'Marketing' | 'Technical Article' | '技术讨论' | '产品介绍';
   date: string;
   summary: string;
   imageUrl: string;
   content?: string; // Full article content in markdown or HTML
   author?: string;
   tags?: string[];
+  seoTitle?: string;
+  seoDescription?: string;
+  keywords?: string[];
 }
 
 export interface Product {

@@ -191,6 +191,133 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>更合理的策略通常不是放弃 cAMP，而是在早期阶段尽快引入 β-arrestin、internalization 等正交 readout，构建多维度评价框架。只有当不同层面的数据能够互相校验时，研发团队才更有可能对分子的真实药理特征形成可靠判断，并据此推进后续开发。</p>
     `,
   },
+  {
+    id: '20260511-discoverx-adc-drug-development-applications',
+    title: 'DiscoverX 产品在 ADC 药物开发中的应用',
+    category: '产品介绍',
+    date: '2026-05-11',
+    summary:
+      'DiscoverX 通过 PathHunter 受体内吞实验、KILR 细胞毒性平台以及 ADCC、ADCP、CDC 等 Fc 效应功能实验，为 ADC 药物发现、候选分子排序和临床前表征提供机制相关数据。',
+    imageUrl: '/pic/ADCC.png',
+    author: 'DiscoverX Team',
+    tags: ['ADC', 'DiscoverX', 'PathHunter', 'KILR', 'ADCC', 'ADCP', 'Receptor Internalization', 'Cytotoxicity'],
+    keywords: [
+      'ADC药物开发',
+      '抗体药物偶联物',
+      'DiscoverX',
+      'PathHunter',
+      'KILR',
+      '受体内吞实验',
+      'ADC细胞毒性',
+      'ADCC实验',
+      'ADCP实验',
+      'Fc效应功能',
+    ],
+    seoTitle: 'DiscoverX 产品在 ADC 药物开发中的应用 | PathHunter KILR ADCC ADCP',
+    seoDescription:
+      '介绍 DiscoverX 在 ADC 药物开发中的细胞实验方案，包括 PathHunter 受体内吞、KILR payload 细胞毒性、ADCC、ADCP 和 Fc 效应功能评估。',
+    content: `
+      <h2>用于 ADC 筛选与表征的细胞实验</h2>
+      <p>抗体药物偶联物（Antibody Drug Conjugates, ADCs）是肿瘤治疗中一种重要且持续增长的药物形式，能够将细胞毒性药物，包括 PROTACs、siRNA、类固醇等，高度靶向地递送至肿瘤细胞，同时尽量降低全身毒性。其潜力正在从肿瘤领域扩展到癌症之外，包括炎症和免疫学等新兴应用方向。</p>
+      <p>ADCs 通过特定 linker 将单克隆抗体与高效力细胞毒性药物连接起来，从而实现对抗原表达肿瘤细胞的选择性递送。这种靶向方式可增强抗肿瘤疗效，同时降低脱靶毒性。</p>
+      <p>目前，已获批的 ADCs，包括 trastuzumab deruxtecan、brentuximab vedotin 和 enfortumab vedotin，已在多种实体瘤和血液系统恶性肿瘤中显示出强劲的临床活性。随着精准肿瘤学的发展，ADCs 在多个癌症适应症中的持续成功凸显出其不断提高的临床相关性，也推动了对其在肿瘤之外用途的探索，包括炎症和免疫疾病中的新兴机会。</p>
+      <p>全面的 MOA（mechanism of action，作用机制）评估对于 ADC 的发现与优化至关重要，可覆盖多个功能层面：抗原识别、受体内吞、细胞内转运、payload 释放、细胞毒活性以及 Fc 介导的免疫反应。Eurofins DiscoverX 提供高通量、基于细胞的实验，用于定量这些机制。</p>
+      <ul>
+        <li><strong>Receptor Internalization PathHunter&reg; Assays：</strong>追踪 ADC 介导的内体摄取，用于评估效力、内吞动力学并对候选分子进行排序。</li>
+        <li><strong>Cytotoxicity（KILR&reg; Platform）：</strong>在抗原特异性癌细胞模型中测量 payload 依赖的杀伤作用，反映靶点依赖的细胞毒活性。</li>
+        <li><strong>Effector Function Assays：</strong>定量 ADCC、ADCP 和 CDC，用于评估 Fc 介导的免疫效应对抗肿瘤作用的贡献。</li>
+      </ul>
+      <p>这些实验可在完整 ADC 工作流程中提供与机制相关的数据，支持临床前优化，帮助选择最有前景的候选分子，并加速其进入临床。也可根据 ADC 开发项目的具体需求定制生成特定细胞模型。</p>
+
+      <h2>一、受体内吞</h2>
+      <h3>实验原理：测量 ADC 介导的受体内吞</h3>
+      <p>抗体药物偶联物（ADCs）通常通过受体介导的内吞进入细胞，经内体系统转运后成熟为溶酶体，大部分药物释放发生在溶酶体中。通过定量评估 ADC 在内体中的转运过程，可测量靶向特定受体的抗体触发受体内吞的能力。识别并优先选择具有高内吞效率的抗体，对于有效 payload 递送以及 ADC 候选分子选择至关重要。</p>
+      <figure>
+        <img src="/pic/adc-internalization-principle.png" alt="PathHunter ADC 受体内吞实验原理" />
+        <figcaption>抗体介导受体内吞实验的实验原理。</figcaption>
+      </figure>
+      <p>PathHunter internalization assay platform 基于行业验证的 Enzyme-Fragment Complementation（EFC）技术。稳定工程化细胞系共同表达两个 β-galactosidase（β-gal）片段：一个小的 donor 片段连接于受体或内体，另一个较大的 enzyme acceptor（EA）标记到内体或受体上。ADC 结合后，receptor-ADC 复合物通过内吞进入早期内体，使两个片段彼此接近并形成有活性的 β-gal。由此产生的化学发光信号与内吞程度成正比。</p>
+
+      <h3>Assay 列表</h3>
+      <p>Eurofins DiscoverX ADC internalization assays 可反映 MOA，并支持对 ADC 诱导受体内吞的效力进行排序和表征。这些实验通过测量内吞受体的内体定位，为 ADC 介导的受体内吞提供高度特异且定量的测量。</p>
+      <table>
+        <thead>
+          <tr><th>靶点</th><th>产品描述</th><th>目录号</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>BCMA</td><td>PathHunter Human BCMA Stable Cell Line Internalization Assay (U2OS)</td><td>793-1145C3</td></tr>
+          <tr><td>CD33</td><td>PathHunter Human CD33 (SIGLEC3) Stable Cell Line Internalization Assay (U2OS)</td><td>793-1148C3</td></tr>
+          <tr><td>ErbB2 (Her2)</td><td>PathHunter ErbB2 Cell Line Internalization Assay (constitutive) (U2OS)</td><td>向销售咨询</td></tr>
+          <tr><td>ErbB2 (Her2)</td><td>PathHunter ErbB2 Cell Line Internalization Assay (inducible) (U2OS)</td><td>向销售咨询</td></tr>
+        </tbody>
+      </table>
+
+      <h3>应用案例</h3>
+      <h4>使用 PathHunter BCMA Internalization Assay 评估 Belantumab Mafodotin</h4>
+      <figure>
+        <img src="/pic/adc-bcma-internalization.png" alt="PathHunter BCMA Internalization Assay 评估 Belantumab Mafodotin" />
+        <figcaption>PathHunter BCMA Internalization Cell Line Assay 可测量由抗体或 ADC 介导的 BCMA 内吞。</figcaption>
+      </figure>
+      <p>BCMA 内吞实验显示，经 anti-BCMA antibody 处理后会产生剂量依赖性的受体内吞，而 isotype IgG1 对照无反应。belantamab-mafodotin 和 belantamab-biosimilar 均可在表达 BCMA 的 U2OS 细胞中诱导强烈且浓度依赖性的内吞，但在原生 U2OS 细胞中不产生该效应，从而确认了靶点特异性。</p>
+
+      <h4>使用 PathHunter Inducible ErbB2 Internalization Assay 评估 Trastuzumab Emtansine</h4>
+      <figure>
+        <img src="/pic/adc-erbb2-internalization.png" alt="PathHunter ErbB2 Internalization Assay 评估 Trastuzumab Emtansine" />
+        <figcaption>在 constitutive 和 inducible promoter 的 PathHunter 细胞系实验中观察 ADC 诱导的 ErbB2 内吞。</figcaption>
+      </figure>
+      <p>具有 constitutive（CMV 驱动）ErbB2 表达的 U2OS 细胞，在 L26 存在条件下，用递增浓度的 trastuzumab emtansine（Kadcyla&reg;）或 trastuzumab 处理。二者均在 PathHunter ErbB2 Internalization Cell Line 中诱导强烈、剂量依赖性的内吞反应。具有 inducible（Tet-responsive）ErbB2 表达的 U2OS 细胞中，仅 trastuzumab emtansine 以及 trastuzumab 与 L26 共处理时观察到强烈、剂量依赖性的内吞反应，证明 ErbB2 依赖的受体内吞可通过受控表达进行调节。</p>
+
+      <h4>使用 PathHunter CD33 Internalization Assay 评估 Gemtuzumab Ozagamicin 和 Lintuzumab</h4>
+      <figure>
+        <img src="/pic/adc-cd33-internalization.png" alt="PathHunter CD33 Internalization Assay 评估 Gemtuzumab Ozagamicin 和 Lintuzumab" />
+        <figcaption>交联可增强 PathHunter CD33 Internalization Cell Line Assay 中 ADC 驱动的 CD33 内吞。</figcaption>
+      </figure>
+      <p>Gemtuzumab ozagamicin 可在 U2OS 细胞中诱导 CD33 内吞；与 anti-IgG4 共处理时，反应明显更强，提示 Fc 介导的受体转运增强。在 anti-IgG1 存在条件下，Lintuzumab 显示增强且剂量依赖性的 CD33 内吞，确认了 Fc 驱动的抗体介导内吞放大作用。</p>
+
+      <h2>二、Payload 介导的细胞毒性</h2>
+      <h3>实验原理：使用 KILR Cytotoxicity Assays 测量 ADC payload 介导的杀伤</h3>
+      <p>Eurofins DiscoverX KILR cell-based Cytotoxicity Assays 在无效应细胞条件下进行，用于专门测量由内吞 ADC 释放的细胞毒性 payload 所诱导的靶细胞死亡，从而分离出 ADC 介导的细胞内药物递送所产生的直接效应。</p>
+      <figure>
+        <img src="/pic/adc-kilr-cytotoxicity-principle.png" alt="KILR Cytotoxicity Assay 测量 ADC payload 介导杀伤的实验原理" />
+        <figcaption>ADC payload 介导杀伤的实验原理。</figcaption>
+      </figure>
+      <p>KILR cytotoxicity assay platform 基于 EFC 技术。稳定工程化的 KILR target cell line assays 共同表达一个表面靶抗原，以及一个带有 β-galactosidase 小 donor 片段标签的 housekeeping protein。用 ADC 处理时，ADC 与靶抗原结合、发生内吞并释放其细胞毒性 payload，导致细胞死亡，随后释放带标签的蛋白。加入 β-gal 的 enzyme acceptor 后，可形成有活性的 β-gal 酶并产生剂量依赖性的化学发光信号。</p>
+
+      <h3>应用案例</h3>
+      <h4>在 KILR MM.1R 模型中使用 KILR Assay Platform 评估 ADC 细胞毒性</h4>
+      <figure>
+        <img src="/pic/adc-kilr-mm1r-cytotoxicity.png" alt="KILR MM.1R 模型评估 Belantamab Mafodotin ADC 细胞毒性" />
+        <figcaption>KILR platform 可通过靶向癌症模型中的特定抗原来检测 ADC 介导的细胞毒性。</figcaption>
+      </figure>
+      <p>ADC belantamab mafodotin 与内源性表达 BCMA 的 MM.1R 细胞孵育后，加入 KILR detection reagent 检测细胞杀伤。较大的实验窗口最短可在 48 小时内检测到。</p>
+
+      <h4>比较 KILR Detection 与 CellTiter-Glo 对 ADC 细胞毒性的评估</h4>
+      <figure>
+        <img src="/pic/adc-kilr-vs-celltiter-glo.png" alt="KILR 和 CellTiter-Glo 评估 ADC 介导细胞毒性的比较" />
+        <figcaption>KILR 和 CellTiter-Glo&reg; Assays 在 MM.1R 细胞中评估 ADC 介导细胞毒性的比较。</figcaption>
+      </figure>
+      <p>在表达 BCMA 的 KILR MM.1R 细胞中，KILR cytotoxicity assay 通过发光信号增加来报告靶点依赖的细胞毒性，而 CellTiter-Glo viability assay 则通过信号降低来报告活力丧失。总体而言，KILR assays 显示出更高的 signal-to-background ratios，可更灵敏地检测 ADC 诱导的、靶点依赖的细胞毒性。</p>
+
+      <h2>三、Fc 介导的 ADCC 与 ADCP</h2>
+      <h3>使用 KILR Cytotoxicity Assays 评估 ADC 介导的 ADCC</h3>
+      <figure>
+        <img src="https://cf-ecom-products.cn.discoverx.com/wp-content/uploads/2026/03/AssayPrinciple_Fc-mediated_TargetCellCytotoxicity_ADCC.png" alt="ADC Fc-effector function ADCC 实验原理" />
+        <figcaption>用于评估 ADC Fc-effector function 的 KILR cytotoxicity ADCC 实验原理。</figcaption>
+      </figure>
+      <p>ADCC assays 用于测量靶细胞的 antibody-dependent cell-mediated cytotoxicity。KILR cytotoxicity ADCC assay 通过靶细胞死亡定量评估 ADC Fc-effector function。在该实验中，靶细胞被工程化改造以稳定表达 KILR reporter protein。ADC 调理靶细胞后，免疫效应细胞结合并裂解靶细胞，释放 reporter protein。随后加入 KILR detection reagents，产生与细胞裂解活性成正比的化学发光信号。</p>
+
+      <h3>使用 KILR Cytotoxicity Assays 评估 ADC 介导的 ADCP</h3>
+      <figure>
+        <img src="https://cf-ecom-products.cn.discoverx.com/wp-content/uploads/2026/03/AssayPrinciple_Fc-mediated_TargetCellCytotoxicity_ADCP.png" alt="ADC Fc-effector function ADCP 实验原理" />
+        <figcaption>用于评估 ADC Fc-effector function 的 KILR cytotoxicity ADCP 实验原理。</figcaption>
+      </figure>
+      <p>ADCP assays 用于测量靶细胞的 antibody-dependent phagocytosis，通常由原代人巨噬细胞介导。表达相关抗原的靶细胞被工程化改造以稳定表达 KILR reporter protein。巨噬细胞吞噬或杀伤靶细胞后，通过检测剩余 KILR protein 的含量评估 ADCP 活性。高化学发光信号表示杀伤最小，低信号则与杀伤增加相关。</p>
+
+      <h3>Fc 效应功能应用示例</h3>
+      <p>KILR MM-1R Target Cells 与 KILR CD16 Effector Cells 可用于评估 belantamab mafodotin 及其未偶联亲本抗体的 ADCC 活性；KILR SKOV3 和 NCI-N87 Target Cells 可用于评估 trastuzumab emtansine 介导的 ADCC；原代人 PBMCs 可用于更具生理相关性的 Gemtuzumab Ozogamicin ADCC 评估；Macrophages 作为效应细胞时，可用于评估 belantamab mafodotin 或 trastuzumab emtansine 介导的 ADCP。</p>
+      <p>通过将受体内吞、payload 介导细胞毒性以及 Fc 介导效应功能放在同一套评价框架中，DiscoverX 相关细胞实验可以帮助 ADC 研发团队更系统地理解候选分子的作用机制、靶点依赖性和潜在临床前风险。</p>
+    `,
+  },
 ];
 
 export interface CatalogItem {

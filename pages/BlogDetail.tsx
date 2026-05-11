@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BLOG_POSTS } from '../constants';
 import { Page } from '../types';
 
@@ -9,6 +9,40 @@ interface BlogDetailProps {
 
 const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
   const post = BLOG_POSTS.find((item) => item.id === blogId);
+
+  useEffect(() => {
+    if (!post) return;
+
+    const upsertMeta = (selector: string, attribute: 'content' | 'href', value: string, create: () => HTMLMetaElement | HTMLLinkElement) => {
+      let element = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+      if (!element) {
+        element = create();
+        document.head.appendChild(element);
+      }
+      element.setAttribute(attribute, value);
+    };
+
+    const title = post.seoTitle ?? post.title;
+    const description = post.seoDescription ?? post.summary;
+    const keywords = post.keywords ?? post.tags ?? [];
+
+    document.title = `${title} | DiscoverX China`;
+    upsertMeta('meta[name="description"]', 'content', description, () => {
+      const meta = document.createElement('meta');
+      meta.setAttribute('name', 'description');
+      return meta;
+    });
+    upsertMeta('meta[name="keywords"]', 'content', keywords.join(', '), () => {
+      const meta = document.createElement('meta');
+      meta.setAttribute('name', 'keywords');
+      return meta;
+    });
+    upsertMeta('link[rel="canonical"]', 'href', window.location.href.split('#')[0], () => {
+      const link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      return link;
+    });
+  }, [post]);
 
   if (!post) {
     return (
@@ -48,7 +82,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
             <span className="text-slate-400 text-sm">{post.date}</span>
             {post.author && (
               <>
-                <span className="text-slate-300">·</span>
+                <span className="text-slate-300">|</span>
                 <span className="text-slate-600 text-sm">作者：{post.author}</span>
               </>
             )}
