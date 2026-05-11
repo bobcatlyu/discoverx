@@ -49,7 +49,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             DiscoverX 中文资料站
           </h1>
           <h2 className="text-xl md:text-2xl font-bold text-teal-100 mb-2 uppercase tracking-wide opacity-95">
-            Product Solutions For Your Success
+            本站为DiscoverX 产品中文资料站，由欧陆生物制品（上海）有限公司运营，更多信息请移步品牌全球官网
           </h2>
           <p className="text-sm md:text-base text-white/80 font-medium opacity-90">
             Global official website:{' '}
