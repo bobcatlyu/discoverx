@@ -155,21 +155,15 @@ const isPageValue = (value: string): value is Page => {
   return Object.values(Page).includes(value as Page);
 };
 
-const parseHashRoute = (): RouteState => {
-  if (typeof window === 'undefined') {
-    return DEFAULT_ROUTE;
-  }
-
-  const rawHash = window.location.hash.replace(/^#/, '');
-  if (!rawHash || rawHash === '/') {
-    return DEFAULT_ROUTE;
-  }
-
-  const [rawPath, rawQueryString = ''] = rawHash.split('?');
-  const path = rawPath.replace(/^\/+/, '');
+const routeFromPath = (path: string, rawQueryString = ''): RouteState => {
+  const normalizedPath = path.replace(/^\/+|\/+$/g, '');
   const params = new URLSearchParams(rawQueryString);
 
-  if (path === Page.Search) {
+  if (!normalizedPath) {
+    return DEFAULT_ROUTE;
+  }
+
+  if (normalizedPath === Page.Search) {
     return {
       page: Page.Search,
       query: params.get('q') ?? '',
@@ -177,7 +171,7 @@ const parseHashRoute = (): RouteState => {
     };
   }
 
-  if (path === Page.BlogDetail) {
+  if (normalizedPath === Page.BlogDetail) {
     return {
       page: Page.BlogDetail,
       query: '',
@@ -185,9 +179,9 @@ const parseHashRoute = (): RouteState => {
     };
   }
 
-  if (isPageValue(path)) {
+  if (isPageValue(normalizedPath)) {
     return {
-      page: path,
+      page: normalizedPath,
       query: '',
       blogId: '',
     };
@@ -196,9 +190,31 @@ const parseHashRoute = (): RouteState => {
   return DEFAULT_ROUTE;
 };
 
-const buildHashRoute = (page: Page, queryOrBlogId?: string): string => {
+const parseRoute = (): RouteState => {
+  if (typeof window === 'undefined') {
+    return DEFAULT_ROUTE;
+  }
+
+  return routeFromPath(window.location.pathname, window.location.search.replace(/^\?/, ''));
+};
+
+const parseLegacyHashRoute = (): RouteState | null => {
+  if (typeof window === 'undefined' || !window.location.hash.startsWith('#/')) {
+    return null;
+  }
+
+  const rawHash = window.location.hash.replace(/^#/, '');
+  if (!rawHash || rawHash === '/') {
+    return DEFAULT_ROUTE;
+  }
+
+  const [rawPath, rawQueryString = ''] = rawHash.split('?');
+  return routeFromPath(rawPath, rawQueryString);
+};
+
+const buildPathRoute = (page: Page, queryOrBlogId?: string): string => {
   if (page === Page.Home) {
-    return '#/';
+    return '/';
   }
 
   if (page === Page.Search) {
@@ -207,7 +223,7 @@ const buildHashRoute = (page: Page, queryOrBlogId?: string): string => {
       params.set('q', queryOrBlogId);
     }
     const suffix = params.toString();
-    return suffix ? `#/${Page.Search}?${suffix}` : `#/${Page.Search}`;
+    return suffix ? `/${Page.Search}?${suffix}` : `/${Page.Search}`;
   }
 
   if (page === Page.BlogDetail) {
@@ -216,10 +232,10 @@ const buildHashRoute = (page: Page, queryOrBlogId?: string): string => {
       params.set('id', queryOrBlogId);
     }
     const suffix = params.toString();
-    return suffix ? `#/${Page.BlogDetail}?${suffix}` : `#/${Page.BlogDetail}`;
+    return suffix ? `/${Page.BlogDetail}?${suffix}` : `/${Page.BlogDetail}`;
   }
 
-  return `#/${page}`;
+  return `/${page}`;
 };
 
 const setMetaDescription = (content: string) => {
@@ -233,20 +249,27 @@ const setMetaDescription = (content: string) => {
 };
 
 const App: React.FC = () => {
-  const [route, setRoute] = useState<RouteState>(() => parseHashRoute());
+  const [route, setRoute] = useState<RouteState>(() => parseLegacyHashRoute() ?? parseRoute());
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setRoute(parseHashRoute());
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    if (!window.location.hash) {
-      window.history.replaceState(null, '', '#/');
+    const legacyRoute = parseLegacyHashRoute();
+    if (legacyRoute) {
+      const nextPath = buildPathRoute(
+        legacyRoute.page,
+        legacyRoute.page === Page.Search ? legacyRoute.query : legacyRoute.page === Page.BlogDetail ? legacyRoute.blogId : undefined
+      );
+      window.history.replaceState(null, '', nextPath);
+      setRoute(legacyRoute);
     }
 
+    const handlePopState = () => {
+      setRoute(parseRoute());
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handlePopState);
     };
   }, []);
 
@@ -272,9 +295,10 @@ const App: React.FC = () => {
 
     setRoute(nextRoute);
 
-    const nextHash = buildHashRoute(page, queryOrBlogId);
-    if (window.location.hash !== nextHash) {
-      window.location.hash = nextHash;
+    const nextPath = buildPathRoute(page, queryOrBlogId);
+    const currentPath = `${window.location.pathname}${window.location.search}`;
+    if (currentPath !== nextPath) {
+      window.history.pushState(null, '', nextPath);
     }
   };
 
