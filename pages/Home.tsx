@@ -56,13 +56,13 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         />
         <div className="relative z-20 mx-auto flex min-h-[360px] max-w-7xl flex-col justify-center px-4 py-10 sm:px-6 lg:px-8">
           <h1 className="mb-8 text-center text-4xl font-extrabold leading-tight drop-shadow-xl md:text-6xl">
-            DiscoverX中文资料站
+            DiscoverX中文站
           </h1>
 
           <div className="mx-auto grid w-full max-w-5xl items-center gap-8 md:grid-cols-[1fr_auto]">
             <div className="space-y-3 text-center md:text-left">
               <p className="text-base font-semibold text-teal-50 md:text-lg">
-                更多信息请移步品牌全球官网{' '}
+                本站为资料站，更多信息请移步品牌全球官网{' '}
                 <a
                   href="https://www.discoverx.com"
                   target="_blank"
