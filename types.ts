@@ -43,6 +43,7 @@ export enum Page {
   Documents = 'documents',
   Contacts = 'contacts',
   Search = 'search',
+  BlogList = 'latest-news',
 
   // Products Sub-pages
   CellLine = 'cell-line',

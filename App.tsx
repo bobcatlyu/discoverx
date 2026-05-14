@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Page } from './types';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import BlogList from './pages/BlogList';
 import ProductTypesPage from './pages/ProductTypes';
 import TargetsPage from './pages/Targets';
 import MechanismsPage from './pages/Mechanisms';
@@ -56,6 +56,7 @@ const PAGE_PARENTS: Record<Page, Page | null> = {
   [Page.Documents]: Page.Home,
   [Page.Contacts]: Page.Home,
   [Page.Search]: Page.Home,
+  [Page.BlogList]: Page.Home,
   [Page.CellLine]: Page.Products,
   [Page.ExpressKit]: Page.Products,
   [Page.BioassayKit]: Page.Products,
@@ -103,7 +104,7 @@ const PAGE_META: Partial<Record<Page, { title: string; description: string }>> =
     description: '查看 DiscoverX 商业化细胞系、eXpress Kit、Bioassay Kit、试剂与工具产品。',
   },
   [Page.Targets]: {
-    title: '靶点分类',
+    title: '靶点选择',
     description: '查看 DiscoverX 在 GPCR、细胞因子受体、检查点受体、RTK、NHR 等方向的产品能力。',
   },
   [Page.Applications]: {
@@ -137,6 +138,10 @@ const PAGE_META: Partial<Record<Page, { title: string; description: string }>> =
   [Page.BlogDetail]: {
     title: '最新动态',
     description: '查看 DiscoverX 最新文章与市场动态。',
+  },
+  [Page.BlogList]: {
+    title: '最新动态',
+    description: '查看 DiscoverX 产品介绍、技术讨论与应用资料更新。',
   },
 };
 
@@ -338,6 +343,8 @@ const App: React.FC = () => {
     switch (route.page) {
       case Page.Home:
         return <Home onNavigate={navigateTo} />;
+      case Page.BlogList:
+        return <BlogList onNavigate={navigateTo} />;
       case Page.BlogDetail:
         return <BlogDetail blogId={route.blogId} onNavigate={navigateTo} />;
       case Page.Products:
@@ -429,7 +436,6 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
-      <Navbar currentPage={route.page} onNavigate={navigateTo} />
       <main className="flex-grow">
         {route.page !== Page.Home && route.page !== Page.Search && (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 -mb-4 relative z-10">

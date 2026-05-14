@@ -1,41 +1,50 @@
-import React, { useState } from 'react';
-import { BLOG_POSTS, DEFAULT_PINNED_BLOG_ID, getBlogPath } from '../constants';
+import React from 'react';
 import { Page } from '../types';
 
 interface HomeProps {
   onNavigate?: (page: Page, blogId?: string) => void;
 }
 
+const HOME_CARDS = [
+  {
+    title: '最新动态',
+    description: '查看 DiscoverX 产品介绍、技术讨论与应用资料更新。',
+    imageUrl: '/pic/discoverx.png',
+    page: Page.BlogList,
+  },
+  {
+    title: '靶点选择',
+    description: '按 GPCR、细胞因子受体、免疫检查点、RTK / CTK 等靶点方向查找产品。',
+    imageUrl: '/pic/GPCR-1150x350.jpg',
+    page: Page.Targets,
+  },
+  {
+    title: '产品类型',
+    description: '浏览稳定细胞系、eXpress Kit、Bioassay Kit、检测工具与试剂耗材。',
+    imageUrl: '/pic/Assay-Kits_Small-Card-Image.jpg',
+    page: Page.Products,
+  },
+  {
+    title: '作用机制',
+    description: '围绕受体二聚化、内吞、PPI、信号通路、细胞毒性等机制选择实验体系。',
+    imageUrl: '/pic/Dimerization.jpg',
+    page: Page.Applications,
+  },
+  {
+    title: '开发服务',
+    description: '了解 Assay 开发、Bioassay 开发、样品检测和功能筛选服务。',
+    imageUrl: '/pic/EDRX-CustomCapabilities_StreamlinedApproach-CustomizedCellLineGeneration-scaled-1.jpg',
+    page: Page.Custom,
+  },
+  {
+    title: '产品资料',
+    description: '集中访问 datasheet、用户手册、验证数据、应用指南和参考文献。',
+    imageUrl: '/pic/Detection-Kits_Small-Card-Image.jpg',
+    page: Page.Documents,
+  },
+];
+
 const Home: React.FC<HomeProps> = ({ onNavigate }) => {
-  const [pinnedPostId, setPinnedPostId] = useState<string | null>(() => {
-    return localStorage.getItem('pinnedPostId');
-  });
-
-  const postsByDate = [...BLOG_POSTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  const latestPosts = postsByDate.slice(0, 9);
-
-  const latestPostIds = new Set(latestPosts.map((post) => post.id));
-  const fallbackPinnedId = latestPostIds.has(DEFAULT_PINNED_BLOG_ID) ? DEFAULT_PINNED_BLOG_ID : latestPosts[0]?.id ?? null;
-  const effectivePinnedPostId = pinnedPostId && latestPostIds.has(pinnedPostId) ? pinnedPostId : fallbackPinnedId;
-
-  const togglePin = (id: string) => {
-    const newPinnedId = effectivePinnedPostId === id ? null : id;
-    setPinnedPostId(newPinnedId);
-    if (newPinnedId) {
-      localStorage.setItem('pinnedPostId', newPinnedId);
-    } else {
-      localStorage.removeItem('pinnedPostId');
-    }
-  };
-
-  const pinnedPost = latestPosts.find((post) => post.id === effectivePinnedPostId);
-  const sortedPosts = pinnedPost ? [pinnedPost, ...latestPosts.filter((post) => post.id !== effectivePinnedPostId)] : latestPosts;
-
-  const openPost = (postId: string, event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    onNavigate?.(Page.BlogDetail, postId);
-  };
-
   return (
     <div className="space-y-12 pb-20">
       <section className="relative min-h-[360px] overflow-hidden text-white">
@@ -85,93 +94,54 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-end mb-10 border-b border-slate-200 pb-4">
-          <div>
-            <h2 className="text-2xl font-bold text-slate-800 uppercase tracking-tight">最新动态</h2>
-          </div>
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 border-b border-slate-200 pb-4">
+          <h2 className="text-2xl font-bold uppercase tracking-tight text-slate-800">内容导航</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {sortedPosts.map((post) => (
-            <article
-              key={post.id}
-              className={`group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border ${
-                post.id === effectivePinnedPostId ? 'border-[#4B827E] ring-1 ring-[#4B827E]/20 ring-inset' : 'border-slate-200'
-              }`}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {HOME_CARDS.map((card) => (
+            <button
+              key={card.title}
+              type="button"
+              onClick={() => onNavigate?.(card.page)}
+              className="group overflow-hidden rounded-lg border border-slate-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
-              <a href={getBlogPath(post)} onClick={(event) => openPost(post.id, event)} className="block h-full">
-                <div className="relative h-48 overflow-hidden">
-                  <img src={post.imageUrl} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt={post.title} />
-
-                  <div className="absolute bottom-0 left-0 flex items-center">
-                    <span className="bg-[#4B827E] text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest">
-                      {post.category}
-                    </span>
-                    {post.id === effectivePinnedPostId && (
-                      <span className="bg-[#1C2C5E] text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest flex items-center">
-                        <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        置顶
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <p className="text-slate-400 text-[10px] font-bold mb-2 uppercase tracking-tighter">{post.date}</p>
-                  <h3 className="text-lg font-bold text-slate-800 mb-3 group-hover:text-[#4B827E] transition-colors leading-tight min-h-[3rem]">
-                    {post.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm line-clamp-3 mb-4 leading-relaxed">{post.summary}</p>
-                  <span className="text-[#4B827E] font-bold text-xs flex items-center group-hover:translate-x-1 transition-transform uppercase tracking-wider">
-                    READ MORE
-                    <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </div>
-              </a>
-
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  togglePin(post.id);
-                }}
-                title={post.id === effectivePinnedPostId ? '取消置顶' : '置顶该文章'}
-                className={`absolute top-3 right-3 p-2 rounded-full backdrop-blur-md transition-all z-20 ${
-                  post.id === effectivePinnedPostId
-                    ? 'bg-[#4B827E] text-white scale-110'
-                    : 'bg-white/40 text-white hover:bg-white/80 hover:text-[#4B827E] opacity-0 group-hover:opacity-100'
-                }`}
-              >
-                <svg className="w-4 h-4" fill={post.id === effectivePinnedPostId ? 'currentColor' : 'none'} stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                </svg>
-              </button>
-            </article>
+              <div className="h-44 overflow-hidden">
+                <img src={card.imageUrl} alt={card.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <div className="p-6">
+                <h3 className="mb-3 text-xl font-bold text-slate-800 transition-colors group-hover:text-[#4B827E]">{card.title}</h3>
+                <p className="min-h-[4.5rem] text-sm leading-relaxed text-slate-600">{card.description}</p>
+                <span className="mt-5 flex items-center text-xs font-bold uppercase tracking-wider text-[#4B827E] transition-transform group-hover:translate-x-1">
+                  ENTER
+                  <svg className="ml-1 h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </button>
           ))}
         </div>
       </section>
 
-      <section className="bg-slate-50 border-y border-slate-200 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+      <section className="border-y border-slate-200 bg-slate-50 py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-12 px-4 text-center sm:px-6 md:grid-cols-4 lg:px-8">
           <div>
-            <div className="text-5xl font-black text-[#4B827E] mb-2">1,000+</div>
-            <div className="text-slate-500 text-xs font-bold uppercase tracking-widest">Assay Kits</div>
+            <div className="mb-2 text-5xl font-black text-[#4B827E]">1,000+</div>
+            <div className="text-xs font-bold uppercase tracking-widest text-slate-500">Assay Kits</div>
           </div>
           <div>
-            <div className="text-5xl font-black text-[#4B827E] mb-2">1500+</div>
-            <div className="text-slate-500 text-xs font-bold uppercase tracking-widest">Cell Lines</div>
+            <div className="mb-2 text-5xl font-black text-[#4B827E]">1500+</div>
+            <div className="text-xs font-bold uppercase tracking-widest text-slate-500">Cell Lines</div>
           </div>
           <div>
-            <div className="text-5xl font-black text-[#4B827E] mb-2">20+</div>
-            <div className="text-slate-500 text-xs font-bold uppercase tracking-widest">Years Experience</div>
+            <div className="mb-2 text-5xl font-black text-[#4B827E]">20+</div>
+            <div className="text-xs font-bold uppercase tracking-widest text-slate-500">Years Experience</div>
           </div>
           <div>
-            <div className="text-4xl font-black text-[#4B827E] mb-2">TOP 50</div>
-            <div className="text-slate-500 text-xs font-bold uppercase tracking-widest">Pharma Partners</div>
+            <div className="mb-2 text-4xl font-black text-[#4B827E]">TOP 50</div>
+            <div className="text-xs font-bold uppercase tracking-widest text-slate-500">Pharma Partners</div>
           </div>
         </div>
       </section>

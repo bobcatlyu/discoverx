@@ -59,7 +59,7 @@ const TargetsPage: React.FC<TargetsPageProps> = ({ onNavigate }) => {
     },
   ];
 
-  return <CardGrid title="靶点分类" subtitle="覆盖多种关键生物学靶点，支持药物发现与机制研究" items={targets} />;
+  return <CardGrid title="靶点选择" subtitle="覆盖多种关键生物学靶点，支持药物发现与机制研究" items={targets} />;
 };
 
 export default TargetsPage;
