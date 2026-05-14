@@ -438,7 +438,7 @@ const App: React.FC = () => {
     <div className="min-h-screen flex flex-col bg-slate-50">
       <main className="flex-grow">
         {route.page !== Page.Home && route.page !== Page.Search && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 -mb-4 relative z-10">
+          <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 pt-6 -mb-4 relative z-10">
             <button
               onClick={goBackToUpperLevel}
               className="group inline-flex items-center text-slate-500 transition-all hover:text-[#4B827E]"
@@ -450,6 +450,23 @@ const App: React.FC = () => {
                 </svg>
               </div>
               <span className="text-xs font-bold uppercase tracking-widest">返回上一级</span>
+            </button>
+            <button
+              onClick={() => navigateTo(Page.Home)}
+              className="group inline-flex items-center text-slate-500 transition-all hover:text-[#4B827E]"
+              aria-label="返回首页"
+            >
+              <span className="text-xs font-bold uppercase tracking-widest">返回首页</span>
+              <div className="ml-2.5 rounded-full border border-slate-200 bg-white p-1.5 shadow-sm transition-all transform group-hover:border-[#4B827E]/40 group-hover:bg-teal-50 group-active:scale-95">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.3}
+                    d="M3 12l9-9 9 9M5 10.5V21h14V10.5M9 21v-6h6v6"
+                  />
+                </svg>
+              </div>
             </button>
           </div>
         )}
