@@ -7,37 +7,37 @@ interface HomeProps {
 
 const HOME_CARDS = [
   {
-    title: '最新动态',
+    title: '最新动态 Latest Update',
     description: '查看 DiscoverX 产品介绍、技术讨论与应用资料更新。',
     imageUrl: '/pic/discoverx.png',
     page: Page.BlogList,
   },
   {
-    title: '靶点选择',
+    title: '靶点选择 Targets Select',
     description: '按 GPCR、细胞因子受体、免疫检查点、RTK / CTK 等靶点方向查找产品。',
     imageUrl: '/pic/GPCR-1150x350.jpg',
     page: Page.Targets,
   },
   {
-    title: '产品类型',
+    title: '产品类型 Product Types',
     description: '浏览稳定细胞系、eXpress Kit、Bioassay Kit、检测工具与试剂耗材。',
     imageUrl: '/pic/Assay-Kits_Small-Card-Image.jpg',
     page: Page.Products,
   },
   {
-    title: '作用机制',
+    title: '作用机制 Mechanism',
     description: '围绕受体二聚化、内吞、PPI、信号通路、细胞毒性等机制选择实验体系。',
     imageUrl: '/pic/Dimerization.jpg',
     page: Page.Applications,
   },
   {
-    title: '开发服务',
+    title: '开发服务 Development Service',
     description: '了解 Assay 开发、Bioassay 开发、样品检测和功能筛选服务。',
     imageUrl: '/pic/EDRX-CustomCapabilities_StreamlinedApproach-CustomizedCellLineGeneration-scaled-1.jpg',
     page: Page.Custom,
   },
   {
-    title: '产品资料',
+    title: '产品资料 Documents',
     description: '集中访问 datasheet、用户手册、验证数据、应用指南和参考文献。',
     imageUrl: '/pic/Detection-Kits_Small-Card-Image.jpg',
     page: Page.Documents,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BLOG_POSTS, getBlogPath } from '../constants';
+import { BLOG_POSTS, DEFAULT_PINNED_BLOG_ID, getBlogPath } from '../constants';
 import { Page } from '../types';
 
 interface BlogListProps {
@@ -7,7 +7,11 @@ interface BlogListProps {
 }
 
 const BlogList: React.FC<BlogListProps> = ({ onNavigate }) => {
-  const posts = [...BLOG_POSTS].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const posts = [...BLOG_POSTS].sort((a, b) => {
+    if (a.id === DEFAULT_PINNED_BLOG_ID) return -1;
+    if (b.id === DEFAULT_PINNED_BLOG_ID) return 1;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -34,6 +38,11 @@ const BlogList: React.FC<BlogListProps> = ({ onNavigate }) => {
                 <span className="absolute bottom-0 left-0 bg-[#4B827E] px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-white">
                   {post.category}
                 </span>
+                {post.id === DEFAULT_PINNED_BLOG_ID && (
+                  <span className="absolute right-3 top-3 rounded-full bg-amber-400 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-900 shadow-sm">
+                    置顶
+                  </span>
+                )}
               </div>
 
               <div className="p-6">
