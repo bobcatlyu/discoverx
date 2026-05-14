@@ -38,26 +38,50 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
   return (
     <div className="space-y-12 pb-20">
-      <section className="relative h-[250px] flex items-center justify-center text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#4B827E] to-[#1a3d3a] z-10 opacity-90"></div>
+      <section className="relative min-h-[360px] overflow-hidden text-white">
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#4B827E] to-[#1a3d3a] opacity-90"></div>
         <img
           src="/pic/DiscoverX Logo_Blue Discover Text w BlueOrange X.png"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover"
           alt="DiscoverX Logo"
         />
-        <div className="relative z-20 text-center px-4 max-w-5xl -mt-4">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 drop-shadow-xl leading-tight tracking-tight">
-            DiscoverX 中文资料站
+        <div className="relative z-20 mx-auto flex min-h-[360px] max-w-7xl flex-col justify-center px-4 py-10 sm:px-6 lg:px-8">
+          <h1 className="mb-8 text-center text-4xl font-extrabold leading-tight drop-shadow-xl md:text-6xl">
+            DiscoverX中文资料站
           </h1>
-          <h2 className="text-xl md:text-2xl font-bold text-teal-100 mb-2 uppercase tracking-wide opacity-95">
-            本站为DiscoverX 产品中文资料站，由欧陆生物制品（上海）有限公司运营，更多信息请移步品牌全球官网
-          </h2>
-          <p className="text-sm md:text-base text-white/80 font-medium opacity-90">
-            Global official website:{' '}
-            <a href="https://www.discoverx.com" target="_blank" rel="noopener noreferrer" className="hover:underline transition-colors font-semibold">
-              https://www.discoverx.com
-            </a>
-          </p>
+
+          <div className="mx-auto grid w-full max-w-5xl items-center gap-8 md:grid-cols-[1fr_auto]">
+            <div className="space-y-3 text-center md:text-left">
+              <p className="text-base font-semibold text-teal-50 md:text-lg">
+                更多信息请移步品牌全球官网{' '}
+                <a
+                  href="https://www.discoverx.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-white/50 underline-offset-4 transition hover:text-teal-100"
+                >
+                  https://www.discoverx.com
+                </a>
+              </p>
+              <p className="text-sm leading-relaxed text-white/90 md:text-base">
+                欧陆生物制品（上海）有限公司是 Eurofins 集团在中国的全资子公司，全面负责 DiscoverX 系列产品在中国的销售、市场推广和技术支持。
+              </p>
+              <p className="text-sm text-white/85 md:text-base">地址：上海市闵行区浦江镇陈行公路 2168 号 8 号楼</p>
+              <p className="text-sm text-white/85 md:text-base">
+                邮箱：
+                <a
+                  href="mailto:CustomerService_DRX_China@cpt.eurofinscn.com"
+                  className="break-all underline decoration-white/50 underline-offset-4 transition hover:text-teal-100"
+                >
+                  CustomerService_DRX_China@cpt.eurofinscn.com
+                </a>
+              </p>
+            </div>
+
+            <div className="mx-auto w-32 rounded-lg bg-white p-2 shadow-xl md:w-36">
+              <img src="/pic/qrcode_for_gh_97a0bd4fdaad_258.jpg" alt="DiscoverX 微信二维码" className="h-auto w-full" />
+            </div>
+          </div>
         </div>
       </section>
 
