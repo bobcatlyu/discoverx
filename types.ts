@@ -1,6 +1,7 @@
 
 export interface BlogPost {
   id: string;
+  slug: string;
   title: string;
   category: 'Product Launch' | 'Marketing' | 'Technical Article' | '技术讨论' | '产品介绍';
   date: string;

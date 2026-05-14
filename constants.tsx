@@ -5,6 +5,7 @@ export const DEFAULT_PINNED_BLOG_ID = '20260304-eurofins-discoverx-intro';
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: '20260304-eurofins-discoverx-intro',
+    slug: 'eurofins-discoverx-assay-platform',
     title: '走进 Eurofins DiscoverX：从靶点到机制验证的一站式能力',
     category: 'Marketing',
     date: '2026-03-04',
@@ -13,6 +14,10 @@ export const BLOG_POSTS: BlogPost[] = [
     imageUrl: '/pic/discoverx.png',
     author: 'DiscoverX Team',
     tags: ['Eurofins', 'DiscoverX', 'Assay', 'MOA', 'Drug Discovery'],
+    keywords: ['DiscoverX', 'Eurofins DiscoverX', 'PathHunter', 'HitHunter', 'EFC技术', 'cell-based assay', '药物发现', '机制验证'],
+    seoTitle: 'Eurofins DiscoverX 中文介绍 | PathHunter 与细胞功能检测平台',
+    seoDescription:
+      '介绍 Eurofins DiscoverX 的 EFC 技术平台、PathHunter、HitHunter、稳定细胞株、eXpress Kit、Bioassay Kit 及药物发现中的机制验证能力。',
     content: `
       <h2>DiscoverX 是做什么的？</h2>
       <p>DiscoverX 隶属于 Eurofins Discovery，专注于药物研发所需的 Assay 产品与开发服务，并通过 ISO 9001:2015 质量体系认证。</p>
@@ -76,6 +81,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: '20260403-gpcr-readout-not-enough',
+    slug: 'gpcr-signaling-readout-not-enough',
     title: 'GPCR 信号通路是什么？为什么“一个 readout”往往不够',
     category: '技术讨论',
     date: '2026-04-03',
@@ -84,6 +90,10 @@ export const BLOG_POSTS: BlogPost[] = [
     imageUrl: '/pic/GPCR.png',
     author: 'DiscoverX Team',
     tags: ['GPCR', 'Readout', 'Beta-Arrestin', 'Internalization', 'Drug Discovery'],
+    keywords: ['GPCR', 'GPCR assay', 'GPCR信号通路', 'β-Arrestin', 'GPCR internalization', 'cAMP assay', 'cell-based assay', 'DiscoverX'],
+    seoTitle: 'GPCR 信号通路与多 readout 检测 | β-Arrestin cAMP Internalization',
+    seoDescription:
+      '解释 GPCR 药物研发中为什么单一 readout 不足以支撑机制判断，并介绍 cAMP、β-Arrestin 招募和受体内化等多 readout 设计思路。',
     content: `
       <p>在 GPCR 药物项目的开发中，研发团队经常会碰到一种情况：同一个受体、同一个配体，换一套实验体系，结论就变了。一个体系里看起来活性很好，换到另一种 readout 上，结果却不支持前面的判断。</p>
       <p>这类现象很多时候并不是实验失误，而是因为单一 readout 只捕捉到了 GPCR 信号网络中的一个切面。GPCR 从来都不是简单的“开/关”系统。对药企研发来说，如果过早依赖单一 readout 做分子优先级判断，后面很容易在机制解释、体内外相关性和候选物筛选上付出代价。</p>
@@ -146,6 +156,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: '20260509-why-camp-alone-is-not-enough',
+    slug: 'gpcr-camp-beta-arrestin-internalization-readout',
     title: '为什么只测 cAMP 不够？GPCR 多 readout 设计的研发逻辑',
     category: '技术讨论',
     date: '2026-05-09',
@@ -154,6 +165,10 @@ export const BLOG_POSTS: BlogPost[] = [
     imageUrl: '/pic/GPCR.png',
     author: 'DiscoverX Team',
     tags: ['GPCR', 'cAMP', 'Beta-Arrestin', 'Internalization', 'Readout Design'],
+    keywords: ['cAMP assay', 'GPCR assay', 'β-Arrestin assay', 'GPCR internalization', 'GPCR多readout', 'GLP1R assay', 'DiscoverX PathHunter'],
+    seoTitle: '为什么只测 cAMP 不够？GPCR 多 readout 设计逻辑',
+    seoDescription:
+      '面向 GPCR 药物研发，说明 cAMP 单一 readout 的局限，以及 β-Arrestin、受体内化和 trafficking 检测在候选分子筛选中的价值。',
     content: `
       <p>在 GPCR 项目中，早期数据与后期结果不一致的情况并不少见。前期筛选阶段活性明确、曲线理想，但进入机制验证、体内评价甚至候选分子收敛阶段后，药理特征却未能维持一致。出现这类偏差，原因未必在化合物本身，很多时候首先需要回头检查的是 readout 设计。</p>
       <p>在早期发现阶段，cAMP 或钙流检测通常是默认选项。这类方法流程成熟、灵敏度高，且适用于高通量筛选，因此在 hit 发现和初步构效关系建立中具有明显优势。不过，如果项目长期依赖单一 readout 推进，就可能在关键决策节点上放大体系偏差，低估受体信号的复杂性。</p>
@@ -193,6 +208,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: '20260511-discoverx-adc-drug-development-applications',
+    slug: 'discoverx-adc-drug-development-applications',
     title: 'DiscoverX 产品在 ADC 药物开发中的应用',
     category: '产品介绍',
     date: '2026-05-11',
@@ -319,6 +335,12 @@ export const BLOG_POSTS: BlogPost[] = [
     `,
   },
 ];
+
+export const getBlogPath = (post: Pick<BlogPost, 'slug'>) => `/blog/${post.slug}`;
+
+export const findBlogPost = (identifier: string) => {
+  return BLOG_POSTS.find((post) => post.id === identifier || post.slug === identifier);
+};
 
 export interface CatalogItem {
   id: string;

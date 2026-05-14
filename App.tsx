@@ -45,6 +45,7 @@ import NhrDetail from './pages/NhrDetail';
 import IonChannelDetail from './pages/IonChannelDetail';
 import EpigeneticDetail from './pages/EpigeneticDetail';
 import BlogDetail from './pages/BlogDetail';
+import { findBlogPost, getBlogPath } from './constants';
 
 const PAGE_PARENTS: Record<Page, Page | null> = {
   [Page.Home]: null,
@@ -179,6 +180,16 @@ const routeFromPath = (path: string, rawQueryString = ''): RouteState => {
     };
   }
 
+  if (normalizedPath.startsWith('blog/')) {
+    const slug = decodeURIComponent(normalizedPath.replace(/^blog\//, ''));
+    const post = findBlogPost(slug);
+    return {
+      page: Page.BlogDetail,
+      query: '',
+      blogId: post?.id ?? slug,
+    };
+  }
+
   if (isPageValue(normalizedPath)) {
     return {
       page: normalizedPath,
@@ -227,12 +238,8 @@ const buildPathRoute = (page: Page, queryOrBlogId?: string): string => {
   }
 
   if (page === Page.BlogDetail) {
-    const params = new URLSearchParams();
-    if (queryOrBlogId) {
-      params.set('id', queryOrBlogId);
-    }
-    const suffix = params.toString();
-    return suffix ? `/${Page.BlogDetail}?${suffix}` : `/${Page.BlogDetail}`;
+    const post = queryOrBlogId ? findBlogPost(queryOrBlogId) : undefined;
+    return post ? getBlogPath(post) : `/${Page.BlogDetail}`;
   }
 
   return `/${page}`;
@@ -246,6 +253,22 @@ const setMetaDescription = (content: string) => {
     document.head.appendChild(meta);
   }
   meta.setAttribute('content', content);
+};
+
+const setCanonicalUrl = (href: string) => {
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', href);
+};
+
+const clearBlogMetadata = () => {
+  document
+    .querySelectorAll('script[data-schema="blog-post"], meta[property^="og:"], meta[name^="twitter:"], meta[name="keywords"]')
+    .forEach((element) => element.remove());
 };
 
 const App: React.FC = () => {
@@ -284,7 +307,11 @@ const App: React.FC = () => {
     const description = meta?.description ?? PAGE_META[Page.Home]!.description;
     document.title = `${title} | DiscoverX China`;
     setMetaDescription(description);
-  }, [route.page]);
+    if (route.page !== Page.BlogDetail) {
+      clearBlogMetadata();
+      setCanonicalUrl(`${window.location.origin}${buildPathRoute(route.page, route.page === Page.Search ? route.query : undefined)}`);
+    }
+  }, [route.page, route.query]);
 
   const navigateTo = (page: Page, queryOrBlogId?: string) => {
     const nextRoute: RouteState = {

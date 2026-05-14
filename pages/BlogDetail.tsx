@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BLOG_POSTS } from '../constants';
+import { BLOG_POSTS, findBlogPost, getBlogPath } from '../constants';
 import { Page } from '../types';
 
 interface BlogDetailProps {
@@ -8,13 +8,18 @@ interface BlogDetailProps {
 }
 
 const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
-  const post = BLOG_POSTS.find((item) => item.id === blogId);
+  const post = findBlogPost(blogId);
 
   useEffect(() => {
     if (!post) return;
 
-    const upsertMeta = (selector: string, attribute: 'content' | 'href', value: string, create: () => HTMLMetaElement | HTMLLinkElement) => {
-      let element = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+    const upsertElement = (
+      selector: string,
+      attribute: 'content' | 'href',
+      value: string,
+      create: () => HTMLMetaElement | HTMLLinkElement | HTMLScriptElement
+    ) => {
+      let element = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | HTMLScriptElement | null;
       if (!element) {
         element = create();
         document.head.appendChild(element);
@@ -25,22 +30,72 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
     const title = post.seoTitle ?? post.title;
     const description = post.seoDescription ?? post.summary;
     const keywords = post.keywords ?? post.tags ?? [];
+    const canonicalUrl = `${window.location.origin}${getBlogPath(post)}`;
+    const imageUrl = post.imageUrl.startsWith('http') ? post.imageUrl : `${window.location.origin}${post.imageUrl}`;
 
     document.title = `${title} | DiscoverX China`;
-    upsertMeta('meta[name="description"]', 'content', description, () => {
+    upsertElement('meta[name="description"]', 'content', description, () => {
       const meta = document.createElement('meta');
       meta.setAttribute('name', 'description');
       return meta;
     });
-    upsertMeta('meta[name="keywords"]', 'content', keywords.join(', '), () => {
+    upsertElement('meta[name="keywords"]', 'content', keywords.join(', '), () => {
       const meta = document.createElement('meta');
       meta.setAttribute('name', 'keywords');
       return meta;
     });
-    upsertMeta('link[rel="canonical"]', 'href', window.location.href.split('#')[0], () => {
+    upsertElement('link[rel="canonical"]', 'href', canonicalUrl, () => {
       const link = document.createElement('link');
       link.setAttribute('rel', 'canonical');
       return link;
+    });
+
+    const metaPairs = [
+      ['meta[property="og:type"]', 'property', 'og:type', 'article'],
+      ['meta[property="og:title"]', 'property', 'og:title', title],
+      ['meta[property="og:description"]', 'property', 'og:description', description],
+      ['meta[property="og:url"]', 'property', 'og:url', canonicalUrl],
+      ['meta[property="og:image"]', 'property', 'og:image', imageUrl],
+      ['meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image'],
+      ['meta[name="twitter:title"]', 'name', 'twitter:title', title],
+      ['meta[name="twitter:description"]', 'name', 'twitter:description', description],
+      ['meta[name="twitter:image"]', 'name', 'twitter:image', imageUrl],
+    ];
+
+    metaPairs.forEach(([selector, nameAttribute, nameValue, content]) => {
+      upsertElement(selector, 'content', content, () => {
+        const meta = document.createElement('meta');
+        meta.setAttribute(nameAttribute, nameValue);
+        return meta;
+      });
+    });
+
+    let structuredData = document.querySelector('script[data-schema="blog-post"]') as HTMLScriptElement | null;
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.type = 'application/ld+json';
+      structuredData.dataset.schema = 'blog-post';
+      document.head.appendChild(structuredData);
+    }
+
+    structuredData.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: post.title,
+      description,
+      image: imageUrl,
+      datePublished: post.date,
+      dateModified: post.date,
+      author: {
+        '@type': 'Organization',
+        name: post.author ?? 'DiscoverX Team',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'DiscoverX China',
+      },
+      mainEntityOfPage: canonicalUrl,
+      keywords,
     });
   }, [post]);
 
@@ -134,10 +189,14 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
             {BLOG_POSTS.filter((item) => item.id !== blogId)
               .slice(0, 2)
               .map((relatedPost) => (
-                <div
+                <a
                   key={relatedPost.id}
                   className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all cursor-pointer border border-slate-200"
-                  onClick={() => onNavigate?.(Page.BlogDetail, relatedPost.id)}
+                  href={getBlogPath(relatedPost)}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    onNavigate?.(Page.BlogDetail, relatedPost.id);
+                  }}
                 >
                   <div className="h-40 overflow-hidden">
                     <img src={relatedPost.imageUrl} alt={relatedPost.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
@@ -147,7 +206,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
                     <h3 className="text-lg font-bold text-slate-800 mt-2 mb-2 line-clamp-2">{relatedPost.title}</h3>
                     <p className="text-sm text-slate-600 line-clamp-2">{relatedPost.summary}</p>
                   </div>
-                </div>
+                </a>
               ))}
           </div>
         </div>
