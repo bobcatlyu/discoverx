@@ -9,6 +9,13 @@ interface TargetsPageProps {
 const TargetsPage: React.FC<TargetsPageProps> = ({ onNavigate }) => {
   const targets = [
     {
+      id: 't0',
+      title: 'GLP-1R / GLP1R',
+      description: '代谢疾病与 GLP-1RA 药物开发中的核心 GPCR 靶点，覆盖 cAMP、β-arrestin 与内吞读数。',
+      imageUrl: '/pic/GPCR1.png',
+      action: () => onNavigate(Page.Glp1r)
+    },
+    {
       id: 't1',
       title: 'G蛋白偶联受体 GPCR',
       description: '真核生物中最大且功能最多样的膜受体家族，调控广泛的生理过程。',

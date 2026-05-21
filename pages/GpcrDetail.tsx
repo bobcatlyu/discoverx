@@ -1,7 +1,22 @@
 
 import React from 'react';
+import { Page } from '../types';
 
-const GpcrDetail: React.FC = () => {
+interface GpcrDetailProps {
+  onNavigate?: (page: Page) => void;
+}
+
+const featuredTargets = [
+  {
+    name: 'GLP-1R / GLP1R',
+    tag: 'Metabolic disease',
+    description: '代谢疾病与 GLP-1RA 药物开发中的核心 GPCR 靶点，覆盖 cAMP、beta-arrestin、internalization、calcium flux 和 binding 等读数。',
+    details: ['Semaglutide / Tirzepatide / Liraglutide / Exenatide', 'Potency、可比性、稳定性和机制研究', 'Bioassay Kit、稳定细胞系、eXpress assay 和 user manual'],
+    page: Page.Glp1r,
+  },
+];
+
+const GpcrDetail: React.FC<GpcrDetailProps> = ({ onNavigate }) => {
   return (
     <div className="bg-white">
       {/* 1. Introduction Section */}
@@ -134,6 +149,47 @@ const GpcrDetail: React.FC = () => {
           <p className="text-slate-500 max-w-2xl mx-auto">
             覆盖超过 290+ 靶点，包含稳转细胞株、eXpress® Kit、Bioassay Kit、膜制品及转运/内吞检测方案。
           </p>
+          <div className="mt-8">
+            <a
+              href="/doc/catalog/Eurofins_DiscoverX_GPCRs_Solution_Guide_CN.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl bg-[#1C2C5E] px-8 py-4 text-base font-bold text-white shadow-xl transition-all hover:-translate-y-1 hover:bg-[#2a3d7a]"
+            >
+              下载GPCR产品目录
+            </a>
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <div className="mb-6 text-center">
+            <h3 className="text-2xl font-bold text-[#1C2C5E]">重点靶点</h3>
+            <p className="mt-2 text-sm text-slate-500">优先整理常见项目靶点的背景、相关产品、推荐 assay 和操作手册。</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {featuredTargets.map((target) => (
+              <article key={target.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-8">
+                <div className="mb-3 text-xs font-black uppercase tracking-widest text-[#4B827E]">{target.tag}</div>
+                <h4 className="text-2xl font-black text-[#1C2C5E]">{target.name}</h4>
+                <p className="mt-4 text-sm leading-relaxed text-slate-600">{target.description}</p>
+                <ul className="mt-5 space-y-2">
+                  {target.details.map((detail) => (
+                    <li key={detail} className="flex gap-2 text-sm text-slate-600">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#4B827E]"></span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  type="button"
+                  onClick={() => onNavigate?.(target.page)}
+                  className="mt-7 rounded-xl bg-[#4B827E] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#3d6b67]"
+                >
+                  查看靶点页面
+                </button>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
@@ -182,9 +238,6 @@ const GpcrDetail: React.FC = () => {
               <li>提供配体结合检测（Membrane Preps）及受体内吞/转运检测。</li>
             </ul>
           </div>
-          <button className="whitespace-nowrap bg-[#1C2C5E] text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-[#2a3d7a] transition-all shadow-xl hover:-translate-y-1">
-            索取 2026 版完整 PDF 目录
-          </button>
         </div>
       </section>
     </div>

@@ -1,6 +1,23 @@
 import React from 'react';
+import { Page } from '../types';
+import { getPagePath } from '../utils/routes';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate?: (page: Page) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const handlePageClick = (event: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
+    if (!onNavigate) {
+      return;
+    }
+
+    event.preventDefault();
+    onNavigate(page);
+  };
+
+  const footerLinkClass = 'transition hover:text-teal-200';
+
   return (
     <footer className="bg-[#4B827E] text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -17,10 +34,26 @@ const Footer: React.FC = () => {
             核心产品
           </h3>
           <ul className="text-sm space-y-2 text-white/90">
-            <li className="hover:text-teal-200 cursor-pointer transition">PathHunter GPCR 细胞系</li>
-            <li className="hover:text-teal-200 cursor-pointer transition">HitHunter cAMP 试剂盒</li>
-            <li className="hover:text-teal-200 cursor-pointer transition">KILR 细胞毒性监测</li>
-            <li className="hover:text-teal-200 cursor-pointer transition">InCELL 靶标结合分析</li>
+            <li>
+              <a href={getPagePath(Page.Gpcr)} onClick={(event) => handlePageClick(event, Page.Gpcr)} className={footerLinkClass}>
+                PathHunter GPCR 细胞系
+              </a>
+            </li>
+            <li>
+              <a href={getPagePath(Page.Gpcr)} onClick={(event) => handlePageClick(event, Page.Gpcr)} className={footerLinkClass}>
+                HitHunter cAMP 试剂盒
+              </a>
+            </li>
+            <li>
+              <a href={getPagePath(Page.CytotoxicityDetail)} onClick={(event) => handlePageClick(event, Page.CytotoxicityDetail)} className={footerLinkClass}>
+                KILR 细胞毒性监测
+              </a>
+            </li>
+            <li>
+              <a href={getPagePath(Page.TargetEngagementDetail)} onClick={(event) => handlePageClick(event, Page.TargetEngagementDetail)} className={footerLinkClass}>
+                InCELL 靶标结合分析
+              </a>
+            </li>
           </ul>
         </div>
         <div>
@@ -28,9 +61,21 @@ const Footer: React.FC = () => {
             技术支持
           </h3>
           <ul className="text-sm space-y-2 text-white/90">
-            <li className="hover:text-teal-200 cursor-pointer transition">产品说明书</li>
-            <li className="hover:text-teal-200 cursor-pointer transition">用户手册</li>
-            <li className="hover:text-teal-200 cursor-pointer transition">技术应用资料</li>
+            <li>
+              <a href={getPagePath(Page.DatasheetList)} onClick={(event) => handlePageClick(event, Page.DatasheetList)} className={footerLinkClass}>
+                产品说明书
+              </a>
+            </li>
+            <li>
+              <a href={getPagePath(Page.UserManual)} onClick={(event) => handlePageClick(event, Page.UserManual)} className={footerLinkClass}>
+                用户手册
+              </a>
+            </li>
+            <li>
+              <a href={getPagePath(Page.ApplicationNote)} onClick={(event) => handlePageClick(event, Page.ApplicationNote)} className={footerLinkClass}>
+                技术应用资料
+              </a>
+            </li>
           </ul>
         </div>
         <div>

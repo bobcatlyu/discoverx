@@ -1,5 +1,6 @@
 import React from 'react';
 import { Page } from '../types';
+import { getPagePath } from '../utils/routes';
 
 interface HomeProps {
   onNavigate?: (page: Page, blogId?: string) => void;
@@ -45,6 +46,15 @@ const HOME_CARDS = [
 ];
 
 const Home: React.FC<HomeProps> = ({ onNavigate }) => {
+  const handleCardClick = (event: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
+    if (!onNavigate) {
+      return;
+    }
+
+    event.preventDefault();
+    onNavigate(page);
+  };
+
   return (
     <div className="space-y-12 pb-20">
       <section className="relative min-h-[360px] overflow-hidden text-white">
@@ -101,10 +111,10 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {HOME_CARDS.map((card) => (
-            <button
+            <a
               key={card.title}
-              type="button"
-              onClick={() => onNavigate?.(card.page)}
+              href={getPagePath(card.page)}
+              onClick={(event) => handleCardClick(event, card.page)}
               className="group overflow-hidden rounded-lg border border-slate-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="h-44 overflow-hidden">
@@ -120,7 +130,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   </svg>
                 </span>
               </div>
-            </button>
+            </a>
           ))}
         </div>
       </section>

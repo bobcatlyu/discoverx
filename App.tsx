@@ -10,6 +10,7 @@ import CustomServicesPage from './pages/CustomServices';
 import DocumentsPage from './pages/Documents';
 import Contact from './pages/Contact';
 import GpcrDetail from './pages/GpcrDetail';
+import Glp1rDetail from './pages/Glp1rDetail';
 import CytokineDetail from './pages/CytokineDetail';
 import DatasheetList from './pages/DatasheetList';
 import DatasheetDetail from './pages/DatasheetDetail';
@@ -45,7 +46,8 @@ import NhrDetail from './pages/NhrDetail';
 import IonChannelDetail from './pages/IonChannelDetail';
 import EpigeneticDetail from './pages/EpigeneticDetail';
 import BlogDetail from './pages/BlogDetail';
-import { findBlogPost, getBlogPath } from './constants';
+import { findBlogPost } from './constants';
+import { getPagePath } from './utils/routes';
 
 const PAGE_PARENTS: Record<Page, Page | null> = {
   [Page.Home]: null,
@@ -67,6 +69,7 @@ const PAGE_PARENTS: Record<Page, Page | null> = {
   [Page.Enzyme]: Page.Products,
   [Page.Calixar]: Page.Products,
   [Page.Gpcr]: Page.Targets,
+  [Page.Glp1r]: Page.Gpcr,
   [Page.CytokineReceptors]: Page.Targets,
   [Page.CheckpointReceptors]: Page.Targets,
   [Page.KinaseReceptors]: Page.Targets,
@@ -106,6 +109,10 @@ const PAGE_META: Partial<Record<Page, { title: string; description: string }>> =
   [Page.Targets]: {
     title: '靶点选择',
     description: '查看 DiscoverX 在 GPCR、细胞因子受体、检查点受体、RTK、NHR 等方向的产品能力。',
+  },
+  [Page.Glp1r]: {
+    title: 'GLP-1R 靶点方案',
+    description: '查看 GLP-1R 相关靶点背景、疾病与药物场景、推荐 assay、产品列表和 user manual。',
   },
   [Page.Applications]: {
     title: '作用机制',
@@ -229,25 +236,7 @@ const parseLegacyHashRoute = (): RouteState | null => {
 };
 
 const buildPathRoute = (page: Page, queryOrBlogId?: string): string => {
-  if (page === Page.Home) {
-    return '/';
-  }
-
-  if (page === Page.Search) {
-    const params = new URLSearchParams();
-    if (queryOrBlogId) {
-      params.set('q', queryOrBlogId);
-    }
-    const suffix = params.toString();
-    return suffix ? `/${Page.Search}?${suffix}` : `/${Page.Search}`;
-  }
-
-  if (page === Page.BlogDetail) {
-    const post = queryOrBlogId ? findBlogPost(queryOrBlogId) : undefined;
-    return post ? getBlogPath(post) : `/${Page.BlogDetail}`;
-  }
-
-  return `/${page}`;
+  return getPagePath(page, queryOrBlogId);
 };
 
 const setMetaDescription = (content: string) => {
@@ -380,7 +369,9 @@ const App: React.FC = () => {
       case Page.Calixar:
         return <CalixarDetail />;
       case Page.Gpcr:
-        return <GpcrDetail />;
+        return <GpcrDetail onNavigate={navigateTo} />;
+      case Page.Glp1r:
+        return <Glp1rDetail />;
       case Page.CytokineReceptors:
         return <CytokineDetail />;
       case Page.CheckpointReceptors:
@@ -472,7 +463,7 @@ const App: React.FC = () => {
         )}
         {renderContent()}
       </main>
-      <Footer />
+      <Footer onNavigate={navigateTo} />
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="fixed bottom-8 right-8 z-40 rounded-full bg-[#4B827E] p-3 text-white shadow-lg transition transform hover:scale-110 hover:bg-[#3d6b67] active:scale-95"

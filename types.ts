@@ -58,6 +58,7 @@ export enum Page {
 
   // Targets Sub-pages
   Gpcr = 'gpcr',
+  Glp1r = 'glp1r',
   CheckpointReceptors = 'checkpoint-receptors',
   CytokineReceptors = 'cytokine-receptors',
   KinaseReceptors = 'kinase-receptor',

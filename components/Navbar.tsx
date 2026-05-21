@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Page } from '../types';
+import { getPagePath } from '../utils/routes';
 
 interface NavSubItem {
   label: string;
@@ -44,6 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       id: Page.Targets,
       label: '靶点分类',
       subItems: [
+        { label: 'GLP-1R', page: Page.Glp1r },
         { label: 'GPCR', page: Page.Gpcr },
         { label: '细胞因子受体', page: Page.CytokineReceptors },
         { label: '免疫检查点受体', page: Page.CheckpointReceptors },
@@ -90,7 +92,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: Page.Contacts, label: '联系我们' },
   ];
 
-  const handleSubItemClick = (page: Page) => {
+  const handlePageLink = (event: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
+    event.preventDefault();
     onNavigate(page);
     setActiveDropdown(null);
     setIsMobileMenuOpen(false);
@@ -119,13 +122,18 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     <nav className="bg-white sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center cursor-pointer shrink-0" onClick={() => onNavigate(Page.Home)}>
+          <a
+            href={getPagePath(Page.Home)}
+            onClick={(event) => handlePageLink(event, Page.Home)}
+            className="flex items-center shrink-0"
+            aria-label="返回首页"
+          >
             <img
               src="/pic/DiscoverX Logo_Blue Discover Text w BlueOrange X.png"
               alt="DiscoverX Logo"
               className="h-8 md:h-10 w-auto object-contain"
             />
-          </div>
+          </a>
 
           <form onSubmit={executeSearch} className="hidden md:flex flex-grow max-w-xl items-center border-b border-slate-300 pb-1">
             <input
@@ -187,8 +195,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 onMouseEnter={() => item.subItems && setActiveDropdown(item.id)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button
-                  onClick={() => onNavigate(item.id)}
+                <a
+                  href={getPagePath(item.id)}
+                  onClick={(event) => handlePageLink(event, item.id)}
                   className={`flex items-center px-4 lg:px-6 py-4 text-sm lg:text-base font-bold uppercase tracking-wide transition-all border-b-4 whitespace-nowrap ${
                     currentPage === item.id || activeDropdown === item.id
                       ? 'border-white text-white'
@@ -201,7 +210,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" />
                     </svg>
                   )}
-                </button>
+                </a>
                 {item.subItems && (
                   <div
                     className={`absolute left-0 w-64 bg-white shadow-2xl rounded-b-lg border-t-4 border-[#1C2C5E] py-2 transition-all origin-top z-50 ${
@@ -209,13 +218,14 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                     }`}
                   >
                     {item.subItems.map((sub, idx) => (
-                      <button
+                      <a
                         key={idx}
-                        onClick={() => handleSubItemClick(sub.page)}
-                        className="w-full text-left px-6 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#4B827E] border-l-4 border-transparent hover:border-[#4B827E] transition-all"
+                        href={getPagePath(sub.page)}
+                        onClick={(event) => handlePageLink(event, sub.page)}
+                        className="block w-full text-left px-6 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#4B827E] border-l-4 border-transparent hover:border-[#4B827E] transition-all"
                       >
                         {sub.label}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 )}
@@ -234,17 +244,15 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           {navItems.map((item) => (
             <div key={item.id} className="border-b border-slate-50 last:border-none">
               <div className="flex items-center justify-between">
-                <button
-                  onClick={() => {
-                    onNavigate(item.id);
-                    setIsMobileMenuOpen(false);
-                  }}
+                <a
+                  href={getPagePath(item.id)}
+                  onClick={(event) => handlePageLink(event, item.id)}
                   className={`flex-grow text-left py-4 px-2 text-sm font-bold uppercase tracking-wide ${
                     currentPage === item.id ? 'text-[#4B827E]' : 'text-slate-700'
                   }`}
                 >
                   {item.label}
-                </button>
+                </a>
                 {item.subItems && (
                   <button onClick={() => toggleMobileItem(item.id)} className="p-4 text-slate-400" aria-label={`展开 ${item.label}`}>
                     <svg className={`w-4 h-4 transition-transform ${expandedMobileItems[item.id] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -257,13 +265,14 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               {item.subItems && expandedMobileItems[item.id] && (
                 <div className="bg-slate-50 rounded-lg mb-2 py-1">
                   {item.subItems.map((sub, idx) => (
-                    <button
+                    <a
                       key={idx}
-                      onClick={() => handleSubItemClick(sub.page)}
-                      className="w-full text-left px-6 py-3 text-xs font-semibold text-slate-600 hover:text-[#4B827E] transition-colors"
+                      href={getPagePath(sub.page)}
+                      onClick={(event) => handlePageLink(event, sub.page)}
+                      className="block w-full text-left px-6 py-3 text-xs font-semibold text-slate-600 hover:text-[#4B827E] transition-colors"
                     >
                       {sub.label}
-                    </button>
+                    </a>
                   ))}
                 </div>
               )}

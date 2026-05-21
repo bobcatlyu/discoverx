@@ -11,7 +11,7 @@ const DocumentsPage: React.FC<DocumentsPageProps> = ({ onNavigate }) => {
     {
       id: 'd1',
       title: '产品说明书 Datasheets',
-      description: '查看产品技术参数、性能指标和应用说明，快速定位合适的产品资料。',
+      description: 'Datasheet 按靶点和产品场景提供索引说明，具体货号资料可按需获取最新版本。',
       badge: 'Datasheets',
       action: () => onNavigate(Page.DatasheetList),
     },
