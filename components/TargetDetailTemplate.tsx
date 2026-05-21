@@ -24,6 +24,8 @@ interface TargetDetailTemplateProps {
   productData: ProductRow[];
   productTableTitle: string;
   customTypeHeaders: string[];
+  productTableColumns?: string[];
+  productTableRows?: string[][];
 }
 
 const normalizeHighlight = (highlight: string) => {
@@ -60,7 +62,11 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
   productData,
   productTableTitle,
   customTypeHeaders,
+  productTableColumns,
+  productTableRows,
 }) => {
+  const hasCustomProductTable = productTableColumns && productTableRows;
+
   return (
     <div className="bg-white">
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -147,36 +153,61 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center md:text-left">{productTableTitle}</h2>
         <div className="flex justify-start">
-          <div className="inline-block max-w-full bg-white shadow-xl rounded-xl border border-slate-200 overflow-hidden w-fit">
-            <table className="divide-y divide-slate-200">
-              <thead className="bg-[#4B827E] text-white">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider whitespace-nowrap">靶点</th>
-                  <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider whitespace-nowrap">作用机制</th>
-                  {customTypeHeaders.map((header, idx) => (
-                    <th key={idx} className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider whitespace-nowrap">
-                      {header}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-slate-200">
-                {productData.map((row, idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/30 transition-colors'}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 border-r border-slate-100">{row.target}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-600 border-r border-slate-100">{row.moa}</td>
-                    {row.statuses.map((status, statusIdx) => {
-                      const normalizedStatus = normalizeStatus(status);
-                      return (
-                        <td key={statusIdx} className="px-6 py-4 whitespace-nowrap text-center text-sm text-slate-700">
-                          {normalizedStatus === '✔' ? <span className="text-[#4B827E] font-bold text-lg">✔</span> : normalizedStatus}
-                        </td>
-                      );
-                    })}
+          <div className="w-full bg-white shadow-xl rounded-xl border border-slate-200 overflow-hidden">
+            {hasCustomProductTable ? (
+              <table className="w-full table-auto divide-y divide-slate-200">
+                <thead className="bg-[#4B827E] text-white">
+                  <tr>
+                    {productTableColumns.map((header, idx) => (
+                      <th key={idx} className="px-5 py-4 text-left text-sm font-bold uppercase tracking-wider">
+                        {header}
+                      </th>
+                    ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="bg-white divide-y divide-slate-200">
+                  {productTableRows.map((row, rowIdx) => (
+                    <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/30 transition-colors'}>
+                      {row.map((cell, cellIdx) => (
+                        <td key={cellIdx} className={`px-5 py-4 align-top text-sm text-slate-700 border-r border-slate-100 last:border-r-0 ${cellIdx === 3 ? 'font-mono text-[#1C2C5E]' : ''}`}>
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <table className="divide-y divide-slate-200">
+                <thead className="bg-[#4B827E] text-white">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider whitespace-nowrap">靶点</th>
+                    <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider whitespace-nowrap">作用机制</th>
+                    {customTypeHeaders.map((header, idx) => (
+                      <th key={idx} className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider whitespace-nowrap">
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-slate-200">
+                  {productData.map((row, idx) => (
+                    <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/30 transition-colors'}>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-900 border-r border-slate-100">{row.target}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-600 border-r border-slate-100">{row.moa}</td>
+                      {row.statuses.map((status, statusIdx) => {
+                        const normalizedStatus = normalizeStatus(status);
+                        return (
+                          <td key={statusIdx} className="px-6 py-4 whitespace-nowrap text-center text-sm text-slate-700">
+                            {normalizedStatus === '✔' ? <span className="text-[#4B827E] font-bold text-lg">✔</span> : normalizedStatus}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </div>
         </div>
         <div className="mt-8 text-center">

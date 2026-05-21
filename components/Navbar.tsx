@@ -45,7 +45,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       id: Page.Targets,
       label: '靶点分类',
       subItems: [
-        { label: 'GLP-1R', page: Page.Glp1r },
         { label: 'GPCR', page: Page.Gpcr },
         { label: '细胞因子受体', page: Page.CytokineReceptors },
         { label: '免疫检查点受体', page: Page.CheckpointReceptors },

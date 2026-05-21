@@ -1,76 +1,48 @@
 
 import React from 'react';
+import { DEGRADATION_PORTFOLIO_COLUMNS, DEGRADATION_PORTFOLIO_ROWS } from '../data/degradationPortfolio';
+import { REPORTER_PORTFOLIO_COLUMNS, REPORTER_PORTFOLIO_ROWS } from '../data/reporterPortfolio';
+import { TRANSLOCATION_PORTFOLIO_COLUMNS, TRANSLOCATION_PORTFOLIO_ROWS } from '../data/translocationPortfolio';
+
+interface ProductPortfolioTableProps {
+  title: string;
+  columns: string[];
+  rows: string[][];
+}
+
+const ProductPortfolioTable: React.FC<ProductPortfolioTableProps> = ({ title, columns, rows }) => (
+  <div>
+    <div className="mb-6">
+      <h3 className="text-2xl font-bold text-[#4B827E]">{title}</h3>
+    </div>
+    <div className="w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
+      <table className="w-full table-auto divide-y divide-slate-200">
+        <thead className="bg-[#4B827E] text-white">
+          <tr>
+            {columns.map((header, idx) => (
+              <th key={idx} className="px-5 py-4 text-left text-sm font-bold uppercase tracking-wider">
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-slate-200 bg-white">
+          {rows.map((row, rowIdx) => (
+            <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/30 transition-colors'}>
+              {row.map((cell, cellIdx) => (
+                <td key={cellIdx} className={`border-r border-slate-100 px-5 py-4 align-top text-sm text-slate-700 last:border-r-0 ${columns[cellIdx] === '货号' ? 'font-mono text-[#1C2C5E]' : ''}`}>
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+);
 
 const SignalPathwayDetail: React.FC = () => {
-  const reporterData = [
-    { pathway: 'NFAT', receptor: '-', host: 'Jurkat' },
-    { pathway: 'NFAT', receptor: 'PD-1', host: 'Jurkat' },
-    { pathway: 'NF-kB', receptor: 'IL18R1', host: 'U2OS' },
-    { pathway: 'NF-kB', receptor: '-', host: 'U2OS' },
-    { pathway: 'NF-kB', receptor: '-', host: 'HEK293' },
-    { pathway: 'NF-kB', receptor: 'CD27', host: 'HEK293' },
-    { pathway: 'NF-kB', receptor: 'RANK', host: 'U2OS' },
-    { pathway: 'NF-kB', receptor: 'BCMA', host: 'K562' },
-    { pathway: 'STAT3', receptor: 'IL-11', host: 'HepG2' },
-    { pathway: 'STAT3', receptor: '-', host: 'HepG2' },
-    { pathway: 'STAT5', receptor: 'IL-2', host: 'REH' },
-    { pathway: 'STAT5', receptor: 'IL-3', host: 'U937' },
-    { pathway: 'STAT5', receptor: 'IL-7', host: 'REH' },
-    { pathway: 'STAT5', receptor: 'IL-15', host: 'REH' },
-    { pathway: 'STAT5', receptor: 'LPS', host: 'THP-1' },
-    { pathway: 'STAT5', receptor: 'TSLP', host: 'REH' },
-    { pathway: 'TREM1-DAP12', receptor: '-', host: 'Jurkat' },
-    { pathway: 'IFNy', receptor: '-', host: 'HEK293' },
-  ];
-
-  const degradationData = [
-    { pathway: 'CDC25A', receptor: '-', host: 'U2OS' },
-    { pathway: 'IKZF3v1', receptor: '-', host: 'HEK293' },
-    { pathway: 'NFkB', receptor: '-', host: 'U2OS' },
-    { pathway: 'IkB', receptor: 'RANK', host: 'U2OS' },
-  ];
-
-  const translocationData = [
-    { pathway: 'FOXO3', receptor: '-', host: 'U2OS' },
-    { pathway: 'Keap1-NRF2', receptor: '-', host: 'U2OS' },
-    { pathway: 'NFkB(RELA)', receptor: '-', host: 'HEK293' },
-    { pathway: 'TORC1', receptor: '-', host: 'U2OS' },
-    { pathway: 'TORC2', receptor: '-', host: 'U2OS' },
-    { pathway: 'TORC3', receptor: '-', host: 'U2OS' },
-    { pathway: 'β-catenin', receptor: 'Wnt-Frizzled', host: 'U2OS' },
-    { pathway: 'XBP1', receptor: '-', host: 'U2OS' },
-    { pathway: 'SREBP1', receptor: '-', host: 'U2OS' },
-    { pathway: 'SREBP2', receptor: '-', host: 'U2OS' },
-  ];
-
-  const ProductTable = ({ data, title }: { data: any[], title: string }) => (
-    <div className="inline-block max-w-full bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden">
-      <div className="bg-[#4B827E] px-6 py-4">
-        <h3 className="text-xl font-bold text-white uppercase tracking-wider whitespace-nowrap">{title}</h3>
-      </div>
-      <div className="overflow-x-auto">
-        <table className="divide-y divide-slate-200">
-          <thead className="bg-slate-50 sticky top-0 z-10">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider border-r border-slate-200 whitespace-nowrap">信号通路</th>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider border-r border-slate-200 whitespace-nowrap">靶点受体</th>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">细胞背景</th>
-            </tr>
-          </thead>
-          <tbody className="bg-white divide-y divide-slate-100">
-            {data.map((row, idx) => (
-              <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E] border-r border-slate-50">{row.pathway}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-[#4B827E] font-medium border-r border-slate-50">{row.receptor}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-600">{row.host}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-
   return (
     <div className="bg-white">
       {/* 1. Introduction Section */}
@@ -310,21 +282,24 @@ const SignalPathwayDetail: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Categorized Product Tables */}
+      {/* 3. Product Table */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
         <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12">信号通路产品列表</h2>
-        <div className="flex flex-col items-start gap-8">
-          <ProductTable
+        <div className="space-y-12">
+          <ProductPortfolioTable
             title="报告基因 (Pathway Reporter)"
-            data={reporterData}
+            columns={REPORTER_PORTFOLIO_COLUMNS}
+            rows={REPORTER_PORTFOLIO_ROWS}
           />
-          <ProductTable
-            title="通路蛋白降解 (Pathway Degradation)"
-            data={degradationData}
+          <ProductPortfolioTable
+            title="转运入核 Nuclear Translocation"
+            columns={TRANSLOCATION_PORTFOLIO_COLUMNS}
+            rows={TRANSLOCATION_PORTFOLIO_ROWS}
           />
-          <ProductTable
-            title="通路蛋白易位 (Nuclear Translocation)"
-            data={translocationData}
+          <ProductPortfolioTable
+            title="通路蛋白降解 Pathway Degradation"
+            columns={DEGRADATION_PORTFOLIO_COLUMNS}
+            rows={DEGRADATION_PORTFOLIO_ROWS}
           />
         </div>
         <div className="mt-12 text-center">

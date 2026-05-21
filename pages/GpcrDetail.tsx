@@ -163,8 +163,7 @@ const GpcrDetail: React.FC<GpcrDetailProps> = ({ onNavigate }) => {
 
         <div className="mb-12">
           <div className="mb-6 text-center">
-            <h3 className="text-2xl font-bold text-[#1C2C5E]">重点靶点</h3>
-            <p className="mt-2 text-sm text-slate-500">优先整理常见项目靶点的背景、相关产品、推荐 assay 和操作手册。</p>
+            <h3 className="text-2xl font-bold text-[#1C2C5E]">热门靶点</h3>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {featuredTargets.map((target) => (

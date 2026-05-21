@@ -1,6 +1,7 @@
 
 import React from 'react';
-import TargetDetailTemplate, { MoaItem, ProductRow } from '../components/TargetDetailTemplate';
+import TargetDetailTemplate, { MoaItem } from '../components/TargetDetailTemplate';
+import { CHECKPOINT_PORTFOLIO_COLUMNS, CHECKPOINT_PORTFOLIO_ROWS } from '../data/checkpointPortfolio';
 
 const CHECKPOINT_HEADERS = ['细胞株', 'eXpress® kit', 'Bioassay kit'];
 
@@ -45,48 +46,20 @@ const CheckpointDetail: React.FC = () => {
       imageUrl2: "/pic/Agonist_TNFRSF.png"
     }
   ];
-  const data: ProductRow[] = [
-    { target: 'BCMA', moa: 'Internalization', statuses: ['✓', '', ''] },
-    { target: 'BCMA', moa: 'Reporter', statuses: ['✓', '', ''] },
-    { target: 'BTLA', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'CD137', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'CD200', moa: 'Ligand-Presenting', statuses: ['✓', '', ''] },
-    { target: 'CD200R', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'CD28', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'CD33', moa: 'Internalization', statuses: ['✓', '', ''] },
-    { target: 'CD47', moa: 'Ligand-Presenting', statuses: ['✓', '', ''] },
-    { target: 'CD86', moa: 'Ligand-Presenting', statuses: ['✓', '', ''] },
-    { target: 'CTLA4', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'HVEM', moa: 'Ligand-Presenting', statuses: ['✓', '', ''] },
-    { target: 'ICOS', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'LAG3', moa: 'Cytotoxicity', statuses: ['✓', '', ''] },
-    { target: 'LAIR1', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'mCD80', moa: 'Ligand-Presenting', statuses: ['✓', '', ''] },
-    { target: 'mCTLA4', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'mPD-1', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'mPD-L1', moa: 'Ligand-Presenting', statuses: ['✓', '', ''] },
-    { target: 'NIK', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'OX40', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'PD-1 (SHP-1)', moa: 'Signaling', statuses: ['✓', '', '✓'] },
-    { target: 'PD-1 (SHP-2)', moa: 'Signaling', statuses: ['✓', '', ''] },
-    { target: 'PD-1', moa: 'Reporter', statuses: ['✓', '', ''] },
-    { target: 'PD-1', moa: 'Cytotoxicity', statuses: ['✓', '', ''] },
-    { target: 'PD-L1', moa: 'Ligand-Presenting', statuses: ['✓', '', ''] },
-    { target: 'PD-L1', moa: 'Cytotoxicity', statuses: ['✓', '', ''] },
-    { target: 'PD-L2', moa: 'Ligand-Presenting', statuses: ['✓', '', ''] },
-    { target: 'PD-L2', moa: 'Cytotoxicity', statuses: ['✓', '', ''] },
-    { target: 'Siglec9', moa: 'Internalization', statuses: ['✓', '', ''] },
-    { target: 'SIRPα (SHP-1)', moa: 'Signaling', statuses: ['✓', '', '✓'] },
-    { target: 'TIM3', moa: 'Cytotoxicity', statuses: ['✓', '', ''] },
-    { target: 'TIM3/TIM3', moa: 'Dimerization', statuses: ['✓', '✓', ''] },
-    { target: 'VISTA/VISTA', moa: 'Dimerization', statuses: ['✓', '✓', ''] },
-    { target: 'FcγRIa', moa: 'Clustering', statuses: ['✓', '', ''] },
-    { target: 'FcγRIIa', moa: 'Clustering', statuses: ['✓', '', ''] },
-    { target: 'FcγRIIIa', moa: 'Clustering', statuses: ['✓', '', ''] },
-    { target: 'FcγRIIb', moa: 'Clustering', statuses: ['✓', '', ''] },
-    { target: 'mFcγRIIb', moa: 'Clustering', statuses: ['✓', '', ''] }
-  ];
-  return <TargetDetailTemplate title="免疫检查点受体 Checkpoint Receptors Assays" introText={intro} highlights={highlights} introImageUrl="https://picsum.photos/seed/checkpoint_lab/800/600" moaItems={moas} productData={data} productTableTitle="免疫检查点产品列表 (Checkpoint Portfolio)" customTypeHeaders={CHECKPOINT_HEADERS} />;
+  return (
+    <TargetDetailTemplate
+      title="免疫检查点受体 Checkpoint Receptors Assays"
+      introText={intro}
+      highlights={highlights}
+      introImageUrl="https://picsum.photos/seed/checkpoint_lab/800/600"
+      moaItems={moas}
+      productData={[]}
+      productTableTitle="免疫检查点产品列表 (Checkpoint Portfolio)"
+      customTypeHeaders={CHECKPOINT_HEADERS}
+      productTableColumns={CHECKPOINT_PORTFOLIO_COLUMNS}
+      productTableRows={CHECKPOINT_PORTFOLIO_ROWS}
+    />
+  );
 };
 
 export default CheckpointDetail;
