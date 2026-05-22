@@ -1,17 +1,8 @@
 
 import React from 'react';
+import { SPRINTER_PORTFOLIO_COLUMNS, SPRINTER_PORTFOLIO_ROWS } from '../data/sprinterPortfolio';
 
 const TpdDetail: React.FC = () => {
-  const kinases = [
-    ['B-Raf', 'CDKN1A (p21)', 'IRAK4'],
-    ['BRAF1(V600E)', 'IKZF1', 'KRAS'],
-    ['BTK', 'IKZF2', 'MYC (c-Myc)']
-  ];
-
-  const epigenetics = [
-    ['BRD4', 'STAT3']
-  ];
-
   return (
     <div className="bg-white">
       {/* 1. Introduction Section */}
@@ -127,51 +118,29 @@ const TpdDetail: React.FC = () => {
       {/* 3. Product List Table Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32">
         <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12 text-center md:text-left">TPD 监测产品列表 / TPD Portfolio</h2>
-        
-        {/* Kinase Targets Table */}
-        <div className="mb-12 overflow-hidden shadow-xl rounded-xl border border-slate-200 w-fit">
-          <div className="bg-[#4B827E] px-6 py-4">
-            <h3 className="text-lg font-bold text-white uppercase tracking-wider whitespace-nowrap">激酶靶点 / Kinase Targets</h3>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="border-collapse">
-              <tbody className="bg-white divide-y divide-slate-100">
-                {kinases.map((row, idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
-                    {row.map((cell, cIdx) => (
-                      <td key={cIdx} className="px-6 py-4 text-sm font-bold text-[#1C2C5E] border-r border-slate-100 last:border-r-0 whitespace-nowrap">
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
+        <div className="w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
+          <table className="w-full table-auto divide-y divide-slate-200">
+            <thead className="bg-[#4B827E] text-white">
+              <tr>
+                {SPRINTER_PORTFOLIO_COLUMNS.map((header, idx) => (
+                  <th key={idx} className="px-5 py-4 text-left text-sm font-bold uppercase tracking-wider">
+                    {header}
+                  </th>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Epigenetic Protein Targets Table */}
-        <div className="mb-12 overflow-hidden shadow-xl rounded-xl border border-slate-200 w-fit">
-          <div className="bg-[#4B827E] px-6 py-4">
-            <h3 className="text-lg font-bold text-white uppercase tracking-wider whitespace-nowrap">表观遗传蛋白靶点 / Epigenetic Protein Targets</h3>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="border-collapse">
-              <tbody className="bg-white divide-y divide-slate-100">
-                {epigenetics.map((row, idx) => (
-                  <tr key={idx} className="bg-white">
-                    {row.map((cell, cIdx) => (
-                      <td key={cIdx} className="px-6 py-4 text-sm font-bold text-[#1C2C5E] border-r border-slate-100 last:border-r-0 whitespace-nowrap">
-                        {cell}
-                      </td>
-                    ))}
-                    {/* Fill empty cells to maintain grid if needed */}
-                    <td className="px-6 py-4 border-r border-slate-100"></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 bg-white">
+              {SPRINTER_PORTFOLIO_ROWS.map((row, rowIdx) => (
+                <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/30 transition-colors'}>
+                  {row.map((cell, cellIdx) => (
+                    <td key={cellIdx} className={`border-r border-slate-100 px-5 py-4 align-top text-sm text-slate-700 last:border-r-0 ${SPRINTER_PORTFOLIO_COLUMNS[cellIdx] === '货号' ? 'font-mono text-[#1C2C5E]' : ''}`}>
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div className="mt-12 text-center">

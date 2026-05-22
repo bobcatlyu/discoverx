@@ -1,13 +1,14 @@
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import { DOC_FILES } from '../utils/fileIndex';
 
 const QualificationData: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Placeholder - will be populated with actual files when available
-  const documents: any[] = [];
-
-  const filtered = documents.filter(doc => doc.title?.toLowerCase().includes(searchTerm.toLowerCase()));
+  const documents = useMemo(() => DOC_FILES.filter((doc) => doc.category === 'qualification_data'), []);
+  const filtered = useMemo(() => {
+    return documents.filter((doc) => doc.filename.toLowerCase().includes(searchTerm.toLowerCase()));
+  }, [documents, searchTerm]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -30,14 +31,42 @@ const QualificationData: React.FC = () => {
         </svg>
       </div>
 
+      <div className="mb-4 text-sm text-slate-500">共找到 {filtered.length} 份验证数据报告</div>
+
       <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
-        <div className="p-20 text-center">
-          <svg className="w-16 h-16 mx-auto mb-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          <p className="text-slate-400 text-lg mb-2">验证数据文件即将上传</p>
-          <p className="text-slate-500 text-sm">Qualification data files will be available soon</p>
-        </div>
+        <table className="min-w-full divide-y divide-slate-200">
+          <thead className="bg-slate-50">
+            <tr>
+              <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">文件名</th>
+              <th className="px-6 py-4 text-center text-xs font-bold text-slate-500 uppercase tracking-wider">下载</th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-slate-100">
+            {filtered.map((item) => (
+              <tr key={item.id} className="hover:bg-slate-50 transition-colors">
+                <td className="px-6 py-5 text-sm text-[#1C2C5E]">{item.filename}</td>
+                <td className="px-6 py-5 whitespace-nowrap text-center">
+                  <a
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block p-2 text-[#4B827E] hover:text-[#3d6b67] transition-colors"
+                    title="打开 PDF"
+                  >
+                    <svg className="w-5 h-5 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {filtered.length === 0 && (
+          <div className="p-20 text-center">
+            <p className="text-slate-400">未找到相关验证数据报告。</p>
+          </div>
+        )}
       </div>
     </div>
   );

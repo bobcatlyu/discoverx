@@ -9,27 +9,6 @@ interface MechanismsPageProps {
 const MechanismsPage: React.FC<MechanismsPageProps> = ({ onNavigate }) => {
   const mechanisms = [
     {
-      id: 'm1',
-      title: '受体二聚化 Dimerization',
-      description: '监测受体激活后的同源或异源二聚化，揭示信号转导的起始步骤。',
-      imageUrl: '/pic/Dimerization.jpg',
-      action: () => onNavigate(Page.DimerizationDetail)
-    },
-    {
-      id: 'm2',
-      title: '受体内吞 Internalization',
-      description: '追踪受体从细胞表面向内体的转运过程，评估受体脱敏与信号终止。',
-      imageUrl: '/pic/Internalization.jpg',
-      action: () => onNavigate(Page.InternalizationDetail)
-    },
-    {
-      id: 'm3',
-      title: '蛋白间相互作用 PPI',
-      description: '检测蛋白质复合物的形成与解离，解析信号通路的分子基础。',
-      imageUrl: '/pic/PPI.jpg',
-      action: () => onNavigate(Page.PpiDetail)
-    },
-    {
       id: 'm4',
       title: '信号通路 Signaling Pathways',
       description: '监测关键信号分子（如 NF-κB、STAT、MAPK）的活化、转录、降解与向核内转位。',
@@ -56,6 +35,27 @@ const MechanismsPage: React.FC<MechanismsPageProps> = ({ onNavigate }) => {
       description: '利用 InCELL 技术，在活细胞中检测测小分子与靶蛋白的结合。',
       imageUrl: '/pic/Target-Engagement_Large-Card-Image.jpg',
       action: () => onNavigate(Page.TargetEngagementDetail)
+    },
+    {
+      id: 'm2',
+      title: '受体内吞 Internalization',
+      description: '追踪受体从细胞表面向内体的转运过程，评估受体脱敏与信号终止。',
+      imageUrl: '/pic/Internalization.jpg',
+      action: () => onNavigate(Page.InternalizationDetail)
+    },
+    {
+      id: 'm1',
+      title: '受体二聚化 Dimerization',
+      description: '监测受体激活后的同源或异源二聚化，揭示信号转导的起始步骤。',
+      imageUrl: '/pic/Dimerization.jpg',
+      action: () => onNavigate(Page.DimerizationDetail)
+    },
+    {
+      id: 'm3',
+      title: '蛋白间相互作用 PPI',
+      description: '检测蛋白质复合物的形成与解离，解析信号通路的分子基础。',
+      imageUrl: '/pic/PPI.jpg',
+      action: () => onNavigate(Page.PpiDetail)
     },
   ];
 

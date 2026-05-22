@@ -12,7 +12,7 @@ export const TRANSLOCATION_PORTFOLIO_ROWS = [
     "Stable Cell Line Assay",
     "793-0821C3",
     "PathHunter® Human Keap1-NRF2 Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "Keap1-NRF2",
@@ -33,7 +33,7 @@ export const TRANSLOCATION_PORTFOLIO_ROWS = [
     "Stable Cell Line Assay",
     "793-0907C1",
     "PathHunter® Human NF-kB (RELA)-IkB Nuclear Translocation Cell-Based Assay Kit (HEK 293) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "RELA",
@@ -54,14 +54,14 @@ export const TRANSLOCATION_PORTFOLIO_ROWS = [
     "Stable Cell Line Assay",
     "793-0757C3",
     "PathHunter® Human p53 (TP53) Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "PI3",
     "Stable Cell Line Assay",
     "793-0876C3",
     "PathHunter® Human FOXO3 Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "PI3",
@@ -82,14 +82,14 @@ export const TRANSLOCATION_PORTFOLIO_ROWS = [
     "Stable Cell Line Assay",
     "793-1175C3",
     "PathHunter® Human SREBP1c Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "SREBP2",
     "Stable Cell Line Assay",
     "793-0830C3",
     "PathHunter® Human SREBP2 Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "SREBP2",
@@ -110,7 +110,7 @@ export const TRANSLOCATION_PORTFOLIO_ROWS = [
     "Stable Cell Line Assay",
     "793-0833C3",
     "PathHunter® Human TORC1 (CRTC1) Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "TORC1 (CRTC1)",
@@ -131,7 +131,7 @@ export const TRANSLOCATION_PORTFOLIO_ROWS = [
     "Stable Cell Line Assay",
     "793-0813C3",
     "PathHunter® Human TORC2 (CRTC2) Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "TORC2 (CRTC2)",
@@ -152,14 +152,14 @@ export const TRANSLOCATION_PORTFOLIO_ROWS = [
     "Stable Cell Line Assay",
     "793-1120C3",
     "PathHunter® Human TORC3 (CRTC3) Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "Wnt-FzGSK3β",
     "Stable Cell Line Assay",
     "793-0743C3",
     "PathHunter® Human beta Catenin (CTNNB1) Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "Wnt-FzGSK3β",
@@ -180,7 +180,7 @@ export const TRANSLOCATION_PORTFOLIO_ROWS = [
     "Stable Cell Line Assay",
     "793-0857C3",
     "PathHunter® Human XBP1 Nuclear Translocation Cell-Based Assay Kit (U2OS) ",
-    "2 vias"
+    "2 vials"
   ],
   [
     "XBP1",

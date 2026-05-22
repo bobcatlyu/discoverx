@@ -20,6 +20,16 @@ interface DocResult {
 
 type SearchResult = CatalogResult | DocResult;
 
+const getDocCategoryLabel = (category: typeof DOC_FILES[number]['category']) => {
+  if (category === 'datasheet') {
+    return '产品说明书';
+  }
+  if (category === 'qualification_data') {
+    return '验证数据';
+  }
+  return '用户手册';
+};
+
 const SearchResults: React.FC<SearchResultsProps> = ({ query, onNavigate }) => {
   const results = useMemo(() => {
     if (!query) {
@@ -118,7 +128,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ query, onNavigate }) => {
                       </td>
                       <td className="px-6 py-5 whitespace-nowrap">
                         <span className="px-3 py-1 bg-purple-50 text-purple-600 text-[10px] font-bold rounded-full uppercase tracking-widest border border-purple-100">
-                          {doc.category === 'datasheet' ? '产品说明书' : '用户手册'}
+                          {getDocCategoryLabel(doc.category)}
                         </span>
                       </td>
                       <td className="px-6 py-5 whitespace-nowrap text-center">
