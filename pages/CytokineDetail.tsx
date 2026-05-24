@@ -1,5 +1,48 @@
 
 import React from 'react';
+import { CYTOKINE_PORTFOLIO_COLUMNS, CYTOKINE_PORTFOLIO_ROWS } from '../data/cytokinePortfolio';
+
+interface ProductPortfolioTableProps {
+  columns: string[];
+  rows: string[][];
+}
+
+const ProductPortfolioTable: React.FC<ProductPortfolioTableProps> = ({ columns, rows }) => (
+  <div className="w-full overflow-hidden shadow-2xl rounded-2xl border border-slate-200 bg-white">
+    <table className="w-full table-auto divide-y divide-slate-200">
+      <thead className="bg-[#4B827E] text-white">
+        <tr>
+          {columns.map((column) => (
+            <th
+              key={column}
+              className="px-4 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20 last:border-r-0"
+            >
+              {column}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody className="bg-white divide-y divide-slate-200">
+        {rows.map((row, rowIdx) => (
+          <tr key={`${row[3] || row[0]}-${rowIdx}`} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+            {row.map((cell, cellIdx) => (
+              <td
+                key={`${columns[cellIdx]}-${cellIdx}`}
+                className={`px-4 py-4 align-top text-sm border-r border-slate-100 last:border-r-0 ${
+                  columns[cellIdx] === '货号'
+                    ? 'font-mono text-[#1C2C5E] whitespace-nowrap'
+                    : 'text-slate-700'
+                }`}
+              >
+                {cell}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
 
 const CytokineDetail: React.FC = () => {
   const intro = [
@@ -15,88 +58,6 @@ const CytokineDetail: React.FC = () => {
     "生物学相关性强 —— MOA 导向的功能性检测，用于监测细胞因子受体激活与受体二聚化过程",
     "经验证的 Bioassay —— 采用已获批准的治疗药物（如 Actemra®（托珠单抗）、Kineret®（阿那白滞素）、Leukine®（沙格司亭）、Humira®（阿达木单抗））进行验证，加速细胞因子治疗药物的研发与批放行",
     "易用且可扩展 —— 均相、流程简便且快速的检测体系，兼容高通量格式以提高实验效率"
-  ];
-
-  const cytokineData = [
-    { target: 'ACVR1/ACVR2', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'ACVR1B/BMPR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'ACVR1C/ACVR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'ACVR1C/ACVR2B', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'ACVRL1/ACVR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'ACVRL1/ACVR2B', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'ACVRL1/BMPR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'BMPR1A/ACVR2', moa: '二聚化', set: false, express: true, bioassay: false },
-    { target: 'BMPR1A/ACVR2A', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'BMPR1A/ACVR2B', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'BMPR1A/BMPR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'BMPR1B/ACVR2A', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'BMPR1B/ACVR2B', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'BMPR1B/BMPR2', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'c-MET/c-MET', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'CSF1R/CSF1R', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'CSF2RB/CSF2R', moa: '二聚化', set: true, express: false, bioassay: true },
-    { target: 'CSF2RB/CSF2RA', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'EGFR/EGFR', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'EGFR/ErbB2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'EGFR/ErbB3', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'EpoR/EpoR', moa: '二聚化', set: true, express: true, bioassay: true },
-    { target: 'ErbB2/ErbB3', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'ErbB2/ErbB4', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'ErbB4/ErbB4', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'FGFR3(G380R)/FGFR3(G380R)', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'FGFR3/FGFR3', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IFNAR1/IFNAR2', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IFNGR1/IFNGR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IFNRL1/IL10RB', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IFNy', moa: '信号通路报告基因', set: true, express: false, bioassay: false },
-    { target: 'IL10RA/IL10RB', moa: '二聚化', set: true, express: true, bioassay: true },
-    { target: 'IL11R/IL6ST', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IL12RB1/IL12RB2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL15 (IL2Rβ/IL2Rγ)', moa: '二聚化', set: true, express: true, bioassay: true },
-    { target: 'IL17RA/IL17RB', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IL17RA/IL17RC', moa: '二聚化', set: true, express: true, bioassay: true },
-    { target: 'IL17RA/IL17RC (U2OS)', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL17RD/TNFR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL18', moa: '信号通路报告基因', set: true, express: false, bioassay: false },
-    { target: 'IL18R1/IL18RAP', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL1R/IL1R', moa: '二聚化', set: true, express: false, bioassay: true },
-    { target: 'IL1R1/IL1RAP', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL1R1/ILRAP', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IL1RL1/IL1RAP', moa: '二聚化', set: true, express: true, bioassay: true },
-    { target: 'IL2', moa: '信号通路报告基因', set: true, express: false, bioassay: false },
-    { target: 'IL2/IL2', moa: '二聚化', set: true, express: false, bioassay: true },
-    { target: 'IL20R1/IL20R2', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IL20RA/IL10RB', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL20RA/IL20RB', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL21R/IL2RG', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL22RA/IL10RB1', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IL22RA1/IL10RB', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL23R/IL12RB1', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL27RA/IL6ST', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IL2RB/IL2RG', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL2RB/IL2RG/IL2RA', moa: '二聚化', set: true, express: true, bioassay: true },
-    { target: 'IL31RA/OSMRb', moa: '二聚化', set: true, express: false, bioassay: true },
-    { target: 'IL3RA/CD131', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'IL4R/IL13RA1', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL4R/IL2RG', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL5RA/CSF2RB', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL6R/IL6ST', moa: '二聚化', set: true, express: false, bioassay: true },
-    { target: 'IL6RA/IL6ST', moa: '二聚化', set: true, express: true, bioassay: true },
-    { target: 'IL7', moa: '信号通路报告基因', set: true, express: false, bioassay: false },
-    { target: 'IL7R/CRLF2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'IL7R/IL2RG', moa: '二聚化', set: true, express: true, bioassay: true },
-    { target: 'IL9R/IL2RG', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'LEPR/LEPR', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'OSMR/IL6ST', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'OSMRb/IL31R', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'OSMRb/IL31RA', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'TGFBR1/ACVR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'TGFBR1/ACVR2B', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'TGFBR1/TGFBR2', moa: '二聚化', set: true, express: true, bioassay: false },
-    { target: 'TGFBR1/TGFBR2/ENG', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'TGFBR1A/ACVR2A', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'TPOR/TPOR', moa: '二聚化', set: true, express: false, bioassay: false },
-    { target: 'TSLP', moa: '信号通路报告基因', set: true, express: false, bioassay: false },
   ];
 
   const chemokineData = [
@@ -281,32 +242,7 @@ const CytokineDetail: React.FC = () => {
         {/* Table 1: Cytokine Receptors */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold text-[#4B827E] mb-6 border-l-4 border-[#4B827E] pl-4">细胞因子受体产品列表</h3>
-          <div className="overflow-hidden shadow-2xl rounded-2xl border border-slate-200">
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-slate-200">
-                <thead className="bg-[#4B827E] text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">靶点</th>
-                    <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20">检测机制</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider border-r border-white/20">稳转细胞系套装</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider border-r border-white/20">eXpress™ Kit</th>
-                    <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">Bioassay Kit</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-slate-200">
-                  {cytokineData.map((row, idx) => (
-                    <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/40 transition-colors'}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E] border-r border-slate-100">{row.target}</td>
-                      <td className="px-6 py-4 text-sm text-slate-600 border-r border-slate-100">{row.moa}</td>
-                      <td className="px-6 py-4 text-center border-r border-slate-100">{row.set && <span className="text-teal-600 font-bold">✓</span>}</td>
-                      <td className="px-6 py-4 text-center border-r border-slate-100">{row.express && <span className="text-teal-600 font-bold">✓</span>}</td>
-                      <td className="px-6 py-4 text-center">{row.bioassay && <span className="text-teal-600 font-bold">✓</span>}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <ProductPortfolioTable columns={CYTOKINE_PORTFOLIO_COLUMNS} rows={CYTOKINE_PORTFOLIO_ROWS} />
         </div>
 
         {/* Table 2: Chemokine Receptors */}

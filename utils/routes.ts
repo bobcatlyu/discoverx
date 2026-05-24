@@ -17,7 +17,7 @@ export const getPagePath = (page: Page, value?: string) => {
 
   if (page === Page.BlogDetail) {
     const post = value ? findBlogPost(value) : undefined;
-    return post ? getBlogPath(post) : `/${Page.BlogDetail}`;
+    return post ? getBlogPath(post) : `/${Page.BlogList}`;
   }
 
   return `/${page}`;

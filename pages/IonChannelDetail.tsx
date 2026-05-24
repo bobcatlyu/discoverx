@@ -1,6 +1,7 @@
 
 import React from 'react';
-import TargetDetailTemplate, { MoaItem, ProductRow } from '../components/TargetDetailTemplate';
+import TargetDetailTemplate, { MoaItem } from '../components/TargetDetailTemplate';
+import { ION_CHANNEL_PORTFOLIO_COLUMNS, ION_CHANNEL_PORTFOLIO_ROWS } from '../data/ionChannelPortfolio';
 
 const ION_CHANNEL_HEADERS = ['Cell Line', 'Ready-to-Assay cells', 'Membrane Prep'];
 
@@ -34,75 +35,6 @@ const IonChannelDetail: React.FC = () => {
     }
   ];
 
-  const data: ProductRow[] = [
-    { target: 'ASIC3', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Cav1.2 α1C/β2a/α2/δ1', moa: 'Electrophysiological', statuses: ['✓', '✓', ''] },
-    { target: 'Cav2.2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Cav3.2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'CFTR', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'GABAA α1/β3/γ2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'GABAA α2/β3/γ2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'GABAA α3/β3/γ2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'GABAA α4/β3/γ2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'GABAA α5/β3/γ2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'GABAA α6/β3/γ2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'GluR6', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'GlyRA1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'HCN1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'HCN2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'HCN3', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'HCN4', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'hERG', moa: 'Electrophysiological', statuses: ['✓', '✓', ''] },
-    { target: 'hERG', moa: 'Pharmacotrafficking', statuses: ['✓', '', ''] },
-    { target: 'hERG', moa: 'Binding', statuses: ['✓', '', ''] },
-    { target: 'CFTR-ΔF508', moa: 'Pharmacotrafficking', statuses: ['✓', '', ''] },
-    { target: 'KCNH2(G601S)', moa: 'Pharmacotrafficking', statuses: ['✓', '', ''] },
-    { target: 'KCNQ1/hminK', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kir2.1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kir6.2/SUR2A', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv1.1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv1.1', moa: 'Binding', statuses: ['', '', '✓'] },
-    { target: 'Kv1.2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv1.3', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv1.4', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv1.5', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv1.6', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv1.7', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv1.8', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv12.2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv2.1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv2.1/Kv9.2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv3.1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv3.2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv3.3', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv4.2/KChIP2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv4.3/KChIP1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv4.3/KChIP2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv7.2/Kv7.3', moa: 'Electrophysiological', statuses: ['✓', '✓', ''] },
-    { target: 'Kv7.3/Kv7.5', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv7.4', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Kv7.4/Kv7.5', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'nACh α7/ric3', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'nAChR α1/β1/δ/ε', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'nAChR α3/β4', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'nAChR α3/β4', moa: 'Binding', statuses: ['', '', '✓'] },
-    { target: 'nAChR α4/β2', moa: 'Electrophysiological', statuses: ['✓', '✓', ''] },
-    { target: 'nAChR α7/ric3', moa: 'Electrophysiological', statuses: ['✓', '✓', ''] },
-    { target: 'Nav1.1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Nav1.2', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Nav1.3', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Nav1.4', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Nav1.5', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Nav1.6', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Nav1.7', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Nav1.8', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'Nav1.8/β1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'TRPA1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'TRPM8', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'TRPV1', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'TRPV3', moa: 'Electrophysiological', statuses: ['✓', '', ''] },
-    { target: 'TRPV4', moa: 'Electrophysiological', statuses: ['✓', '', ''] }
-  ];
 
   return (
     <TargetDetailTemplate
@@ -111,9 +43,11 @@ const IonChannelDetail: React.FC = () => {
       introImageUrl="https://picsum.photos/seed/ion_channel_banner/800/600"
       highlights={highlights}
       moaItems={moas}
-      productData={data}
+      productData={[]}
       productTableTitle="离子通道产品列表"
       customTypeHeaders={ION_CHANNEL_HEADERS}
+      productTableColumns={ION_CHANNEL_PORTFOLIO_COLUMNS}
+      productTableRows={ION_CHANNEL_PORTFOLIO_ROWS}
     />
   );
 };

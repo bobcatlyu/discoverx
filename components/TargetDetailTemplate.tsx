@@ -169,7 +169,7 @@ const TargetDetailTemplate: React.FC<TargetDetailTemplateProps> = ({
                   {productTableRows.map((row, rowIdx) => (
                     <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/30 transition-colors'}>
                       {row.map((cell, cellIdx) => (
-                        <td key={cellIdx} className={`px-5 py-4 align-top text-sm text-slate-700 border-r border-slate-100 last:border-r-0 ${cellIdx === 3 ? 'font-mono text-[#1C2C5E]' : ''}`}>
+                        <td key={cellIdx} className={`px-5 py-4 align-top text-sm text-slate-700 border-r border-slate-100 last:border-r-0 ${productTableColumns[cellIdx] === '货号' ? 'font-mono text-[#1C2C5E] whitespace-nowrap' : ''}`}>
                           {cell}
                         </td>
                       ))}

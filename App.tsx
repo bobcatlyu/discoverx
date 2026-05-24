@@ -115,7 +115,7 @@ const PAGE_META: Partial<Record<Page, { title: string; description: string }>> =
     description: '查看 GLP-1R 相关靶点背景、疾病与药物场景、推荐 assay、产品列表和 user manual。',
   },
   [Page.Applications]: {
-    title: '作用机制',
+    title: '作用机制 Mechanisms',
     description: '查看 DiscoverX 在二聚化、内吞、PPI、信号通路、靶标结合等机制方向的产品方案。',
   },
   [Page.Custom]: {
@@ -168,6 +168,18 @@ const isPageValue = (value: string): value is Page => {
   return Object.values(Page).includes(value as Page);
 };
 
+const LEGACY_PAGE_PATHS: Record<string, Page> = {
+  applications: Page.Applications,
+  'datasheet-detail': Page.DatasheetDetail,
+  'cytotoxicity-detail': Page.CytotoxicityDetail,
+  'dimerization-detail': Page.DimerizationDetail,
+  'ppi-detail': Page.PpiDetail,
+  'signal-pathway-detail': Page.SignalPathwayDetail,
+  'target-engagement-detail': Page.TargetEngagementDetail,
+  'internalization-detail': Page.InternalizationDetail,
+  'tpd-detail': Page.TpdDetail,
+};
+
 const routeFromPath = (path: string, rawQueryString = ''): RouteState => {
   const normalizedPath = path.replace(/^\/+|\/+$/g, '');
   const params = new URLSearchParams(rawQueryString);
@@ -184,11 +196,28 @@ const routeFromPath = (path: string, rawQueryString = ''): RouteState => {
     };
   }
 
+  if (normalizedPath === 'blog-detail') {
+    return {
+      page: Page.BlogDetail,
+      query: '',
+      blogId: params.get('id') ?? '',
+    };
+  }
+
   if (normalizedPath === Page.BlogDetail) {
     return {
       page: Page.BlogDetail,
       query: '',
       blogId: params.get('id') ?? '',
+    };
+  }
+
+  const legacyPage = LEGACY_PAGE_PATHS[normalizedPath];
+  if (legacyPage) {
+    return {
+      page: legacyPage,
+      query: '',
+      blogId: '',
     };
   }
 
@@ -239,6 +268,21 @@ const buildPathRoute = (page: Page, queryOrBlogId?: string): string => {
   return getPagePath(page, queryOrBlogId);
 };
 
+const buildCanonicalRoutePath = (route: RouteState): string => {
+  return buildPathRoute(
+    route.page,
+    route.page === Page.Search ? route.query : route.page === Page.BlogDetail ? route.blogId : undefined
+  );
+};
+
+const replaceWithCanonicalRoutePath = (route: RouteState) => {
+  const canonicalPath = buildCanonicalRoutePath(route);
+  const currentPath = `${window.location.pathname}${window.location.search}`;
+  if (currentPath !== canonicalPath) {
+    window.history.replaceState(null, '', canonicalPath);
+  }
+};
+
 const setMetaDescription = (content: string) => {
   let meta = document.querySelector('meta[name="description"]');
   if (!meta) {
@@ -271,16 +315,18 @@ const App: React.FC = () => {
   useEffect(() => {
     const legacyRoute = parseLegacyHashRoute();
     if (legacyRoute) {
-      const nextPath = buildPathRoute(
-        legacyRoute.page,
-        legacyRoute.page === Page.Search ? legacyRoute.query : legacyRoute.page === Page.BlogDetail ? legacyRoute.blogId : undefined
-      );
-      window.history.replaceState(null, '', nextPath);
+      replaceWithCanonicalRoutePath(legacyRoute);
       setRoute(legacyRoute);
+    } else {
+      const currentRoute = parseRoute();
+      replaceWithCanonicalRoutePath(currentRoute);
+      setRoute(currentRoute);
     }
 
     const handlePopState = () => {
-      setRoute(parseRoute());
+      const nextRoute = parseRoute();
+      replaceWithCanonicalRoutePath(nextRoute);
+      setRoute(nextRoute);
     };
 
     window.addEventListener('popstate', handlePopState);

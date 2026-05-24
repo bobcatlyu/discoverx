@@ -26,7 +26,7 @@ const HOME_CARDS = [
     page: Page.Products,
   },
   {
-    title: '作用机制 Mechanism',
+    title: '作用机制 Mechanisms',
     description: '围绕受体二聚化、内吞、PPI、信号通路、细胞毒性等机制选择实验体系。',
     imageUrl: '/pic/Dimerization.jpg',
     page: Page.Applications,

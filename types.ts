@@ -38,7 +38,7 @@ export enum Page {
   Home = 'home',
   Products = 'products',
   Targets = 'targets',
-  Applications = 'applications',
+  Applications = 'mechanisms',
   Custom = 'custom',
   Documents = 'documents',
   Contacts = 'contacts',
@@ -66,14 +66,14 @@ export enum Page {
   IonChannels = 'ion-channels',
   EpigeneticProteins = 'epigenetic-proteins',
 
-  // Applications Sub-pages
-  CytotoxicityDetail = 'cytotoxicity-detail',
-  DimerizationDetail = 'dimerization-detail',
-  PpiDetail = 'ppi-detail',
-  SignalPathwayDetail = 'signal-pathway-detail',
-  TargetEngagementDetail = 'target-engagement-detail',
-  InternalizationDetail = 'internalization-detail',
-  TpdDetail = 'tpd-detail',
+  // Mechanism Sub-pages
+  CytotoxicityDetail = 'cytotoxicity',
+  DimerizationDetail = 'dimerization',
+  PpiDetail = 'ppi',
+  SignalPathwayDetail = 'signaling-pathways',
+  TargetEngagementDetail = 'target-engagement',
+  InternalizationDetail = 'internalization',
+  TpdDetail = 'tpd',
 
   // Custom Sub-pages
   CustomAssayDevelopment = 'custom-assay-development',
@@ -83,7 +83,7 @@ export enum Page {
 
   // Documents Sub-pages
   DatasheetList = 'datasheet-list',
-  DatasheetDetail = 'datasheet-detail',
+  DatasheetDetail = 'datasheet',
   UserManual = 'user-manual',
   QualificationData = 'qualification-data',
   ApplicationNote = 'application-note',
@@ -91,5 +91,5 @@ export enum Page {
   OthersDoc = 'others-doc',
 
   // Blog
-  BlogDetail = 'blog-detail'
+  BlogDetail = 'blog'
 }

@@ -1,91 +1,45 @@
 
 import React from 'react';
+import { CYTOTOXICITY_PORTFOLIO_COLUMNS, CYTOTOXICITY_PORTFOLIO_ROWS } from '../data/cytotoxicityPortfolio';
+
+interface PortfolioTableProps {
+  columns: string[];
+  rows: string[][];
+}
+
+const PortfolioTable: React.FC<PortfolioTableProps> = ({ columns, rows }) => (
+  <div className="w-full bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+    <table className="w-full table-auto divide-y divide-slate-200">
+      <thead className="bg-[#4B827E] text-white">
+        <tr>
+          {columns.map((column) => (
+            <th key={column} className="px-5 py-4 text-left text-sm font-bold uppercase tracking-wider border-r border-white/20 last:border-r-0">
+              {column}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody className="bg-white divide-y divide-slate-100">
+        {rows.map((row, rowIdx) => (
+          <tr key={`${row[3] || row[1]}-${rowIdx}`} className={rowIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}>
+            {row.map((cell, cellIdx) => (
+              <td
+                key={`${columns[cellIdx]}-${cellIdx}`}
+                className={`px-5 py-4 align-top text-sm border-r border-slate-100 last:border-r-0 ${
+                  columns[cellIdx] === '货号' ? 'font-mono text-[#1C2C5E] whitespace-nowrap' : 'text-slate-700'
+                }`}
+              >
+                {cell}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
 
 const CytotoxicityDetail: React.FC = () => {
-  const productData = [
-    { type: 'Primary Cell', target: 'CD16 Effector Cell', moa: 'Cytotoxicity', host: 'U2OS', desc: 'Osteosarcoma' },
-    { type: 'Cell Line', target: 'EGFR', moa: 'Cytotoxicity', host: 'U2OS', desc: 'Osteosarcoma' },
-    { type: 'Cell Line', target: 'PD-L1', moa: 'Cytotoxicity', host: 'U2OS', desc: 'Osteosarcoma' },
-    { type: 'Cell Line', target: 'PD-L2', moa: 'Cytotoxicity', host: 'U2OS', desc: 'Osteosarcoma' },
-    { type: 'Cell Line', target: 'LAG3', moa: 'Cytotoxicity', host: 'Jurkat', desc: 'T lymphocyte' },
-    { type: 'Cell Line', target: 'PD-1', moa: 'Cytotoxicity', host: 'Jurkat', desc: 'T lymphocyte' },
-    { type: 'Cell Line', target: 'TIM3', moa: 'Cytotoxicity', host: 'Jurkat', desc: 'T lymphocyte' },
-    { type: 'Cell Pool', target: '--', moa: 'Cytotoxicity', host: '4T1', desc: 'Mouse mammary gland carcinoma' },
-    { type: 'Cell Pool', target: 'EGFR', moa: 'Cytotoxicity', host: 'A-498', desc: 'Renal cell carcinoma (kidney)' },
-    { type: 'Cell Pool', target: 'EGFR', moa: 'Cytotoxicity', host: 'A549', desc: 'Lung cancer' },
-    { type: 'Cell Pool', target: 'HER2; HER3', moa: 'Cytotoxicity', host: 'BT-474', desc: 'Mammary ductal carcinoma' },
-    { type: 'Cell Pool', target: 'CCR4', moa: 'Cytotoxicity', host: 'CCRF-CEM', desc: 'T lymphocyte (CCR4+)' },
-    { type: 'Cell Pool', target: 'Gpa33', moa: 'Cytotoxicity', host: 'COLO-205', desc: 'Colorectal cancer' },
-    { type: 'Cell Pool', target: 'CD19; CD20; CD38', moa: 'Cytotoxicity', host: 'Daudi', desc: "Burkitt's lymphoma" },
-    { type: 'Cell Pool', target: 'EFGR; HER2', moa: 'Cytotoxicity', host: 'DU-145', desc: 'Prostate carcinoma' },
-    { type: 'Cell Pool', target: '--', moa: 'Cytotoxicity', host: 'EL4', desc: 'Mouse T lymphocyte line' },
-    { type: 'Cell Pool', target: 'EGFR; B7-H3', moa: 'Cytotoxicity', host: 'H322', desc: 'NSCLC' },
-    { type: 'Cell Pool', target: '--', moa: 'Cytotoxicity', host: 'HCT-116', desc: 'Colorectal carcinoma' },
-    { type: 'Cell Pool', target: 'Glypican', moa: 'Cytotoxicity', host: 'HepG2', desc: 'Hepatocellular carcinoma' },
-    { type: 'Cell Pool', target: 'CD33; CD38', moa: 'Cytotoxicity', host: 'HL-60', desc: 'Promyeloblast' },
-    { type: 'Cell Pool', target: 'NY-ESO-1 (CTAG1A)', moa: 'Cytotoxicity', host: 'HT1080', desc: 'Fibrosarcoma' },
-    { type: 'Cell Pool', target: 'GITR; CD30', moa: 'Cytotoxicity', host: 'Hut78', desc: 'Cutaneous T lymphocyte' },
-    { type: 'Cell Pool', target: '--', moa: 'Cytotoxicity', host: 'Jurkat', desc: 'T lymphocyte' },
-    { type: 'Cell Pool', target: '--', moa: 'Cytotoxicity', host: 'K562', desc: 'Bone Marrow; Chronic Myelogenous Leukemia (CML)' },
-    { type: 'Cell Pool', target: 'HER2', moa: 'Cytotoxicity', host: 'MCF7', desc: 'Breast adenocarcinoma' },
-    { type: 'Cell Pool', target: 'CD73; PD-L1; B7-H3', moa: 'Cytotoxicity', host: 'MDA-MB-231', desc: 'Breast cancer' },
-    { type: 'Cell Pool', target: 'BCMA', moa: 'Cytotoxicity', host: 'MM-1R', desc: 'Multiple myeloma' },
-    { type: 'Cell Pool', target: 'CD3; CD38', moa: 'Cytotoxicity', host: 'MOLT-4', desc: 'T-lymphoblast (Acute Lymphoblastic Leukemia)' },
-    { type: 'Cell Pool', target: 'EGFR', moa: 'Cytotoxicity', host: 'NCI-H292', desc: 'NSCLC (Squamous)' },
-    { type: 'Cell Pool', target: 'EGFR; HER2; B7-H3', moa: 'Cytotoxicity', host: 'NCI-N87', desc: 'Gastric cancer' },
-    { type: 'Cell Pool', target: 'EGFR', moa: 'Cytotoxicity', host: 'PANC-1', desc: 'Pancreatic cancer' },
-    { type: 'Cell Pool', target: 'CD19; CD20; CD38', moa: 'Cytotoxicity', host: 'Raji', desc: "Burkitt's lymphoma" },
-    { type: 'Cell Pool', target: 'CD19; CD20', moa: 'Cytotoxicity', host: 'Ramos', desc: "Burkitt's lymphoma" },
-    { type: 'Cell Pool', target: 'GITR; BCMA', moa: 'Cytotoxicity', host: 'RPMI 8226', desc: 'B lymphocyte' },
-    { type: 'Cell Pool', target: '--', moa: 'Cytotoxicity', host: 'SKBR3', desc: 'Breast adenocarcinoma' },
-    { type: 'Cell Pool', target: 'CD73', moa: 'Cytotoxicity', host: 'SK-MEL-28', desc: 'Melanoma' },
-    { type: 'Cell Pool', target: 'CD73', moa: 'Cytotoxicity', host: 'SK-MEL-5', desc: 'Melanoma' },
-    { type: 'Cell Pool', target: 'HER2; PD-L1', moa: 'Cytotoxicity', host: 'SKOV3', desc: 'Ovarian adenocarcinoma' },
-    { type: 'Cell Pool', target: 'CD25; CD30', moa: 'Cytotoxicity', host: 'SR', desc: 'Lymphoblast' },
-    { type: 'Cell Pool', target: '--', moa: 'Cytotoxicity', host: 'T2 (174 xCEM.T2)', desc: 'Lymphoblast' },
-    { type: 'Cell Pool', target: 'CD33', moa: 'Cytotoxicity', host: 'THP-1', desc: 'AML' },
-    { type: 'Cell Pool', target: 'CD73', moa: 'Cytotoxicity', host: 'U118-MG', desc: 'Glioblastoma' },
-    { type: 'Cell Pool', target: 'CD20', moa: 'Cytotoxicity', host: 'WIL2-S', desc: 'B lymphoblast (hereditary spherocytosis)' },
-  ];
-
-  const primaryCells = productData.filter(p => p.type === 'Primary Cell');
-  const cellLines = productData.filter(p => p.type === 'Cell Line');
-  const cellPools = productData.filter(p => p.type === 'Cell Pool');
-
-  const ProductTable = ({ data, title }: { data: any[], title: string }) => (
-    <div className="mb-12 flex justify-start">
-      <div className="inline-block max-w-full bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden w-fit">
-        <div className="bg-[#4B827E] px-6 py-4">
-          <h3 className="text-lg font-bold text-white uppercase tracking-wider whitespace-nowrap">{title}</h3>
-        </div>
-        <div className="overflow-x-auto">
-          <table className="divide-y divide-slate-200">
-            <thead className="bg-slate-50">
-              <tr>
-                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider border-r border-slate-200 whitespace-nowrap">产品类型</th>
-                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider border-r border-slate-200 whitespace-nowrap">Targets / Antigens</th>
-                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider border-r border-slate-200 whitespace-nowrap">MoA</th>
-                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider border-r border-slate-200 whitespace-nowrap">细胞种类</th>
-                <th className="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">细胞描述</th>
-              </tr>
-            </thead>
-            <tbody className="bg-white divide-y divide-slate-100">
-              {data.map((row, idx) => (
-                <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50 hover:bg-teal-50/30 transition-colors'}>
-                  <td className="px-6 py-4 whitespace-nowrap text-xs text-slate-600 font-medium border-r border-slate-100">{row.type}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#1C2C5E] border-r border-slate-100">{row.target}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 border-r border-slate-100">{row.moa}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-[#4B827E] border-r border-slate-100">{row.host}</td>
-                  <td className="px-6 py-4 text-sm text-slate-600 whitespace-nowrap">{row.desc}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="bg-white">
       {/* 1. Introduction Section */}
@@ -248,10 +202,8 @@ const CytotoxicityDetail: React.FC = () => {
       {/* 5. Product List Table Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-left">细胞毒性产品列表 / Cytotoxicity Portfolio</h2>
-        
-        <ProductTable title="Primary Cells" data={primaryCells} />
-        <ProductTable title="Cell Lines" data={cellLines} />
-        <ProductTable title="Cell Pools" data={cellPools} />
+
+        <PortfolioTable columns={CYTOTOXICITY_PORTFOLIO_COLUMNS} rows={CYTOTOXICITY_PORTFOLIO_ROWS} />
 
         <div className="mt-8 text-left">
           <p className="text-slate-500 text-sm italic bg-slate-50 py-4 px-6 rounded-lg border border-dashed border-slate-300 inline-block">

@@ -1,5 +1,6 @@
 import React from 'react';
-import TargetDetailTemplate, { MoaItem, ProductRow } from '../components/TargetDetailTemplate';
+import TargetDetailTemplate, { MoaItem } from '../components/TargetDetailTemplate';
+import { KINASE_RECEPTOR_PORTFOLIO_COLUMNS, KINASE_RECEPTOR_PORTFOLIO_ROWS } from '../data/kinaseReceptorPortfolio';
 
 const KINASE_HEADERS = ['激酶类别', '稳转细胞系套装', 'eXpress™ Kit', 'Bioassay Kit'];
 
@@ -37,98 +38,6 @@ const KinaseDetail: React.FC = () => {
     }
   ];
 
-  const data: ProductRow[] = [
-    { target: 'ACVR1/ACVR2', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'ACVR1B/BMPR2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'ACVR1C/ACVR2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'ACVR1C/ACVR2B', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'ACVRL1/ACVR2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'ACVRL1/ACVR2B', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'ACVRL1/BMPR2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'AXL', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'BLK', moa: 'Activity', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'BMPR1A/ACVR2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'BMPR1A/ACVR2B', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'BMPR1A/BMPR2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'BMPR1B/ACVR2A', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'BMPR1B/ACVR2B', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'BMPR1B/BMPR2', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'cINSRa', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'cINSRb', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'c-KIT', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'c-MET', moa: 'Functional', statuses: ['RTK', '', '', ''] },
-    { target: 'c-MET/c-MET', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'c-MET/EGFR', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'c-Ret-GFRα1', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'c-Ret-GFRα2', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'c-Ret-GFRα3', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'CSF1R/CSF1R', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'CSF2RB/CSF2RA', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'CSF3R-JAK1', moa: 'Functional', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'DDR1', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'EGFR/EGFR', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'EGFR/ErbB2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'EGFR/ErbB3', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'EphA4', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'EphA5', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'EphA7', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'EphB1', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'EphB2', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'EphB3', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'EphB4', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'EpoR/EpoR', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'EpoR-JAK2', moa: 'Functional', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'ErbB1', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'ErbB2/ErbB3', moa: 'Dimerization', statuses: ['RTK', '✓', '', '✓'] },
-    { target: 'ErbB2-ErbB3', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'ErbB4', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'ErbB4/ErbB4', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'FGFR1', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'FGFR1v3B', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'FGFR1-α-Klotho', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'FGFR1-β-Klotho', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'FGFR2', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'FGFR3(G380R)/FGFR3(G380R)', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'FGFR3/FGFR3', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'FGFR4', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'FGFR4-α-Klotho', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'FGFR4-β-Klotho', moa: 'Functional', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'FGR', moa: 'Activity', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'Flt3', moa: 'Activity', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'Flt4', moa: 'Activity', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'GHR-JAK1', moa: 'Functional', statuses: ['CTK', '✓', '✓', '✓'] },
-    { target: 'GHR-JAK2', moa: 'Functional', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'IGF1R', moa: 'Functional', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'INSRa', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'INSRa (mouse)', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'INSRb', moa: 'Functional', statuses: ['RTK', '✓', '', '✓'] },
-    { target: 'INSRb (mouse)', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'JAK3', moa: 'Activity', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'KDR', moa: 'Activity', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'KDR/KDR', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'Lck', moa: 'Activity', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'PDGFRα', moa: 'Functional', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'PDGFRβ', moa: 'Functional', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'PRLR-JAK1', moa: 'Functional', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'PRLR-JAK2', moa: 'Functional', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'Syk', moa: 'Activity', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'TGFBR1/ACVR2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'TGFBR1/ACVR2B', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'TGFBR1/TGFBR2', moa: 'Dimerization', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'TGFBR1/TGFBR2/ENG', moa: 'Dimerization', statuses: ['RTK', '✓', '', ''] },
-    { target: 'Tie2', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'TrkA', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'TrkA-P75', moa: 'Functional', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'TrkA-P75 (monkey)', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'TrkA-P75 (rat)', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'TrkB', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'TrkB-P75', moa: 'Functional', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'TrkC', moa: 'Functional', statuses: ['RTK', '✓', '✓', '✓'] },
-    { target: 'TrkC-P75', moa: 'Functional', statuses: ['RTK', '✓', '✓', ''] },
-    { target: 'TYK2', moa: 'Activity', statuses: ['CTK', '✓', '✓', ''] },
-    { target: 'TYRO3', moa: 'Functional', statuses: ['RTK', '✓', '', ''] },
-    { target: 'Yes', moa: 'Activity', statuses: ['CTK', '✓', '✓', ''] },
-  ];
 
   return (
     <TargetDetailTemplate
@@ -138,12 +47,13 @@ const KinaseDetail: React.FC = () => {
       highlights={highlights}
       introImageUrl="https://picsum.photos/seed/kinase_lab/800/600"
       moaItems={moas}
-      productData={data}
+      productData={[]}
       productTableTitle="产品列表"
       customTypeHeaders={KINASE_HEADERS}
+      productTableColumns={KINASE_RECEPTOR_PORTFOLIO_COLUMNS}
+      productTableRows={KINASE_RECEPTOR_PORTFOLIO_ROWS}
     />
   );
 };
 
 export default KinaseDetail;
-
