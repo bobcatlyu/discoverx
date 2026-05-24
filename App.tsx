@@ -511,12 +511,13 @@ const App: React.FC = () => {
       </main>
       <Footer onNavigate={navigateTo} />
       <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 z-40 rounded-full bg-[#4B827E] p-3 text-white shadow-lg transition transform hover:scale-110 hover:bg-[#3d6b67] active:scale-95"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'auto' })}
+        className="fixed bottom-6 left-1/2 z-40 -translate-x-1/2 rounded-full bg-[#4B827E] p-3 text-white shadow-lg transition hover:bg-[#3d6b67] active:scale-95"
         aria-label="返回顶部"
+        title="返回顶部"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.3} d="M5 15l7-7 7 7" />
         </svg>
       </button>
     </div>

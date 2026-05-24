@@ -1,6 +1,7 @@
 
 import React from 'react';
-import TargetDetailTemplate, { MoaItem, ProductRow } from '../components/TargetDetailTemplate';
+import TargetDetailTemplate, { MoaItem } from '../components/TargetDetailTemplate';
+import { NHR_PORTFOLIO_COLUMNS, NHR_PORTFOLIO_ROWS } from '../data/nhrPortfolio';
 
 const NHR_HEADERS = ['Cell Line (Catalog No.)'];
 
@@ -31,33 +32,6 @@ const NhrDetail: React.FC = () => {
       maxWidth: "max-w-2xl"
     }
   ];
-  const data: ProductRow[] = [
-    { target: 'AR', moa: 'Nuclear Translocation', statuses: ['793-0177C1'] },
-    { target: 'AR', moa: 'Protein Interaction', statuses: ['793-0454C2'] },
-    { target: 'ARH', moa: 'Protein Interaction', statuses: ['793-1113C3'] },
-    { target: 'ERα', moa: 'Protein Interaction', statuses: ['793-0453C2'] },
-    { target: 'FXR', moa: 'Protein Interaction', statuses: ['793-0443C2'] },
-    { target: 'GR', moa: 'Nuclear Translocation', statuses: ['793-0002C2'] },
-    { target: 'GR', moa: 'Protein Interaction', statuses: ['793-0456C2'] },
-    { target: 'LXRα', moa: 'Nuclear Translocation', statuses: ['793-0215C2'] },
-    { target: 'LXRα', moa: 'Protein Interaction', statuses: ['793-0389C2'] },
-    { target: 'LXRβ', moa: 'Protein Interaction', statuses: ['793-0442C2'] },
-    { target: 'LXRβ-NCoR1', moa: 'Protein Interaction', statuses: ['793-0856C1'] },
-    { target: 'MR', moa: 'Nuclear Translocation', statuses: ['793-0451C2'] },
-    { target: 'MR', moa: 'Protein Interaction', statuses: ['793-0758C2'] },
-    { target: 'PPARα', moa: 'Protein Interaction', statuses: ['793-0457C2'] },
-    { target: 'PPARγ', moa: 'Protein Interaction', statuses: ['793-0390C2'] },
-    { target: 'PPARδ', moa: 'Protein Interaction', statuses: ['793-0492C2'] },
-    { target: 'PRβ', moa: 'Nuclear Translocation', statuses: ['793-0484C3'] },
-    { target: 'PRα', moa: 'Protein Interaction', statuses: ['793-0852C3'] },
-    { target: 'PRβ', moa: 'Protein Interaction', statuses: ['793-0851C3'] },
-    { target: 'RARα', moa: 'Protein Interaction', statuses: ['793-0325C2'] },
-    { target: 'RARβ', moa: 'Protein Interaction', statuses: ['793-0326C2'] },
-    { target: 'RXRα', moa: 'Protein Interaction', statuses: ['793-0439C3'] },
-    { target: 'RXRγ', moa: 'Protein Interaction', statuses: ['793-0327C2'] },
-    { target: 'THRα', moa: 'Protein Interaction', statuses: ['793-0324C2'] },
-    { target: 'THRβ', moa: 'Protein Interaction', statuses: ['793-0391C2'] }
-  ];
   return (
     <TargetDetailTemplate
       title="核激素受体 NHR Assays"
@@ -66,9 +40,11 @@ const NhrDetail: React.FC = () => {
       introImageUrl="https://picsum.photos/seed/nhr_structure/800/600"
       highlights={highlights}
       moaItems={moas}
-      productData={data}
+      productData={[]}
       productTableTitle="核受体 (NHR) 产品列表"
       customTypeHeaders={NHR_HEADERS}
+      productTableColumns={NHR_PORTFOLIO_COLUMNS}
+      productTableRows={NHR_PORTFOLIO_ROWS}
     />
   );
 };

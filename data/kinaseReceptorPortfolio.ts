@@ -5,9 +5,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_COLUMNS = [
   "作用机制",
   "货号",
   "产品描述",
-  "规格",
-  "Date of Update",
-  "Update"
+  "规格"
 ];
 
 export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
@@ -18,8 +16,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1072C3",
     "PathHunter® Human Activin A (ACVR1B/BMPR2) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -29,9 +25,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1072E3CP5L",
     "PathHunter eXpress ACVR1B/BMPR2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "Activin A",
@@ -40,9 +34,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1072E3CP5M",
     "PathHunter eXpress ACVR1B/BMPR2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "Activin B",
@@ -51,8 +43,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1047C3",
     "PathHunter® Human Activin B (ACVR1C/ACVR2B) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -62,9 +52,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1047E3CP5L",
     "PathHunter eXpress ACVR1C/ACVR2B Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "Activin B",
@@ -73,9 +61,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1047E3CP5M",
     "PathHunter eXpress ACVR1C/ACVR2B Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "Activin B",
@@ -84,8 +70,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1069C3",
     "PathHunter® Human Activin B (ACVR1C/ACVR2) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -95,9 +79,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1069E3CP5L",
     "PathHunter eXpress ACVR1C/ACVR2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "Activin B",
@@ -106,9 +88,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1069E3CP5M",
     "PathHunter eXpress ACVR1C/ACVR2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "AMH",
@@ -117,8 +97,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1169C3",
     "PathHunter® Human AMHR2/BMPR1A Dimerization Stable Cell Line Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -128,8 +106,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1006C3",
     "PathHunter® Human BMP-4 (BMPR1A/BMPR2) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -139,9 +115,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1006E3CP0L",
     "PathHunter eXpress BMPR1A/BMPR2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "BMP-4",
@@ -150,9 +124,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1006E3CP0M",
     "PathHunter eXpress BMPR1A/BMPR2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "BMP-4",
@@ -161,8 +133,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1037C3",
     "PathHunter® Human BMP-4 (BMPR1A/ACVR2) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -172,9 +142,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1037E3CP5L",
     "PathHunter eXpress BMPR1A/ACVR2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "BMP-4",
@@ -183,9 +151,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1037E3CP5M",
     "PathHunter eXpress BMPR1A/ACVR2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "BMP-4",
@@ -194,8 +160,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1038C3",
     "PathHunter® Human BMP-4 (BMPR1A/ACVR2B) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -205,8 +169,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1010C3",
     "PathHunter® Human BMP-6 (BMPR1B/ACVR2) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -216,9 +178,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1010E3CP0L",
     "PathHunter eXpress BMPR1B/ACVR2A Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "BMP-6",
@@ -227,9 +187,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1010E3CP0M",
     "PathHunter eXpress BMPR1B/ACVR2A Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "BMP-6",
@@ -238,8 +196,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1052C3",
     "PathHunter® Human BMP-6 (BMPR1B/ACVR2B) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -249,8 +205,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1053C3",
     "PathHunter® Human BMP-6 (BMPR1B/BMPR2) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -260,8 +214,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0906C3",
     "PathHunter® Human BMP-7 (ACVR2/ACVR1) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -271,8 +223,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0962C3",
     "PathHunter® Human BMP-9 (ACVRL1/BMPR2) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -282,9 +232,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0962E3CP22L",
     "PathHunter eXpress ACVRL1/BMPR2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "BMP-9",
@@ -293,9 +241,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0962E3CP22M",
     "PathHunter eXpress ACVRL1/BMPR2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "BMP-9",
@@ -304,8 +250,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0963C3",
     "PathHunter® Human BMP-9 (ACVRL1/ACVR2) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -315,9 +259,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0963E3CP0L",
     "PathHunter eXpress ACVRL1/ACVR2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "BMP-9",
@@ -326,9 +268,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0963E3CP0M",
     "PathHunter eXpress ACVRL1/ACVR2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "BMP-9",
@@ -337,8 +277,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0964C3",
     "PathHunter® Human BMP-9 (ACVRL1/ACVR2B) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -348,9 +286,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0964E3CP22L",
     "PathHunter eXpress ACVRL1/ACVR2B Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "BMP-9",
@@ -359,9 +295,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0964E3CP22M",
     "PathHunter eXpress ACVRL1/ACVR2B Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "GDF-11",
@@ -370,8 +304,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1012C3",
     "PathHunter® Human TGFBR1/ACVR2 Dimerization Stable Cell Line Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -381,9 +313,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1012E3CP5L",
     "PathHunter eXpress TGFBR1/ACVR2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "GDF-11",
@@ -392,9 +322,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1012E3CP5M",
     "PathHunter eXpress TGFBR1/ACVR2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "GDF-11",
@@ -403,8 +331,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1046C3",
     "PathHunter® Human GDF-11 (TGFBR1/ACVR2B) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -414,9 +340,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1046E3CP5L",
     "PathHunter eXpress TGFBR1/ACVR2B Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "GDF-11",
@@ -425,9 +349,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1046E3CP5M",
     "PathHunter eXpress TGFBR1/ACVR2B Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "TGF-β1",
@@ -436,8 +358,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0889C3",
     "PathHunter® Human TGFBR1/TGFBR2 Dimerization Stable Cell Line Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -447,9 +367,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0889E3CP5L",
     "PathHunter eXpress TGFBR1/TGFBR2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "TGF-β1",
@@ -458,9 +376,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0889E3CP5M",
     "PathHunter eXpress TGFBR1/TGFBR2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "TGF-β1",
@@ -469,8 +385,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1122C3",
     "PathHunter® Human TGF-β1 (TGFBR1/TGFBR2/ENG) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -480,8 +394,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1105C3",
     "PathHunter® Human Axl Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -491,8 +403,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0853C3",
     "PathHunter® Human c-Kit Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -502,8 +412,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1063C3",
     "PathHunter® Human c-MET/c-MET Dimerization Stable Cell Line Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -513,8 +421,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1179C3",
     "PathHunter® Human c-MET/EGFR Dimerization Stable Cell Line Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -524,8 +430,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1054C3",
     "PathHunter® Human c-Ret-GFR alpha 1 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -535,8 +439,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0816C3",
     "PathHunter® Human c-Ret-GFR alpha 2 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -546,8 +448,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1143C3",
     "PathHunter® Human c-Ret-GFR alpha 3 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -557,8 +457,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0894C3",
     "PathHunter® Human DDR1 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -568,9 +466,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0989E3CP5L",
     "PathHunter eXpress EGFR/EGFR Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "EGFR",
@@ -579,9 +475,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0989E3CP5M",
     "PathHunter eXpress EGFR/EGFR Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "EGFR",
@@ -590,8 +484,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0989C3",
     "PathHunter® Human EGFR/EGFR Dimerization Stable Cell Line Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -601,8 +493,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1051C3",
     "PathHunter® Human EGFR/ErbB2 Dimerization Stable Cell Line Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -612,9 +502,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1051E3CP14L",
     "PathHunter eXpress EGFR/ErbB2 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "EGFR/ErbB2",
@@ -623,9 +511,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1051E3CP14M",
     "PathHunter eXpress EGFR/ErbB2 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "EGFR/ErbB3",
@@ -634,8 +520,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1125C3",
     "PathHunter® Human Heregulin β1 (EGFR/ErbB3) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -645,8 +529,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0863C3",
     "PathHunter® Human ErbB1 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -656,8 +538,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1042C3",
     "PathHunter® Human Neuregulin-1 beta 2 (ErbB2/ErbB3) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -667,8 +547,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0960C3",
     "PathHunter® Human Heregulin beta 1 (ErbB2/ErbB4) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -678,9 +556,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0960E3CP5L",
     "PathHunter eXpress ErbB2/ErbB4 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "ErbB2/ErbB4",
@@ -689,9 +565,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0960E3CP5M",
     "PathHunter eXpress ErbB2/ErbB4 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "ErbB2-ErbB3",
@@ -700,8 +574,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0535C3",
     "PathHunter® Human Heregulin beta 1 (ErbB2-ErbB3) Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -711,8 +583,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0465C3",
     "PathHunter® Human Heregulin beta 1 (ErbB4) Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -722,8 +592,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0961C3",
     "PathHunter® Human Heregulin beta 2 (ErbB4/ErbB4) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -733,9 +601,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0961E3CP5L",
     "PathHunter eXpress ErbB4/ErbB4 Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "ErbB4/ErbB4",
@@ -744,9 +610,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0961E3CP5M",
     "PathHunter eXpress ErbB4/ErbB4 Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "EphA4",
@@ -755,8 +619,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0877C3",
     "PathHunter® Human EphA4 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -766,8 +628,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0840C3",
     "PathHunter® Human EphA5 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -777,8 +637,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0841C3",
     "PathHunter® Human EphA7 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -788,8 +646,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0893C3",
     "PathHunter® Human EphB1 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -799,8 +655,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0848C3",
     "PathHunter® Human EphB2 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -810,8 +664,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0842C3",
     "PathHunter® Human EphB3 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -821,8 +673,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0468C3",
     "PathHunter® Human EphB4 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -832,8 +682,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0965C3",
     "PathHunter® Human Erythropoietin (EpoR/EpoR) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -843,9 +691,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0965E3CP0L",
     "PathHunter eXpress EpoR/EpoR Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "EPOR",
@@ -854,9 +700,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0965E3CP0M",
     "PathHunter eXpress EpoR/EpoR Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "EPOR",
@@ -865,9 +709,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0965Y3-00017",
     "PathHunter Epoetin Alfa Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "EPOR",
@@ -876,9 +718,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0965Y3-00018",
     "PathHunter Epoetin Alfa Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "FGFR1",
@@ -887,8 +727,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1090C3",
     "PathHunter® Human FGFR1 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -898,8 +736,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1117C3",
     "PathHunter® Human FGFR1-alpha-Klotho Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -909,8 +745,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1118C3",
     "PathHunter® Human FGFR1-beta-Klotho Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -920,8 +754,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1025C3",
     "PathHunter® Human FGFR1v3B Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -931,8 +763,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1049C3",
     "PathHunter® Human FGFR2 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -942,8 +772,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1160C3",
     "PathHunter® Human FGFR3 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -953,8 +781,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1055C3",
     "PathHunter® Human FGFR3/FGFR3 Dimerization Stable Cell Line Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -964,8 +790,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-1091C3",
     "PathHunter® Human FGFR3(G380R)/FGFR3(G380R) Stable Cell Line Dimerization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -975,8 +799,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1022C3",
     "PathHunter® Human FGFR4 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -986,8 +808,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1115C3",
     "PathHunter® Human FGFR4-alpha-Klotho Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -997,8 +817,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1060C3",
     "PathHunter® Human FGFR4-beta-Klotho Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1008,9 +826,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1078E3CP22L",
     "PathHunter eXpress CSF2RB/CSF2RA Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "GM-CSF",
@@ -1019,9 +835,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1078E3CP22M",
     "PathHunter eXpress CSF2RB/CSF2RA Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "GM-CSF",
@@ -1030,9 +844,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1078Y3-00111",
     "PathHunter Sargramostim Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "GM-CSF",
@@ -1041,9 +853,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1078Y3-00112",
     "PathHunter Sargramostim Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "GM-CSF",
@@ -1052,9 +862,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1078Y3-00190",
     "PathHunter® Sargramostim Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "IGF1R",
@@ -1063,8 +871,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0505C1",
     "PathHunter® Human IGF1R Stable Cell Line Functional Kinase Assay (HEK 293)",
-    "",
-    "",
     ""
   ],
   [
@@ -1074,8 +880,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1008C3",
     "PathHunter® Human Insulin Receptor A (INSRa) Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1085,8 +889,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1016C3",
     "PathHunter® Cyno Insulin Receptor A (INSRa) Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1096,8 +898,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1015C3",
     "PathHunter® Mouse Insulin Receptor A (INSRa) Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1107,8 +907,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0466C3",
     "PathHunter® Human Insulin Receptor B (INSRb) Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1118,8 +916,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Internalization",
     "793-0808C3",
     "PathHunter® Human Insulin Receptor B (INSRb) Stable Cell Line Internalization Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1129,8 +925,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1018C3",
     "PathHunter® Cyno Insulin Receptor B (INSRb) Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1140,8 +934,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1017C3",
     "PathHunter® Mouse Insulin Receptor B (INSRb) Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1151,9 +943,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1061E3CP5L",
     "PathHunter eXpress CSF1R/CSF1R Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "M-CSF",
@@ -1162,9 +952,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-1061E3CP5M",
     "PathHunter eXpress CSF1R/CSF1R Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "Mer",
@@ -1173,8 +961,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1151C3",
     "PathHunter® Human Mer Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1184,8 +970,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0823C3",
     "PathHunter® Human PDGFRa Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1195,8 +979,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0493C3",
     "PathHunter® Human PDGFRb Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1206,8 +988,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1024C1",
     "PathHunter® Human Tie2 Stable Cell Line Functional Kinase Assay (HEK 293)",
-    "",
-    "",
     ""
   ],
   [
@@ -1217,8 +997,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0462C3",
     "PathHunter® Human TrkA Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1228,8 +1006,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0529C3",
     "PathHunter® Human TrkA-P75 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1239,8 +1015,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1014C3",
     "PathHunter® Rat TrkA-P75 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1250,8 +1024,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1009C3",
     "PathHunter® Rhesus TrkA-P75 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1261,8 +1033,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0463C3",
     "PathHunter® Human TrkB Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1272,8 +1042,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0530C3",
     "PathHunter® Human TrkB-P75 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1283,8 +1051,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0464C3",
     "PathHunter® Human TrkC Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1294,8 +1060,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0531C3",
     "PathHunter® Human TrkC-P75 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1305,8 +1069,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-1110C3",
     "PathHunter® Human TYRO3 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1316,8 +1078,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "793-0996C1",
     "PathHunter® Human VEGF (KDR/KDR) Stable Cell Line Dimerization Assay (HEK 293)",
-    "",
-    "",
     ""
   ],
   [
@@ -1327,9 +1087,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0996E1CP0L",
     "PathHunter eXpress KDR/KDR Dimerization Assay",
-    "1,000 dp (10 x 96-well)",
-    "",
-    ""
+    "1,000 dp (10 x 96-well)"
   ],
   [
     "VEGFR",
@@ -1338,9 +1096,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Dimerization",
     "93-0996E1CP0M",
     "PathHunter eXpress KDR/KDR Dimerization Assay",
-    "200 dp (2 x 96-well)",
-    "",
-    ""
+    "200 dp (2 x 96-well)"
   ],
   [
     "Blk",
@@ -1349,8 +1105,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0882C3",
     "PathHunter® Human Blk Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1360,8 +1114,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0809C3",
     "PathHunter® Human CSF3R-JAK1 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1371,8 +1123,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0900C3",
     "PathHunter® Human EpoR-JAK2 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1382,8 +1132,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0884C3",
     "PathHunter® Human FGR Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1393,8 +1141,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0901C3",
     "PathHunter® Human FLT3 Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1404,8 +1150,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0888C3",
     "PathHunter® Human FLT4 Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1415,8 +1159,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0756C3",
     "PathHunter® Human GHR-JAK1 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1426,8 +1168,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0829C3",
     "PathHunter® Human GHR-JAK2 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1437,8 +1177,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0796C3",
     "PathHunter® Human JAK3 Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1448,8 +1186,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0903C3",
     "PathHunter® Human KDR Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1459,8 +1195,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-1100C3",
     "PathHunter® Human Lck Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1470,8 +1204,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0686C3",
     "PathHunter® Human PRLR-JAK1 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1481,8 +1213,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "793-0687C3",
     "PathHunter® Human PRLR-JAK2 Stable Cell Line Functional Kinase Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1492,8 +1222,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0865C3",
     "PathHunter® Human Syk Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1503,8 +1231,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0875C3",
     "PathHunter® Human TYK2 Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1514,8 +1240,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "793-0883C3",
     "PathHunter® Human YES1 Stable Cell Line Kinase Activity Assay (U2OS)",
-    "",
-    "",
     ""
   ],
   [
@@ -1525,9 +1249,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkA",
     "93-0462E3CP16L",
-    "PathHunter eXpress TrkA Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress TrkA Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1536,9 +1258,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkA",
     "93-0462E3CP16M",
-    "PathHunter eXpress TrkA Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress TrkA Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1547,9 +1267,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkB",
     "93-0463E3CP16L",
-    "PathHunter eXpress TrkB Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress TrkB Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1558,9 +1276,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkB",
     "93-0463E3CP16M",
-    "PathHunter eXpress TrkB Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress TrkB Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1569,9 +1285,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkC",
     "93-0464E3CP16L",
-    "PathHunter eXpress TrkC Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress TrkC Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1580,9 +1294,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkC",
     "93-0464E3CP16M",
-    "PathHunter eXpress TrkC Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress TrkC Functional Assay"
   ],
   [
     "Kinase",
@@ -1591,9 +1303,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "TrkC",
     "93-0464Y3-00077",
-    "PathHunter U2OS TrkC Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter U2OS TrkC Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1602,9 +1312,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "TrkC",
     "93-0464Y3-00078",
-    "PathHunter U2OS TrkC Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter U2OS TrkC Bioassay Kit"
   ],
   [
     "Kinase RTK",
@@ -1613,9 +1321,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "INSRb",
     "93-0466E3CP16L",
-    "PathHunter eXpress INSRb Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress INSRb Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1624,9 +1330,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "INSRb",
     "93-0466E3CP16M",
-    "PathHunter eXpress INSRb Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress INSRb Functional Assay"
   ],
   [
     "Kinase",
@@ -1635,9 +1339,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "INSRb",
     "93-0466Y3-00007",
-    "PathHunter Insulin Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Insulin Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1646,9 +1348,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "INSRb",
     "93-0466Y3-00008",
-    "PathHunter Insulin Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Insulin Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1657,9 +1357,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "INSRb",
     "93-0466Y3-00009",
-    "PathHunter Insulin Lispro Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Insulin Lispro Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1668,9 +1366,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "INSRb",
     "93-0466Y3-00010",
-    "PathHunter Insulin Lispro Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Insulin Lispro Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1679,9 +1375,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "INSRb",
     "93-0466Y3-00011",
-    "PathHunter Insulin Glargine Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Insulin Glargine Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1690,9 +1384,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "INSRb",
     "93-0466Y3-00012",
-    "PathHunter Insulin Glargine Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Insulin Glargine Bioassay Kit"
   ],
   [
     "Kinase RTK",
@@ -1701,9 +1393,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "PDGFRb",
     "93-0493E3CP16L",
-    "PathHunter eXpress PDGFRb Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress PDGFRb Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1712,9 +1402,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "PDGFRb",
     "93-0493E3CP16M",
-    "PathHunter eXpress PDGFRb Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress PDGFRb Functional Assay"
   ],
   [
     "Kinase",
@@ -1723,9 +1411,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "PDGFRb",
     "93-0493Y3-00073",
-    "PathHunter U2OS PDGFRb Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter U2OS PDGFRb Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1734,9 +1420,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "PDGFRb",
     "93-0493Y3-00074",
-    "PathHunter U2OS PDGFRb Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter U2OS PDGFRb Bioassay Kit"
   ],
   [
     "Kinase RTK",
@@ -1745,9 +1429,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "IGF1R",
     "93-0505E1CP17L",
-    "PathHunter eXpress IGF1R Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress IGF1R Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1756,9 +1438,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "IGF1R",
     "93-0505E1CP17M",
-    "PathHunter eXpress IGF1R Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress IGF1R Functional Assay"
   ],
   [
     "Kinase",
@@ -1767,9 +1447,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "IGF1R",
     "93-0505Y1-00069",
-    "PathHunter® IGF-1 Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter® IGF-1 Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1778,9 +1456,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "IGF1R",
     "93-0505Y1-00070",
-    "PathHunter® IGF-1 Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter® IGF-1 Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1789,9 +1465,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "IGF1R",
     "93-0505Y1-00195",
-    "PathHunter® IGF-1 Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter® IGF-1 Bioassay Kit"
   ],
   [
     "Kinase RTK",
@@ -1800,9 +1474,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkA-P75",
     "93-0529E3CP16L",
-    "PathHunter eXpress TrkA-P75 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress TrkA-P75 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1811,9 +1483,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkA-P75",
     "93-0529E3CP16M",
-    "PathHunter eXpress TrkA-P75 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress TrkA-P75 Functional Assay"
   ],
   [
     "Kinase",
@@ -1822,9 +1492,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "TrkA-p75",
     "93-0529Y3-00147",
-    "PathHunter U2OS TrkA-p75 Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter U2OS TrkA-p75 Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1833,9 +1501,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "TrkA-p75",
     "93-0529Y3-00148",
-    "PathHunter U2OS TrkA-p75 Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter U2OS TrkA-p75 Bioassay Kit"
   ],
   [
     "Kinase RTK",
@@ -1844,9 +1510,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkB-P75",
     "93-0530E3CP16L",
-    "PathHunter eXpress TrkB-P75 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress TrkB-P75 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1855,9 +1519,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkB-P75",
     "93-0530E3CP16M",
-    "PathHunter eXpress TrkB-P75 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress TrkB-P75 Functional Assay"
   ],
   [
     "Kinase",
@@ -1866,9 +1528,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "TrkB-P75",
     "93-0530Y3-00075",
-    "PathHunter U2OS TrkB-P75 Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter U2OS TrkB-P75 Bioassay Kit"
   ],
   [
     "Kinase",
@@ -1877,9 +1537,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "TrkB-P75",
     "93-0530Y3-00076",
-    "PathHunter U2OS TrkB-P75 Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter U2OS TrkB-P75 Bioassay Kit"
   ],
   [
     "Kinase RTK",
@@ -1888,9 +1546,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkC-P75",
     "93-0531E3CP16L",
-    "PathHunter eXpress TrkC-P75 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress TrkC-P75 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1899,9 +1555,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "TrkC-P75",
     "93-0531E3CP16M",
-    "PathHunter eXpress TrkC-P75 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress TrkC-P75 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1910,9 +1564,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "ErbB2-ErbB3",
     "93-0535E3CP16L",
-    "PathHunter eXpress ErbB2-ErbB3 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress ErbB2-ErbB3 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -1921,9 +1573,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "ErbB2-ErbB3",
     "93-0535E3CP16M",
-    "PathHunter eXpress ErbB2-ErbB3 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress ErbB2-ErbB3 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -1932,9 +1582,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "PRLR-JAK1",
     "93-0686E3CP0L",
-    "PathHunter eXpress PRLR-JAK1 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress PRLR-JAK1 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -1943,9 +1591,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "PRLR-JAK1",
     "93-0686E3CP0M",
-    "PathHunter eXpress PRLR-JAK1 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress PRLR-JAK1 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -1954,9 +1600,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "PRLR-JAK2",
     "93-0687E3CP0L",
-    "PathHunter eXpress PRLR-JAK2 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress PRLR-JAK2 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -1965,9 +1609,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "PRLR-JAK2",
     "93-0687E3CP0M",
-    "PathHunter eXpress PRLR-JAK2 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress PRLR-JAK2 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -1976,9 +1618,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "GHR-JAK1",
     "93-0756E3CP0L",
-    "PathHunter eXpress GHR-JAK1 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress GHR-JAK1 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -1987,9 +1627,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "GHR-JAK1",
     "93-0756E3CP0M",
-    "PathHunter eXpress GHR-JAK1 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress GHR-JAK1 Functional Assay"
   ],
   [
     "Kinase",
@@ -1998,9 +1636,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "GHR",
     "93-0756Y3-00023",
-    "PathHunter Growth Hormone Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Growth Hormone Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2009,9 +1645,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "GHR",
     "93-0756Y3-00024",
-    "PathHunter Growth Hormone Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Growth Hormone Bioassay Kit"
   ],
   [
     "Kinase CTK",
@@ -2020,9 +1654,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "JAK3",
     "93-0796E3CP16L",
-    "PathHunter eXpress JAK3 Activity Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress JAK3 Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2031,9 +1663,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "JAK3",
     "93-0796E3CP16M",
-    "PathHunter eXpress JAK3 Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress JAK3 Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2042,9 +1672,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "CSF3R-JAK1",
     "93-0809E3CP16L",
-    "PathHunter eXpress CSF3R-JAK1 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress CSF3R-JAK1 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -2053,9 +1681,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "CSF3R-JAK1",
     "93-0809E3CP16M",
-    "PathHunter eXpress CSF3R-JAK1 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress CSF3R-JAK1 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2064,9 +1690,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "c-Ret-GFRα2",
     "93-0816E3CP16L",
-    "PathHunter eXpress c-Ret-GFRα2 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress c-Ret-GFRα2 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2075,9 +1699,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "c-Ret-GFRα2",
     "93-0816E3CP16M",
-    "PathHunter eXpress c-Ret-GFRα2 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress c-Ret-GFRα2 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2086,9 +1708,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "PDGFRa",
     "93-0823E3CP16L",
-    "PathHunter eXpress PDGFRa Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress PDGFRa Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2097,9 +1717,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "PDGFRa",
     "93-0823E3CP16M",
-    "PathHunter eXpress PDGFRa Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress PDGFRa Functional Assay"
   ],
   [
     "Kinase",
@@ -2108,9 +1726,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "PDGFRa",
     "93-0823Y3-00071",
-    "PathHunter U2OS PDGFRa Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter U2OS PDGFRa Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2119,9 +1735,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "PDGFRa",
     "93-0823Y3-00072",
-    "PathHunter U2OS PDGFRa Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter U2OS PDGFRa Bioassay Kit"
   ],
   [
     "Kinase CTK",
@@ -2130,9 +1744,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "GHR-JAK2",
     "93-0829E3CP14L",
-    "PathHunter eXpress GHR-JAK2 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress GHR-JAK2 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -2141,9 +1753,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "GHR-JAK2",
     "93-0829E3CP14M",
-    "PathHunter eXpress GHR-JAK2 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress GHR-JAK2 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2152,9 +1762,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EphA7",
     "93-0841E3CP16L",
-    "PathHunter eXpress EphA7 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress EphA7 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2163,9 +1771,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EphA7",
     "93-0841E3CP16M",
-    "PathHunter eXpress EphA7 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress EphA7 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2174,9 +1780,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EphB3",
     "93-0842E3CP16L",
-    "PathHunter eXpress EphB3 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress EphB3 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2185,9 +1789,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EphB3",
     "93-0842E3CP16M",
-    "PathHunter eXpress EphB3 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress EphB3 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2196,9 +1798,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EphB2",
     "93-0848E3CP16L",
-    "PathHunter eXpress EphB2 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress EphB2 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2207,9 +1807,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EphB2",
     "93-0848E3CP16M",
-    "PathHunter eXpress EphB2 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress EphB2 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2218,9 +1816,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "c-KIT",
     "93-0853E3CP16L",
-    "PathHunter eXpress c-KIT Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress c-KIT Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2229,9 +1825,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "c-KIT",
     "93-0853E3CP16M",
-    "PathHunter eXpress c-KIT Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress c-KIT Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -2240,9 +1834,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "SYK",
     "93-0865E3CP16L",
-    "PathHunter eXpress SYK Activity Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress SYK Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2251,9 +1843,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "SYK",
     "93-0865E3CP16M",
-    "PathHunter eXpress SYK Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress SYK Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2262,9 +1852,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "TYK2",
     "93-0875E3CP16L",
-    "PathHunter eXpress TYK2 Activity Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress TYK2 Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2273,9 +1861,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "TYK2",
     "93-0875E3CP16M",
-    "PathHunter eXpress TYK2 Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress TYK2 Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2284,9 +1870,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "BLK",
     "93-0882E3CP16L",
-    "PathHunter eXpress BLK Activity Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress BLK Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2295,9 +1879,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "BLK",
     "93-0882E3CP16M",
-    "PathHunter eXpress BLK Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress BLK Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2306,9 +1888,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "YES1",
     "93-0883E3CP16L",
-    "PathHunter eXpress YES1 Activity Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress YES1 Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2317,9 +1897,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "YES1",
     "93-0883E3CP16M",
-    "PathHunter eXpress YES1 Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress YES1 Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2328,9 +1906,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "FGR",
     "93-0884E3CP16L",
-    "PathHunter eXpress FGR Activity Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress FGR Activity Assay"
   ],
   [
     "Kinase CTK",
@@ -2339,9 +1915,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "FGR",
     "93-0884E3CP16M",
-    "PathHunter eXpress FGR Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress FGR Activity Assay"
   ],
   [
     "Kinase RTK",
@@ -2350,9 +1924,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "Flt4",
     "93-0888E3CP16L",
-    "PathHunter eXpress Flt4 Activity Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress Flt4 Activity Assay"
   ],
   [
     "Kinase RTK",
@@ -2361,9 +1933,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "Flt4",
     "93-0888E3CP16M",
-    "PathHunter eXpress Flt4 Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress Flt4 Activity Assay"
   ],
   [
     "Kinase RTK",
@@ -2372,9 +1942,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EphB1",
     "93-0893E3CP16L",
-    "PathHunter eXpress EphB1 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress EphB1 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2383,9 +1951,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EphB1",
     "93-0893E3CP16M",
-    "PathHunter eXpress EphB1 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress EphB1 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2394,9 +1960,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "DDR1",
     "93-0894E3CP16L",
-    "PathHunter eXpress DDR1 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress DDR1 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2405,9 +1969,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "DDR1",
     "93-0894E3CP16M",
-    "PathHunter eXpress DDR1 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress DDR1 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -2416,9 +1978,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EpoR-JAK2",
     "93-0900E3CP16L",
-    "PathHunter eXpress EpoR-JAK2 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress EpoR-JAK2 Functional Assay"
   ],
   [
     "Kinase CTK",
@@ -2427,9 +1987,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "EpoR-JAK2",
     "93-0900E3CP16M",
-    "PathHunter eXpress EpoR-JAK2 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress EpoR-JAK2 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2438,9 +1996,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "Flt3",
     "93-0901E3CP16L",
-    "PathHunter eXpress Flt3 ActivityAssay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress Flt3 ActivityAssay"
   ],
   [
     "Kinase RTK",
@@ -2449,9 +2005,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "Flt3",
     "93-0901E3CP16M",
-    "PathHunter eXpress Flt3 Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress Flt3 Activity Assay"
   ],
   [
     "Kinase RTK",
@@ -2460,9 +2014,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "KDR",
     "93-0903E3CP16L",
-    "PathHunter eXpress KDR Activity Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress KDR Activity Assay"
   ],
   [
     "Kinase RTK",
@@ -2471,9 +2023,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Activity",
     "KDR",
     "93-0903E3CP16M",
-    "PathHunter eXpress KDR Activity Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress KDR Activity Assay"
   ],
   [
     "Kinase",
@@ -2482,9 +2032,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "EPOR",
     "93-0965Y3-00019",
-    "PathHunter Darbepoetin Alfa Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Darbepoetin Alfa Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2493,9 +2041,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "EPOR",
     "93-0965Y3-00020",
-    "PathHunter Darbepoetin Alfa Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Darbepoetin Alfa Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2504,9 +2050,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00001",
-    "PathHunter Bevacizumab Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Bevacizumab Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2515,9 +2059,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00002",
-    "PathHunter Bevacizumab Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Bevacizumab Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2526,9 +2068,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00003",
-    "PathHunter Ranibizumab Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Ranibizumab Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2537,9 +2077,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00004",
-    "PathHunter Ranibizumab Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Ranibizumab Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2548,9 +2086,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00005",
-    "PathHunter Aflibercept Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Aflibercept Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2559,9 +2095,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00006",
-    "PathHunter Aflibercept Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Aflibercept Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2570,9 +2104,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00153",
-    "PathHunter Aflibercept Bioassay HS Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Aflibercept Bioassay HS Kit"
   ],
   [
     "Kinase",
@@ -2581,9 +2113,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00154",
-    "PathHunter Aflibercept Bioassay HS Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Aflibercept Bioassay HS Kit"
   ],
   [
     "Kinase",
@@ -2592,9 +2122,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00165",
-    "PathHunter Bevacizumab Bioassay HS Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Bevacizumab Bioassay HS Kit"
   ],
   [
     "Kinase",
@@ -2603,9 +2131,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00166",
-    "PathHunter Bevacizumab Bioassay HS Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Bevacizumab Bioassay HS Kit"
   ],
   [
     "Kinase",
@@ -2614,9 +2140,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00167",
-    "PathHunter Ranibizumab Bioassay HS Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Ranibizumab Bioassay HS Kit"
   ],
   [
     "Kinase",
@@ -2625,9 +2149,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "VEGFA",
     "93-0996Y1-00168",
-    "PathHunter Ranibizumab Bioassay HS Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Ranibizumab Bioassay HS Kit"
   ],
   [
     "Kinase RTK",
@@ -2636,9 +2158,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "rhTrkA-rhP75",
     "93-1009E3CP16L",
-    "PathHunter eXpress rhTrkA-rhP75 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress rhTrkA-rhP75 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2647,9 +2167,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "rhTrkA-rhP75",
     "93-1009E3CP16M",
-    "PathHunter eXpress rhTrkA-rhP75 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress rhTrkA-rhP75 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2658,9 +2176,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "rTrkA-rP75",
     "93-1014E3CP16L",
-    "PathHunter eXpress rTrkA-rP75 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress rTrkA-rP75 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2669,9 +2185,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "rTrkA-rP75",
     "93-1014E3CP16M",
-    "PathHunter eXpress rTrkA-rP75 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress rTrkA-rP75 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2680,9 +2194,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "mINSRa",
     "93-1015E3CP16L",
-    "PathHunter eXpress mINSRa Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress mINSRa Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2691,9 +2203,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "mINSRa",
     "93-1015E3CP16M",
-    "PathHunter eXpress mINSRa Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress mINSRa Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2702,9 +2212,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "cINSRa",
     "93-1016E3CP16L",
-    "PathHunter eXpress cINSRa Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress cINSRa Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2713,9 +2221,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "cINSRa",
     "93-1016E3CP16M",
-    "PathHunter eXpress cINSRa Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress cINSRa Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2724,9 +2230,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "mINSRb",
     "93-1017E3CP16L",
-    "PathHunter eXpress mINSRb Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress mINSRb Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2735,9 +2239,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "mINSRb",
     "93-1017E3CP16M",
-    "PathHunter eXpress mINSRb Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress mINSRb Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2746,9 +2248,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "cINSRb",
     "93-1018E3CP16L",
-    "PathHunter eXpress cINSRb Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress cINSRb Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2757,9 +2257,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "cINSRb",
     "93-1018E3CP16M",
-    "PathHunter eXpress cINSRb Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress cINSRb Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2768,9 +2266,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "FGFR4",
     "93-1022E3CP16L",
-    "PathHunter eXpress FGFR4 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress FGFR4 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2779,9 +2275,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "FGFR4",
     "93-1022E3CP16M",
-    "PathHunter eXpress FGFR4 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress FGFR4 Functional Assay"
   ],
   [
     "Kinase",
@@ -2790,9 +2284,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "HER2",
     "93-1042Y3-00095",
-    "PathHunter Pertuzumab Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Pertuzumab Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2801,9 +2293,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "HER2",
     "93-1042Y3-00096",
-    "PathHunter Pertuzumab Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Pertuzumab Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2812,9 +2302,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "EGFR",
     "93-1051Y3-00093",
-    "PathHunter Panitumumab Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter Panitumumab Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2823,9 +2311,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "EGFR",
     "93-1051Y3-00094",
-    "PathHunter Panitumumab Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter Panitumumab Bioassay Kit"
   ],
   [
     "Kinase RTK",
@@ -2834,9 +2320,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "c-Ret-GFRα1",
     "93-1054E3CP16L",
-    "PathHunter eXpress c-Ret-GFRα1 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress c-Ret-GFRα1 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2845,9 +2329,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "c-Ret-GFRα1",
     "93-1054E3CP16M",
-    "PathHunter eXpress c-Ret-GFRα1 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress c-Ret-GFRα1 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2856,9 +2338,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "FGFR4-β-Klotho",
     "93-1060E3CP0L",
-    "PathHunter eXpress FGFR4-β-Klotho Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress FGFR4-β-Klotho Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2867,9 +2347,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "FGFR4-β-Klotho",
     "93-1060E3CP0M",
-    "PathHunter eXpress FGFR4-β-Klotho Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress FGFR4-β-Klotho Functional Assay"
   ],
   [
     "Kinase",
@@ -2878,9 +2356,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "FGFR4-β-Klotho",
     "93-1060Y3-00089",
-    "PathHunter U2OS FGFR4-β-Klotho Bioassay Kit",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter U2OS FGFR4-β-Klotho Bioassay Kit"
   ],
   [
     "Kinase",
@@ -2889,9 +2365,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "",
     "FGFR4-β-Klotho",
     "93-1060Y3-00090",
-    "PathHunter U2OS FGFR4-β-Klotho Bioassay Kit",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter U2OS FGFR4-β-Klotho Bioassay Kit"
   ],
   [
     "Kinase RTK",
@@ -2900,9 +2374,7 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "FGFR1",
     "93-1090E3CP16L",
-    "PathHunter eXpress FGFR1 Functional Assay",
-    "1,000 dp (10 x 96-well)",
-    ""
+    "PathHunter eXpress FGFR1 Functional Assay"
   ],
   [
     "Kinase RTK",
@@ -2911,8 +2383,6 @@ export const KINASE_RECEPTOR_PORTFOLIO_ROWS = [
     "Functional",
     "FGFR1",
     "93-1090E3CP16M",
-    "PathHunter eXpress FGFR1 Functional Assay",
-    "200 dp (2 x 96-well)",
-    ""
+    "PathHunter eXpress FGFR1 Functional Assay"
   ]
 ];
