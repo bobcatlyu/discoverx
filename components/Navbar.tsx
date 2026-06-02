@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Page } from '../types';
-import { getPagePath } from '../utils/routes';
+import { Language, Page } from '../types';
+import { getPagePath, LANGUAGE_CONFIG, SUPPORTED_LANGUAGES } from '../utils/routes';
+import { getLocale } from '../locales';
 
 interface NavSubItem {
   label: string;
@@ -15,80 +16,83 @@ interface NavItem {
 
 interface NavbarProps {
   currentPage: Page;
+  currentLanguage: Language;
   onNavigate: (page: Page, query?: string) => void;
+  onLanguageChange: (language: Language) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentPage, currentLanguage, onNavigate, onLanguageChange }) => {
   const [activeDropdown, setActiveDropdown] = useState<Page | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileItems, setExpandedMobileItems] = useState<Record<string, boolean>>({});
   const [searchVal, setSearchVal] = useState('');
+  const locale = getLocale(currentLanguage);
 
   const navItems: NavItem[] = [
-    { id: Page.Home, label: '首页' },
+    { id: Page.Home, label: locale.nav.home },
     {
       id: Page.Products,
-      label: '产品类型',
+      label: locale.nav.products,
       subItems: [
-        { label: '商业化稳定细胞株', page: Page.CellLine },
-        { label: '即用型 eXpress Kit', page: Page.ExpressKit },
-        { label: 'Bioassay Kit', page: Page.BioassayKit },
-        { label: '工具产品', page: Page.Toolbox },
-        { label: '检测试剂盒', page: Page.DetectionKit },
-        { label: '试剂耗材', page: Page.Reagent },
-        { label: '膜制品', page: Page.MembranePrep },
-        { label: '重组酶类', page: Page.Enzyme },
-        { label: 'Calixar 膜蛋白', page: Page.Calixar },
+        { label: locale.navSubItems[Page.CellLine]!, page: Page.CellLine },
+        { label: locale.navSubItems[Page.ExpressKit]!, page: Page.ExpressKit },
+        { label: locale.navSubItems[Page.BioassayKit]!, page: Page.BioassayKit },
+        { label: locale.navSubItems[Page.Toolbox]!, page: Page.Toolbox },
+        { label: locale.navSubItems[Page.DetectionKit]!, page: Page.DetectionKit },
+        { label: locale.navSubItems[Page.Reagent]!, page: Page.Reagent },
+        { label: locale.navSubItems[Page.MembranePrep]!, page: Page.MembranePrep },
+        { label: locale.navSubItems[Page.Enzyme]!, page: Page.Enzyme },
+        { label: locale.navSubItems[Page.Calixar]!, page: Page.Calixar },
       ],
     },
     {
       id: Page.Targets,
-      label: '靶点分类',
+      label: locale.nav.targets,
       subItems: [
-        { label: 'GPCR', page: Page.Gpcr },
-        { label: '细胞因子受体', page: Page.CytokineReceptors },
-        { label: '免疫检查点受体', page: Page.CheckpointReceptors },
-        { label: 'RTK / CTK', page: Page.KinaseReceptors },
-        { label: '核受体 NHR', page: Page.Nhr },
-        { label: '离子通道', page: Page.IonChannels },
-        { label: '表观遗传蛋白', page: Page.EpigeneticProteins },
+        { label: locale.navSubItems[Page.Gpcr]!, page: Page.Gpcr },
+        { label: locale.navSubItems[Page.CytokineReceptors]!, page: Page.CytokineReceptors },
+        { label: locale.navSubItems[Page.CheckpointReceptors]!, page: Page.CheckpointReceptors },
+        { label: locale.navSubItems[Page.KinaseReceptors]!, page: Page.KinaseReceptors },
+        { label: locale.navSubItems[Page.Nhr]!, page: Page.Nhr },
+        { label: locale.navSubItems[Page.IonChannels]!, page: Page.IonChannels },
+        { label: locale.navSubItems[Page.EpigeneticProteins]!, page: Page.EpigeneticProteins },
       ],
     },
     {
       id: Page.Applications,
-      label: '作用机制',
+      label: locale.nav.mechanisms,
       subItems: [
-        { label: '受体二聚化', page: Page.DimerizationDetail },
-        { label: '受体内吞', page: Page.InternalizationDetail },
-        { label: '蛋白相互作用', page: Page.PpiDetail },
-        { label: '信号通路', page: Page.SignalPathwayDetail },
-        { label: '细胞毒性', page: Page.CytotoxicityDetail },
-        { label: '靶向蛋白降解', page: Page.TpdDetail },
-        { label: '靶标结合', page: Page.TargetEngagementDetail },
+        { label: locale.navSubItems[Page.DimerizationDetail]!, page: Page.DimerizationDetail },
+        { label: locale.navSubItems[Page.InternalizationDetail]!, page: Page.InternalizationDetail },
+        { label: locale.navSubItems[Page.PpiDetail]!, page: Page.PpiDetail },
+        { label: locale.navSubItems[Page.SignalPathwayDetail]!, page: Page.SignalPathwayDetail },
+        { label: locale.navSubItems[Page.CytotoxicityDetail]!, page: Page.CytotoxicityDetail },
+        { label: locale.navSubItems[Page.TpdDetail]!, page: Page.TpdDetail },
+        { label: locale.navSubItems[Page.TargetEngagementDetail]!, page: Page.TargetEngagementDetail },
       ],
     },
     {
       id: Page.Custom,
-      label: '开发服务',
+      label: locale.nav.custom,
       subItems: [
-        { label: 'Assay 开发服务', page: Page.CustomAssayDevelopment },
-        { label: 'Bioassay 开发', page: Page.BioassayDevelopment },
-        { label: '样品检测服务', page: Page.SampleTesting },
-        { label: '化合物筛选', page: Page.FunctionalScreening },
+        { label: locale.navSubItems[Page.CustomAssayDevelopment]!, page: Page.CustomAssayDevelopment },
+        { label: locale.navSubItems[Page.BioassayDevelopment]!, page: Page.BioassayDevelopment },
+        { label: locale.navSubItems[Page.SampleTesting]!, page: Page.SampleTesting },
+        { label: locale.navSubItems[Page.FunctionalScreening]!, page: Page.FunctionalScreening },
       ],
     },
     {
       id: Page.Documents,
-      label: '产品资料',
+      label: locale.nav.documents,
       subItems: [
-        { label: '产品说明书', page: Page.DatasheetList },
-        { label: '用户操作手册', page: Page.UserManual },
-        { label: '验证数据报告', page: Page.QualificationData },
-        { label: '技术应用指南', page: Page.ApplicationNote },
-        { label: '参考文献库', page: Page.Reference },
+        { label: locale.navSubItems[Page.DatasheetList]!, page: Page.DatasheetList },
+        { label: locale.navSubItems[Page.UserManual]!, page: Page.UserManual },
+        { label: locale.navSubItems[Page.QualificationData]!, page: Page.QualificationData },
+        { label: locale.navSubItems[Page.ApplicationNote]!, page: Page.ApplicationNote },
+        { label: locale.navSubItems[Page.Reference]!, page: Page.Reference },
       ],
     },
-    { id: Page.Contacts, label: '联系我们' },
+    { id: Page.Contacts, label: locale.nav.contacts },
   ];
 
   const handlePageLink = (event: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
@@ -122,10 +126,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 md:py-4">
         <div className="flex items-center justify-between gap-4">
           <a
-            href={getPagePath(Page.Home)}
+            href={getPagePath(Page.Home, undefined, currentLanguage)}
             onClick={(event) => handlePageLink(event, Page.Home)}
             className="flex items-center shrink-0"
-            aria-label="返回首页"
+            aria-label={locale.common.backHome}
           >
             <img
               src="/pic/DiscoverX Logo_Blue Discover Text w BlueOrange X.png"
@@ -137,23 +141,39 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           <form onSubmit={executeSearch} className="hidden md:flex flex-grow max-w-xl items-center border-b border-slate-300 pb-1">
             <input
               type="text"
-              placeholder="搜索产品目录号、名称或靶点"
+              placeholder={locale.nav.searchPlaceholder}
               className="flex-grow px-2 py-1 text-sm focus:outline-none"
               value={searchVal}
               onChange={(e) => setSearchVal(e.target.value)}
             />
-            <button type="submit" className="p-2 text-slate-400 hover:text-[#4B827E] transition-colors" aria-label="搜索">
+            <button type="submit" className="p-2 text-slate-400 hover:text-[#4B827E] transition-colors" aria-label={locale.nav.searchLabel}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
           </form>
 
+          <div className="hidden md:flex items-center rounded-full border border-slate-200 bg-slate-50 p-1" aria-label={locale.common.languageLabel}>
+            {SUPPORTED_LANGUAGES.map((language) => (
+              <button
+                key={language}
+                type="button"
+                onClick={() => onLanguageChange(language)}
+                className={`rounded-full px-3 py-1.5 text-xs font-bold transition ${
+                  currentLanguage === language ? 'bg-[#4B827E] text-white shadow-sm' : 'text-slate-600 hover:bg-white hover:text-[#4B827E]'
+                }`}
+                aria-pressed={currentLanguage === language}
+              >
+                {LANGUAGE_CONFIG[language].label}
+              </button>
+            ))}
+          </div>
+
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 text-[#1C2C5E] hover:bg-slate-100 rounded-lg transition-colors"
-              aria-label={isMobileMenuOpen ? '关闭菜单' : '打开菜单'}
+              aria-label={isMobileMenuOpen ? locale.nav.closeMenu : locale.nav.openMenu}
             >
               {isMobileMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,17 +191,32 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         <form onSubmit={executeSearch} className="mt-3 flex md:hidden items-center border-b border-slate-300 pb-1">
           <input
             type="text"
-            placeholder="搜索产品"
+            placeholder={locale.nav.mobileSearchPlaceholder}
             className="flex-grow px-2 py-1 text-sm focus:outline-none"
             value={searchVal}
             onChange={(e) => setSearchVal(e.target.value)}
           />
-          <button type="submit" className="p-2 text-slate-400" aria-label="搜索">
+          <button type="submit" className="p-2 text-slate-400" aria-label={locale.nav.searchLabel}>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </button>
         </form>
+        <div className="mt-3 flex md:hidden items-center rounded-full border border-slate-200 bg-slate-50 p-1" aria-label={locale.common.languageLabel}>
+          {SUPPORTED_LANGUAGES.map((language) => (
+            <button
+              key={language}
+              type="button"
+              onClick={() => onLanguageChange(language)}
+              className={`flex-1 rounded-full px-3 py-1.5 text-xs font-bold transition ${
+                currentLanguage === language ? 'bg-[#4B827E] text-white shadow-sm' : 'text-slate-600 hover:bg-white hover:text-[#4B827E]'
+              }`}
+              aria-pressed={currentLanguage === language}
+            >
+              {LANGUAGE_CONFIG[language].label}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="hidden md:block bg-[#4B827E]">
@@ -195,7 +230,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <a
-                  href={getPagePath(item.id)}
+                href={getPagePath(item.id, undefined, currentLanguage)}
                   onClick={(event) => handlePageLink(event, item.id)}
                   className={`flex items-center px-4 lg:px-6 py-4 text-sm lg:text-base font-bold uppercase tracking-wide transition-all border-b-4 whitespace-nowrap ${
                     currentPage === item.id || activeDropdown === item.id
@@ -219,7 +254,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                     {item.subItems.map((sub, idx) => (
                       <a
                         key={idx}
-                        href={getPagePath(sub.page)}
+                        href={getPagePath(sub.page, undefined, currentLanguage)}
                         onClick={(event) => handlePageLink(event, sub.page)}
                         className="block w-full text-left px-6 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-[#4B827E] border-l-4 border-transparent hover:border-[#4B827E] transition-all"
                       >
@@ -244,7 +279,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             <div key={item.id} className="border-b border-slate-50 last:border-none">
               <div className="flex items-center justify-between">
                 <a
-                  href={getPagePath(item.id)}
+                  href={getPagePath(item.id, undefined, currentLanguage)}
                   onClick={(event) => handlePageLink(event, item.id)}
                   className={`flex-grow text-left py-4 px-2 text-sm font-bold uppercase tracking-wide ${
                     currentPage === item.id ? 'text-[#4B827E]' : 'text-slate-700'
@@ -253,7 +288,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   {item.label}
                 </a>
                 {item.subItems && (
-                  <button onClick={() => toggleMobileItem(item.id)} className="p-4 text-slate-400" aria-label={`展开 ${item.label}`}>
+                  <button onClick={() => toggleMobileItem(item.id)} className="p-4 text-slate-400" aria-label={`${locale.nav.expandPrefix} ${item.label}`}>
                     <svg className={`w-4 h-4 transition-transform ${expandedMobileItems[item.id] ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -266,7 +301,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
                   {item.subItems.map((sub, idx) => (
                     <a
                       key={idx}
-                      href={getPagePath(sub.page)}
+                      href={getPagePath(sub.page, undefined, currentLanguage)}
                       onClick={(event) => handlePageLink(event, sub.page)}
                       className="block w-full text-left px-6 py-3 text-xs font-semibold text-slate-600 hover:text-[#4B827E] transition-colors"
                     >

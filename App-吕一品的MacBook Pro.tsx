@@ -195,7 +195,7 @@ const LEGACY_PAGE_PATHS: Record<string, Page> = {
 };
 
 const routeFromPath = (path: string, rawQueryString = ''): RouteState => {
-  const languagePath = splitLanguageFromPath(path, typeof window === 'undefined' ? '' : window.location.hostname);
+  const languagePath = splitLanguageFromPath(path);
   const language = languagePath.language;
   const normalizedPath = languagePath.path;
   const params = new URLSearchParams(rawQueryString);
@@ -385,6 +385,7 @@ const App: React.FC = () => {
   }, [route.language, route.page, route.query, route.blogId]);
 
   useEffect(() => {
+    const locale = getLocale(route.language);
     document.documentElement.lang = LANGUAGE_CONFIG[route.language].htmlLang;
     const meta = locale.meta[route.page] ?? PAGE_META[route.page] ?? locale.meta[Page.Home] ?? PAGE_META[Page.Home];
     const title = meta?.title ?? locale.meta[Page.Home]?.title ?? 'DiscoverX';
@@ -396,7 +397,7 @@ const App: React.FC = () => {
       setCanonicalUrl(`${window.location.origin}${buildPathRoute(route.page, route.page === Page.Search ? route.query : undefined, route.language)}`);
     }
     setAlternateLanguageUrls(route);
-  }, [locale, route]);
+  }, [route.language, route.page, route.query, route.blogId]);
 
   const navigateTo = (page: Page, queryOrBlogId?: string) => {
     const nextRoute: RouteState = {
@@ -454,7 +455,7 @@ const App: React.FC = () => {
       case Page.Documents:
         return <DocumentsPage language={route.language} onNavigate={navigateTo} />;
       case Page.Contacts:
-        return <Contact />;
+        return <Contact language={route.language} />;
       case Page.Search:
         return <SearchResults query={route.query} onNavigate={navigateTo} />;
       case Page.CellLine:

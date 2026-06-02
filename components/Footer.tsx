@@ -1,12 +1,17 @@
 import React from 'react';
-import { Page } from '../types';
+import { Language, Page } from '../types';
 import { getPagePath } from '../utils/routes';
+import { getLocale } from '../locales';
 
 interface FooterProps {
+  language: Language;
   onNavigate?: (page: Page) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+const Footer: React.FC<FooterProps> = ({ language, onNavigate }) => {
+  const locale = getLocale(language);
+  const footer = locale.footer;
+
   const handlePageClick = (event: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
     if (!onNavigate) {
       return;
@@ -23,67 +28,67 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 className="text-white text-lg font-bold mb-4 uppercase tracking-wider border-b border-white/20 pb-2 inline-block">
-            关于我们
+            {footer.aboutTitle}
           </h3>
           <p className="text-sm leading-relaxed text-white/90">
-            Eurofins DiscoverX 聚焦药物研发相关的细胞模型、试剂盒、工具产品与定制化检测服务，支持从早期筛选到机制验证的关键环节。
+            {footer.aboutText}
           </p>
         </div>
         <div>
           <h3 className="text-white text-lg font-bold mb-4 uppercase tracking-wider border-b border-white/20 pb-2 inline-block">
-            核心产品
+            {footer.coreProductsTitle}
           </h3>
           <ul className="text-sm space-y-2 text-white/90">
             <li>
-              <a href={getPagePath(Page.Gpcr)} onClick={(event) => handlePageClick(event, Page.Gpcr)} className={footerLinkClass}>
-                PathHunter GPCR 细胞系
+              <a href={getPagePath(Page.Gpcr, undefined, language)} onClick={(event) => handlePageClick(event, Page.Gpcr)} className={footerLinkClass}>
+                {footer.links[Page.Gpcr]}
               </a>
             </li>
             <li>
-              <a href={getPagePath(Page.Gpcr)} onClick={(event) => handlePageClick(event, Page.Gpcr)} className={footerLinkClass}>
-                HitHunter cAMP 试剂盒
+              <a href={getPagePath(Page.Gpcr, undefined, language)} onClick={(event) => handlePageClick(event, Page.Gpcr)} className={footerLinkClass}>
+                HitHunter cAMP Kit
               </a>
             </li>
             <li>
-              <a href={getPagePath(Page.CytotoxicityDetail)} onClick={(event) => handlePageClick(event, Page.CytotoxicityDetail)} className={footerLinkClass}>
-                KILR 细胞毒性监测
+              <a href={getPagePath(Page.CytotoxicityDetail, undefined, language)} onClick={(event) => handlePageClick(event, Page.CytotoxicityDetail)} className={footerLinkClass}>
+                {footer.links[Page.CytotoxicityDetail]}
               </a>
             </li>
             <li>
-              <a href={getPagePath(Page.TargetEngagementDetail)} onClick={(event) => handlePageClick(event, Page.TargetEngagementDetail)} className={footerLinkClass}>
-                InCELL 靶标结合分析
+              <a href={getPagePath(Page.TargetEngagementDetail, undefined, language)} onClick={(event) => handlePageClick(event, Page.TargetEngagementDetail)} className={footerLinkClass}>
+                {footer.links[Page.TargetEngagementDetail]}
               </a>
             </li>
           </ul>
         </div>
         <div>
           <h3 className="text-white text-lg font-bold mb-4 uppercase tracking-wider border-b border-white/20 pb-2 inline-block">
-            技术支持
+            {footer.supportTitle}
           </h3>
           <ul className="text-sm space-y-2 text-white/90">
             <li>
-              <a href={getPagePath(Page.DatasheetList)} onClick={(event) => handlePageClick(event, Page.DatasheetList)} className={footerLinkClass}>
-                产品说明书
+              <a href={getPagePath(Page.DatasheetList, undefined, language)} onClick={(event) => handlePageClick(event, Page.DatasheetList)} className={footerLinkClass}>
+                {footer.links[Page.DatasheetList]}
               </a>
             </li>
             <li>
-              <a href={getPagePath(Page.UserManual)} onClick={(event) => handlePageClick(event, Page.UserManual)} className={footerLinkClass}>
-                用户手册
+              <a href={getPagePath(Page.UserManual, undefined, language)} onClick={(event) => handlePageClick(event, Page.UserManual)} className={footerLinkClass}>
+                {footer.links[Page.UserManual]}
               </a>
             </li>
             <li>
-              <a href={getPagePath(Page.ApplicationNote)} onClick={(event) => handlePageClick(event, Page.ApplicationNote)} className={footerLinkClass}>
-                技术应用资料
+              <a href={getPagePath(Page.ApplicationNote, undefined, language)} onClick={(event) => handlePageClick(event, Page.ApplicationNote)} className={footerLinkClass}>
+                {footer.links[Page.ApplicationNote]}
               </a>
             </li>
           </ul>
         </div>
         <div>
           <h3 className="text-white text-lg font-bold mb-4 uppercase tracking-wider border-b border-white/20 pb-2 inline-block">
-            联系我们
+            {footer.contactTitle}
           </h3>
-          <p className="text-sm text-white/90 mb-2">地址：上海市闵行区浦江镇陈行公路 2168 号 8 号楼</p>
-          <p className="text-sm text-white/90">邮箱：CustomerService_DRX_China@cpt.eurofinscn.com</p>
+          <p className="text-sm text-white/90 mb-2">{footer.address}</p>
+          <p className="text-sm text-white/90">{footer.email}</p>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-white/20 text-center text-[10px]">

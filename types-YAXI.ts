@@ -38,6 +38,7 @@ export enum Page {
   Home = 'home',
   Products = 'products',
   Targets = 'targets',
+  TargetsJapanese = 'targets-ja',
   Applications = 'mechanisms',
   Custom = 'custom',
   Documents = 'documents',
@@ -93,5 +94,3 @@ export enum Page {
   // Blog
   BlogDetail = 'blog'
 }
-
-export type Language = 'zh' | 'ja' | 'ko';

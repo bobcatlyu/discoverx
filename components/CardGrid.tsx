@@ -3,6 +3,7 @@ import React from 'react';
 interface CardGridProps {
   title: string;
   subtitle?: string;
+  actionLabel?: string;
   items: Array<{
     id: string;
     title: string;
@@ -13,7 +14,7 @@ interface CardGridProps {
   }>;
 }
 
-const CardGrid: React.FC<CardGridProps> = ({ title, subtitle, items }) => {
+const CardGrid: React.FC<CardGridProps> = ({ title, subtitle, actionLabel, items }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-12">
@@ -47,7 +48,7 @@ const CardGrid: React.FC<CardGridProps> = ({ title, subtitle, items }) => {
               <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">{item.description}</p>
               <button className="text-[#4B827E] font-semibold text-sm inline-flex items-center hover:text-[#3d6b67]">
-                了解更多
+                {actionLabel ?? '了解更多'}
                 <svg className="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
