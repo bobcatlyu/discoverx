@@ -179,12 +179,17 @@ const CalixarDetail: React.FC = () => {
       <div className="mt-16 text-center">
         <p className="text-slate-500 mb-6">联系我们，了解我们的定制蛋白服务如何加速您的研究和药物开发计划。</p>
         <div className="flex flex-wrap justify-center gap-4">
-          <a href="mailto:ProteinRequests@discovery.eurofinseu.com" className="bg-[#4B827E] text-white px-8 py-3 rounded-full font-bold hover:bg-[#3d6a67] transition-colors shadow-lg">
+          <a href="/contacts" className="bg-[#4B827E] text-white px-8 py-3 rounded-full font-bold hover:bg-[#3d6a67] transition-colors shadow-lg">
             立即发送邮件咨询
           </a>
-          <button className="border-2 border-[#4B827E] text-[#4B827E] px-8 py-3 rounded-full font-bold hover:bg-teal-50 transition-colors">
+          <a
+            href="https://www.calixar.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-2 border-[#4B827E] text-[#4B827E] px-8 py-3 rounded-full font-bold hover:bg-teal-50 transition-colors"
+          >
             访问 calixar.com
-          </button>
+          </a>
         </div>
       </div>
     </div>

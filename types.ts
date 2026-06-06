@@ -79,7 +79,6 @@ export enum Page {
   CustomAssayDevelopment = 'custom-assay-development',
   BioassayDevelopment = 'bioassay-development',
   SampleTesting = 'sample-testing',
-  FunctionalScreening = 'functional-screening',
 
   // Documents Sub-pages
   DatasheetList = 'datasheet-list',

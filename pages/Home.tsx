@@ -35,38 +35,40 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
             {home.heroTitle}
           </h1>
 
-          <div className="mx-auto grid w-full max-w-5xl items-center gap-8 md:grid-cols-[1fr_auto]">
-            <div className="space-y-3 text-center md:text-left">
-              <p className="text-base font-semibold text-teal-50 md:text-lg">
-                {home.globalSiteLabel}{' '}
-                <a
-                  href="https://www.discoverx.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-white/50 underline-offset-4 transition hover:text-teal-100"
-                >
-                  https://www.discoverx.com
-                </a>
-              </p>
-              <p className="text-sm leading-relaxed text-white/90 md:text-base">
-                {home.companyIntro}
-              </p>
-              <p className="text-sm text-white/85 md:text-base">{home.address}</p>
-              <p className="text-sm text-white/85 md:text-base">
-                {home.emailLabel}
-                <a
-                  href="mailto:CustomerService_DRX_China@cpt.eurofinscn.com"
-                  className="break-all underline decoration-white/50 underline-offset-4 transition hover:text-teal-100"
-                >
-                  CustomerService_DRX_China@cpt.eurofinscn.com
-                </a>
-              </p>
-            </div>
+          {language === 'zh' && (
+            <div className="mx-auto grid w-full max-w-5xl items-center gap-8 md:grid-cols-[1fr_auto]">
+              <div className="space-y-3 text-center md:text-left">
+                <p className="text-base font-semibold text-teal-50 md:text-lg">
+                  {home.globalSiteLabel}{' '}
+                  <a
+                    href="https://www.discoverx.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-white/50 underline-offset-4 transition hover:text-teal-100"
+                  >
+                    https://www.discoverx.com
+                  </a>
+                </p>
+                <p className="text-sm leading-relaxed text-white/90 md:text-base">
+                  {home.companyIntro}
+                </p>
+                <p className="text-sm text-white/85 md:text-base">{home.address}</p>
+                <p className="text-sm text-white/85 md:text-base">
+                  {home.emailLabel}
+                  <a
+                    href="mailto:CustomerService_DRX_China@cpt.eurofinscn.com"
+                    className="break-all underline decoration-white/50 underline-offset-4 transition hover:text-teal-100"
+                  >
+                    CustomerService_DRX_China@cpt.eurofinscn.com
+                  </a>
+                </p>
+              </div>
 
-            <div className="mx-auto w-32 rounded-lg bg-white p-2 shadow-xl md:w-36">
-              <img src="/pic/qrcode_for_gh_97a0bd4fdaad_258.jpg" alt="DiscoverX 微信二维码" className="h-auto w-full" />
+              <div className="mx-auto w-32 rounded-lg bg-white p-2 shadow-xl md:w-36">
+                <img src="/pic/qrcode_for_gh_97a0bd4fdaad_258.jpg" alt="DiscoverX 微信二维码" className="h-auto w-full" />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 

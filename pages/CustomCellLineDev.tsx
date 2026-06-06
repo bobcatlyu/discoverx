@@ -261,9 +261,9 @@ const CustomCellLineDev: React.FC = () => {
           <p className="text-white/80 mb-10 max-w-2xl mx-auto text-lg">
             填写您的项目需求，我们的技术专家将在 24 小时内为您提供初步的技术建议与报价方案。
           </p>
-          <button className="bg-white text-[#4B827E] px-10 py-4 rounded-full font-bold text-lg hover:bg-teal-50 transition-all shadow-lg">
+          <a href="/contacts" className="inline-block bg-white text-[#4B827E] px-10 py-4 rounded-full font-bold text-lg hover:bg-teal-50 transition-all shadow-lg">
             立即咨询专家
-          </button>
+          </a>
         </div>
       </section>
     </div>

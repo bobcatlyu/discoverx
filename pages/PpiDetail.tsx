@@ -58,8 +58,8 @@ const PpiDetail: React.FC<PpiDetailProps> = ({ onNavigate }) => {
     <div className="bg-white">
       {/* 1. Introduction Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="md:w-1/2">
+        <div className="max-w-4xl">
+          <div>
             <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-6">蛋白间相互作用 (PPI)</h1>
             <div className="h-1 w-20 bg-[#4B827E] mb-8"></div>
             <p className="text-slate-600 leading-relaxed text-lg mb-6">
@@ -68,13 +68,6 @@ const PpiDetail: React.FC<PpiDetailProps> = ({ onNavigate }) => {
             <p className="text-slate-600 leading-relaxed text-lg">
               Eurofins DiscoverX 的酶片段互补 (EFC) 技术为在活细胞内直接、定量地研究 PPI 提供了最灵敏的工具。无需破坏细胞，即可实时捕捉蛋白质复合物的形成与解离。
             </p>
-          </div>
-          <div className="md:w-1/2">
-            <img 
-              src="https://picsum.photos/seed/ppi_science/800/600" 
-              alt="PPI Assay Principle" 
-              className="rounded-2xl shadow-2xl border border-slate-100"
-            />
           </div>
         </div>
       </section>

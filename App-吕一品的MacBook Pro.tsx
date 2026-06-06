@@ -39,7 +39,6 @@ import CellLineDetail from './pages/CellLineDetail';
 import ExpressKitDetail from './pages/ExpressKitDetail';
 import BioassayKitDetail from './pages/BioassayKitDetail';
 import SampleTesting from './pages/SampleTesting';
-import FunctionalScreening from './pages/FunctionalScreening';
 import SearchResults from './pages/SearchResults';
 import CheckpointDetail from './pages/CheckpointDetail';
 import KinaseDetail from './pages/KinaseDetail';
@@ -88,7 +87,6 @@ const PAGE_PARENTS: Record<Page, Page | null> = {
   [Page.CustomAssayDevelopment]: Page.Custom,
   [Page.BioassayDevelopment]: Page.Custom,
   [Page.SampleTesting]: Page.Custom,
-  [Page.FunctionalScreening]: Page.Custom,
   [Page.DatasheetList]: Page.Documents,
   [Page.DatasheetDetail]: Page.DatasheetList,
   [Page.UserManual]: Page.Documents,
@@ -122,7 +120,7 @@ const PAGE_META: Partial<Record<Page, { title: string; description: string }>> =
   },
   [Page.Custom]: {
     title: '开发服务',
-    description: '了解 DiscoverX 的 Assay 开发、Bioassay 开发、样品检测与功能筛选服务。',
+    description: '了解 DiscoverX 的 Assay 开发、Bioassay 开发与样品检测服务。',
   },
   [Page.Documents]: {
     title: '产品资料',
@@ -526,8 +524,6 @@ const App: React.FC = () => {
         return <BioassayDev />;
       case Page.SampleTesting:
         return <SampleTesting />;
-      case Page.FunctionalScreening:
-        return <FunctionalScreening />;
       default:
         return <Home language={route.language} onNavigate={navigateTo} />;
     }

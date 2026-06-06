@@ -747,7 +747,7 @@ const EnzymeDetail: React.FC = () => {
             </p>
             <div className="flex items-center space-x-4">
               <a
-                href="/downloads/recombinant-kinases-list.pdf"
+                href="/doc/catalog/Eurofins_DiscoverX_Kinases_Target_List_中文.pdf"
                 className="inline-flex items-center px-6 py-3 bg-[#4B827E] text-white font-semibold rounded-lg hover:bg-[#3d6b68] transition-colors"
                 download
               >

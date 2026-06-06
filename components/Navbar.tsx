@@ -78,7 +78,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, currentLanguage, onNavigat
         { label: locale.navSubItems[Page.CustomAssayDevelopment]!, page: Page.CustomAssayDevelopment },
         { label: locale.navSubItems[Page.BioassayDevelopment]!, page: Page.BioassayDevelopment },
         { label: locale.navSubItems[Page.SampleTesting]!, page: Page.SampleTesting },
-        { label: locale.navSubItems[Page.FunctionalScreening]!, page: Page.FunctionalScreening },
       ],
     },
     {

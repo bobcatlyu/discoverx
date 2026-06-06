@@ -6,8 +6,8 @@ const SampleTesting: React.FC = () => {
     <div className="bg-white">
       {/* 1. Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="flex flex-col md:flex-row gap-12 items-center">
-          <div className="md:w-1/2">
+        <div className="max-w-4xl">
+          <div>
             <h1 className="text-4xl font-extrabold text-[#1C2C5E] mb-6">样品检测服务 (Sample Testing Services)</h1>
             <div className="h-1 w-20 bg-[#4B827E] mb-8"></div>
             <p className="text-slate-600 leading-relaxed text-lg mb-6">
@@ -17,13 +17,6 @@ const SampleTesting: React.FC = () => {
               我们将利用公司内部验证过的成熟检测平台，为您提供的化合物、抗体或蛋白质样品进行快速、精准的功能性分析。您可以直接获得高质量的数据报告，无需投入昂贵的仪器设备和人员培训。
             </p>
           </div>
-          <div className="md:w-1/2">
-            <img 
-              src="https://picsum.photos/seed/testing_hero/800/600" 
-              alt="Sample Testing Service" 
-              className="rounded-2xl shadow-2xl border border-slate-100"
-            />
-          </div>
         </div>
       </section>
 
@@ -32,40 +25,16 @@ const SampleTesting: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12 text-center">核心能力与检测范围</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="max-w-3xl mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
               <h4 className="text-xl font-bold text-[#1C2C5E] mb-4">GPCR 功能检测</h4>
               <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                基于 cAMP、钙流及 β-Arrestin 招募等多种读值，测定分子的功能活性。
+                基于 cAMP 与 beta-arrestin 招募两类核心读值，测定 GPCR 靶点上分子的激动、拮抗及功能响应特征。
               </p>
               <ul className="text-xs text-slate-500 space-y-2">
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> EC50 / IC50 曲线拟合</li>
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> 偏向性配体分析 (Biased Signaling)</li>
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> 拮抗剂/激动剂模式验证</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-              <h4 className="text-xl font-bold text-[#1C2C5E] mb-4">ADC 内吞速率评价</h4>
-              <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                利用 PathHunter® 专利技术，定量追踪 ADC 候选药物诱导的受体内吞过程。
-              </p>
-              <ul className="text-xs text-slate-500 space-y-2">
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> 受体内化动力学追踪</li>
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> 抗体诱导的靶点下调评估</li>
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> 多种肿瘤细胞背景可选</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-              <h4 className="text-xl font-bold text-[#1C2C5E] mb-4">细胞毒性与安全评价</h4>
-              <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                利用 KILR® 等平台评估药物的杀伤效力或脱靶毒性风险。
-              </p>
-              <ul className="text-xs text-slate-500 space-y-2">
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> ADCC / CDC 效应评价</li>
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> 脱靶安全性面板扫描</li>
-                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> 内源性信号通路监测</li>
+                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> cAMP Gs / Gi 通路功能响应检测</li>
+                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> PathHunter beta-arrestin 招募检测</li>
+                <li className="flex items-center"><span className="text-[#4B827E] mr-2">●</span> EC50 / IC50 曲线拟合与激动剂 / 拮抗剂模式验证</li>
               </ul>
             </div>
           </div>

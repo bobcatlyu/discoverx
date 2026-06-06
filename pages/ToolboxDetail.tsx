@@ -53,25 +53,25 @@ const ToolboxDetail: React.FC = () => {
   ];
 
   const ProductTable = ({ data, title }: { data: any[], title: string }) => (
-    <div className="flex justify-start mb-12">
-      <div className="inline-block max-w-full overflow-x-auto shadow-xl rounded-xl border border-slate-200">
+    <div className="min-w-0">
+      <div className="h-full max-w-full overflow-x-auto shadow-xl rounded-xl border border-slate-200 bg-white">
         <div className="bg-[#4B827E] px-6 py-4">
-          <h3 className="text-xl font-bold text-white uppercase tracking-wider">{title}</h3>
+          <h3 className="text-lg font-bold text-white uppercase tracking-wider">{title}</h3>
         </div>
-        <table className="divide-y divide-slate-200">
+        <table className="w-full divide-y divide-slate-200">
           <thead className="bg-slate-50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">应用 (Application)</th>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">货号 (Cat No.)</th>
-              <th className="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">规格 (Specs)</th>
+              <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">应用 (Application)</th>
+              <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">货号 (Cat No.)</th>
+              <th className="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap">规格 (Specs)</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-slate-100">
             {data.map((row, idx) => (
               <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-600 border-r border-slate-50">{row.app}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-mono font-bold text-[#1C2C5E] border-r border-slate-50">{row.cat || row.package}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">{row.specs}</td>
+                <td className="px-4 py-4 whitespace-nowrap text-sm text-slate-600 border-r border-slate-50">{row.app}</td>
+                <td className="px-4 py-4 whitespace-nowrap text-sm font-mono font-bold text-[#1C2C5E] border-r border-slate-50">{row.cat || row.package}</td>
+                <td className="px-4 py-4 whitespace-nowrap text-sm text-slate-500">{row.specs}</td>
               </tr>
             ))}
           </tbody>
@@ -128,9 +128,11 @@ const ToolboxDetail: React.FC = () => {
       <section className="bg-slate-50 py-20 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-[#1C2C5E] mb-12 text-left">产品目录 / Product Catalog</h2>
-          <ProductTable title="质粒 Vectors" data={vectorsData} />
-          <ProductTable title="逆转录病毒颗粒 Retroparticles" data={retroData} />
-          <ProductTable title="亲本细胞株 Parental Cell Lines" data={parentalData} />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <ProductTable title="质粒 Vectors" data={vectorsData} />
+            <ProductTable title="逆转录病毒颗粒 Retroparticles" data={retroData} />
+            <ProductTable title="亲本细胞株 Parental Cell Lines" data={parentalData} />
+          </div>
         </div>
       </section>
 

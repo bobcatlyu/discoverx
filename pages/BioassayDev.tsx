@@ -264,9 +264,9 @@ const BioassayDev: React.FC = () => {
           <p className="text-slate-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
             如需进一步了解生物活性检测开发与实施服务，或讨论您的具体项目需求，请联系我们的技术专家获取专业支持。
           </p>
-          <button className="bg-[#4B827E] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#3d6b67] transition-all shadow-lg">
+          <a href="/contacts" className="inline-block bg-[#4B827E] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#3d6b67] transition-all shadow-lg">
             立即咨询
-          </button>
+          </a>
         </div>
       </section>
     </div>

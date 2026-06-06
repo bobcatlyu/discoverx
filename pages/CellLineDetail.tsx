@@ -278,12 +278,13 @@ const CellLineDetail: React.FC<CellLineDetailProps> = ({ onNavigate }) => {
               >
                 立即咨询技术专家
               </button>
-              <button 
-                onClick={() => navigateTo(Page.Documents)}
+              <a
+                href="/doc/catalog/Eurofins_DiscoverX_Capabilities_中文.pdf"
                 className="bg-[#1C2C5E] text-white px-12 py-5 rounded-2xl font-black hover:bg-[#2a3d7a] transition-all shadow-xl text-lg"
+                download
               >
-                下载 2026 版目录
-              </button>
+                下载完整产品目录
+              </a>
            </div>
         </div>
       </section>

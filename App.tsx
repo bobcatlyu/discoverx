@@ -39,7 +39,6 @@ import CellLineDetail from './pages/CellLineDetail';
 import ExpressKitDetail from './pages/ExpressKitDetail';
 import BioassayKitDetail from './pages/BioassayKitDetail';
 import SampleTesting from './pages/SampleTesting';
-import FunctionalScreening from './pages/FunctionalScreening';
 import SearchResults from './pages/SearchResults';
 import CheckpointDetail from './pages/CheckpointDetail';
 import KinaseDetail from './pages/KinaseDetail';
@@ -88,7 +87,6 @@ const PAGE_PARENTS: Record<Page, Page | null> = {
   [Page.CustomAssayDevelopment]: Page.Custom,
   [Page.BioassayDevelopment]: Page.Custom,
   [Page.SampleTesting]: Page.Custom,
-  [Page.FunctionalScreening]: Page.Custom,
   [Page.DatasheetList]: Page.Documents,
   [Page.DatasheetDetail]: Page.DatasheetList,
   [Page.UserManual]: Page.Documents,
@@ -122,7 +120,7 @@ const PAGE_META: Partial<Record<Page, { title: string; description: string }>> =
   },
   [Page.Custom]: {
     title: '开发服务',
-    description: '了解 DiscoverX 的 Assay 开发、Bioassay 开发、样品检测与功能筛选服务。',
+    description: '了解 DiscoverX 的 Assay 开发、Bioassay 开发与样品检测服务。',
   },
   [Page.Documents]: {
     title: '产品资料',
@@ -162,6 +160,16 @@ const TRANSLATED_PAGES = new Set<Page>([
   Page.Custom,
   Page.Documents,
   Page.Contacts,
+  Page.Gpcr,
+  Page.CytokineReceptors,
+  Page.CheckpointReceptors,
+  Page.KinaseReceptors,
+  Page.Nhr,
+  Page.IonChannels,
+  Page.SignalPathwayDetail,
+  Page.CytotoxicityDetail,
+  Page.TpdDetail,
+  Page.TargetEngagementDetail,
 ]);
 
 interface RouteState {
@@ -189,7 +197,9 @@ const LEGACY_PAGE_PATHS: Record<string, Page> = {
   'dimerization-detail': Page.DimerizationDetail,
   'ppi-detail': Page.PpiDetail,
   'signal-pathway-detail': Page.SignalPathwayDetail,
+  'signaling-pathway': Page.SignalPathwayDetail,
   'target-engagement-detail': Page.TargetEngagementDetail,
+  'target-engagment': Page.TargetEngagementDetail,
   'internalization-detail': Page.InternalizationDetail,
   'tpd-detail': Page.TpdDetail,
 };
@@ -476,19 +486,19 @@ const App: React.FC = () => {
       case Page.Calixar:
         return <CalixarDetail />;
       case Page.Gpcr:
-        return <GpcrDetail onNavigate={navigateTo} />;
+        return <GpcrDetail language={route.language} onNavigate={navigateTo} />;
       case Page.Glp1r:
         return <Glp1rDetail />;
       case Page.CytokineReceptors:
-        return <CytokineDetail />;
+        return <CytokineDetail language={route.language} />;
       case Page.CheckpointReceptors:
-        return <CheckpointDetail />;
+        return <CheckpointDetail language={route.language} />;
       case Page.KinaseReceptors:
-        return <KinaseDetail />;
+        return <KinaseDetail language={route.language} />;
       case Page.Nhr:
-        return <NhrDetail />;
+        return <NhrDetail language={route.language} />;
       case Page.IonChannels:
-        return <IonChannelDetail />;
+        return <IonChannelDetail language={route.language} />;
       case Page.EpigeneticProteins:
         return <EpigeneticDetail />;
       case Page.DatasheetList:
@@ -506,27 +516,25 @@ const App: React.FC = () => {
       case Page.OthersDoc:
         return <OthersDoc />;
       case Page.CytotoxicityDetail:
-        return <CytotoxicityDetail />;
+        return <CytotoxicityDetail language={route.language} />;
       case Page.DimerizationDetail:
         return <DimerizationDetail />;
       case Page.PpiDetail:
         return <PpiDetail onNavigate={navigateTo} />;
       case Page.SignalPathwayDetail:
-        return <SignalPathwayDetail />;
+        return <SignalPathwayDetail language={route.language} />;
       case Page.TargetEngagementDetail:
-        return <TargetEngagementDetail />;
+        return <TargetEngagementDetail language={route.language} />;
       case Page.InternalizationDetail:
         return <InternalizationDetail />;
       case Page.TpdDetail:
-        return <TpdDetail />;
+        return <TpdDetail language={route.language} />;
       case Page.CustomAssayDevelopment:
         return <CustomCellLineDev />;
       case Page.BioassayDevelopment:
         return <BioassayDev />;
       case Page.SampleTesting:
         return <SampleTesting />;
-      case Page.FunctionalScreening:
-        return <FunctionalScreening />;
       default:
         return <Home language={route.language} onNavigate={navigateTo} />;
     }
