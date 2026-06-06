@@ -542,7 +542,7 @@ export const locales: Record<Language, SiteLocale> = {
       [Page.Products]: { title: '제품 유형', description: '안정 발현 세포주, eXpress Kit, Bioassay Kit, 시약 및 툴 제품을 확인할 수 있습니다.' },
       [Page.Targets]: { title: '타깃 선택', description: 'GPCR, 사이토카인 수용체, 면역 체크포인트, RTK, NHR 등 제품 역량을 확인할 수 있습니다.' },
       [Page.Applications]: { title: '작용기전', description: '이량체화, 내재화, PPI, 신호전달, 타깃 결합 등 assay 솔루션을 소개합니다.' },
-      [Page.Custom]: { title: '개발 서비스', description: 'Assay 개발, Bioassay 개발, 샘플 측정, 기능 스크리닝 서비스를 소개합니다.' },
+      [Page.Custom]: { title: '개발 서비스', description: 'Assay 개발, Bioassay 개발, 샘플 측정 서비스를 소개합니다.' },
       [Page.Documents]: { title: '제품 자료', description: 'Datasheet, User Manual, Qualification Data, Application Note, 참고문헌을 확인할 수 있습니다.' },
       [Page.Contacts]: { title: '문의', description: '견적, 샘플, 자료, 기술 상담은 DiscoverX China 팀으로 문의하십시오.' },
       [Page.BlogList]: { title: '최신 소식', description: 'DiscoverX 제품 소개, 기술 주제, 응용 자료 업데이트를 확인할 수 있습니다.' },

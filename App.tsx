@@ -192,6 +192,7 @@ const isPageValue = (value: string): value is Page => {
 
 const LEGACY_PAGE_PATHS: Record<string, Page> = {
   applications: Page.Applications,
+  custom: Page.Custom,
   'datasheet-detail': Page.DatasheetDetail,
   'cytotoxicity-detail': Page.CytotoxicityDetail,
   'dimerization-detail': Page.DimerizationDetail,

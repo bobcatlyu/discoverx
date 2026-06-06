@@ -39,7 +39,7 @@ export enum Page {
   Products = 'products',
   Targets = 'targets',
   Applications = 'mechanisms',
-  Custom = 'custom',
+  Custom = 'service',
   Documents = 'documents',
   Contacts = 'contacts',
   Search = 'search',

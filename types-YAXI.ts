@@ -40,7 +40,7 @@ export enum Page {
   Targets = 'targets',
   TargetsJapanese = 'targets-ja',
   Applications = 'mechanisms',
-  Custom = 'custom',
+  Custom = 'service',
   Documents = 'documents',
   Contacts = 'contacts',
   Search = 'search',
