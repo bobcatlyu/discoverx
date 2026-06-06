@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Language } from '../types';
 
 interface ContactProps {
@@ -38,7 +38,54 @@ const contactBlocks = [
   },
 ];
 
+const initialFormState = {
+  name: '',
+  email: '',
+  company: '',
+  region: '',
+  topic: '',
+  language: '中文',
+  message: '',
+  website: '',
+};
+
 const Contact: React.FC<ContactProps> = () => {
+  const [form, setForm] = useState(initialFormState);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const updateField = (field: keyof typeof initialFormState, value: string) => {
+    setForm((current) => ({ ...current, [field]: value }));
+  };
+
+  const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus('submitting');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json().catch(() => ({ ok: false }));
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || 'SEND_FAILED');
+      }
+
+      setStatus('success');
+      setForm(initialFormState);
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'SEND_FAILED');
+    }
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mb-12">
@@ -49,7 +96,7 @@ const Contact: React.FC<ContactProps> = () => {
         </p>
       </div>
 
-      <div className="grid gap-10 lg:grid-cols-[1fr_360px]">
+      <div className="grid gap-10 lg:grid-cols-[1fr_380px]">
         <div className="grid gap-6">
           {contactBlocks.map((block) => (
             <section key={block.lang} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -107,7 +154,125 @@ const Contact: React.FC<ContactProps> = () => {
           ))}
         </div>
 
-        <aside className="lg:sticky lg:top-28 lg:self-start">
+        <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+          <form onSubmit={submitForm} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-slate-900">在线表单 / Contact Form</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                Fill in the form and the message will be sent to our mailbox after submission.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <label className="block">
+                <span className="mb-1 block text-sm font-bold text-slate-700">姓名 / Name *</span>
+                <input
+                  required
+                  value={form.name}
+                  onChange={(event) => updateField('name', event.target.value)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#4B827E] focus:outline-none focus:ring-2 focus:ring-teal-100"
+                />
+              </label>
+
+              <label className="block">
+                <span className="mb-1 block text-sm font-bold text-slate-700">邮箱 / Email *</span>
+                <input
+                  required
+                  type="email"
+                  value={form.email}
+                  onChange={(event) => updateField('email', event.target.value)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#4B827E] focus:outline-none focus:ring-2 focus:ring-teal-100"
+                />
+              </label>
+
+              <label className="block">
+                <span className="mb-1 block text-sm font-bold text-slate-700">公司 / Company</span>
+                <input
+                  value={form.company}
+                  onChange={(event) => updateField('company', event.target.value)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#4B827E] focus:outline-none focus:ring-2 focus:ring-teal-100"
+                />
+              </label>
+
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                <label className="block">
+                  <span className="mb-1 block text-sm font-bold text-slate-700">地区 / Region</span>
+                  <input
+                    value={form.region}
+                    onChange={(event) => updateField('region', event.target.value)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#4B827E] focus:outline-none focus:ring-2 focus:ring-teal-100"
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="mb-1 block text-sm font-bold text-slate-700">语言 / Language</span>
+                  <select
+                    value={form.language}
+                    onChange={(event) => updateField('language', event.target.value)}
+                    className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#4B827E] focus:outline-none focus:ring-2 focus:ring-teal-100"
+                  >
+                    <option>中文</option>
+                    <option>日本語</option>
+                    <option>한국어</option>
+                    <option>English</option>
+                  </select>
+                </label>
+              </div>
+
+              <label className="block">
+                <span className="mb-1 block text-sm font-bold text-slate-700">主题 / Topic</span>
+                <select
+                  value={form.topic}
+                  onChange={(event) => updateField('topic', event.target.value)}
+                  className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#4B827E] focus:outline-none focus:ring-2 focus:ring-teal-100"
+                >
+                  <option value="">请选择 / Select</option>
+                  <option value="Quotation">报价 / Quotation</option>
+                  <option value="Sample request">样品 / Sample request</option>
+                  <option value="Technical support">技术支持 / Technical support</option>
+                  <option value="Product document">资料 / Product document</option>
+                  <option value="Other">其他 / Other</option>
+                </select>
+              </label>
+
+              <label className="hidden" aria-hidden="true">
+                Website
+                <input tabIndex={-1} autoComplete="off" value={form.website} onChange={(event) => updateField('website', event.target.value)} />
+              </label>
+
+              <label className="block">
+                <span className="mb-1 block text-sm font-bold text-slate-700">留言 / Message *</span>
+                <textarea
+                  required
+                  rows={5}
+                  value={form.message}
+                  onChange={(event) => updateField('message', event.target.value)}
+                  className="w-full resize-y rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-[#4B827E] focus:outline-none focus:ring-2 focus:ring-teal-100"
+                />
+              </label>
+
+              <button
+                type="submit"
+                disabled={status === 'submitting'}
+                className="w-full rounded-lg bg-[#4B827E] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#3d6b67] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {status === 'submitting' ? '发送中 / Sending...' : '提交 / Submit'}
+              </button>
+
+              {status === 'success' && (
+                <p className="rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-800">
+                  已发送。我们会尽快回复您。
+                </p>
+              )}
+
+              {status === 'error' && (
+                <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm font-medium text-red-800">
+                  发送失败：{errorMessage}
+                </p>
+              )}
+            </div>
+          </form>
+
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-lg">
             <img
               src="/pic/qrcode_for_gh_97a0bd4fdaad_430.jpg"

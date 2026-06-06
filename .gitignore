@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+.env*
+.dev.vars*
 
 # Local/internal examples that should not be published
 local-examples/
