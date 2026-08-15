@@ -3,12 +3,14 @@ export interface BlogPost {
   id: string;
   slug: string;
   title: string;
-  category: 'Product Launch' | 'Marketing' | 'Technical Article' | '技术讨论' | '产品介绍';
+  category: 'Product Launch' | 'Marketing' | 'Technical Article' | '技术讨论' | '产品介绍' | '技术支持';
   date: string;
   summary: string;
   imageUrl: string;
   content?: string; // Full article content in markdown or HTML
+  contentFormat?: 'html' | 'markdown';
   author?: string;
+  sourceUrl?: string;
   tags?: string[];
   seoTitle?: string;
   seoDescription?: string;

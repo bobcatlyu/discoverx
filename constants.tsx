@@ -1,8 +1,26 @@
 import { BlogPost } from './types';
+import discoverxProductFaqMarkdown from './content/latest-news/discoverx-product-faq.md?raw';
 
 export const DEFAULT_PINNED_BLOG_ID = '20260304-eurofins-discoverx-intro';
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: '20260815-discoverx-product-faq',
+    slug: 'discoverx-product-usage-faq',
+    title: 'DiscoverX 产品使用常见问题解答汇总',
+    category: '技术支持',
+    date: '2026-08-15',
+    summary: '汇总 DiscoverX 产品信息查找、产品选择、细胞与检测验证、Bioassay 支持及实验故障排查中的常见问题。',
+    imageUrl: '/pic/discoverx.png',
+    author: 'Eurofins DiscoverX',
+    tags: ['DiscoverX', 'FAQ', '细胞产品', 'Bioassay', '故障排查'],
+    keywords: ['DiscoverX FAQ', 'DiscoverX 产品使用', '细胞系', 'eXpress Kit', 'Bioassay Kit', '故障排查'],
+    seoTitle: 'DiscoverX 产品使用常见问题解答 | 细胞、试剂盒与故障排查',
+    seoDescription: 'DiscoverX 产品使用 FAQ，涵盖产品信息、细胞系与试剂盒选择、产品验证、Bioassay 支持及常见实验故障排查。',
+    sourceUrl: 'https://cn.discoverx.com/support',
+    contentFormat: 'markdown',
+    content: discoverxProductFaqMarkdown,
+  },
   {
     id: '20260304-eurofins-discoverx-intro',
     slug: 'eurofins-discoverx-assay-platform',

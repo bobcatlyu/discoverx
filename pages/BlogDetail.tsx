@@ -1,4 +1,9 @@
 import React, { useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import rehypeSanitize from 'rehype-sanitize';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkGfm from 'remark-gfm';
 import { BLOG_POSTS, findBlogPost, getBlogPath } from '../constants';
 import { Page } from '../types';
 
@@ -6,6 +11,24 @@ interface BlogDetailProps {
   blogId: string;
   onNavigate?: (page: Page, value?: string) => void;
 }
+
+const articleContentClassName = [
+  'text-slate-700 leading-8',
+  '[&_h2]:mt-12 [&_h2]:mb-5 [&_h2]:border-b [&_h2]:border-slate-200 [&_h2]:pb-3 [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-[#1C2C5E]',
+  '[&_h3]:mt-10 [&_h3]:mb-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-slate-900',
+  '[&_h4]:mt-8 [&_h4]:mb-3 [&_h4]:text-lg [&_h4]:font-bold [&_h4]:text-slate-800',
+  '[&_p]:my-4',
+  '[&_strong]:font-bold [&_strong]:text-slate-900',
+  '[&_a]:font-medium [&_a]:text-[#4B827E] [&_a]:underline [&_a]:decoration-teal-200 [&_a]:underline-offset-4 [&_a:hover]:text-[#315f5c]',
+  '[&_ul]:my-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-7',
+  '[&_ol]:my-6 [&_ol]:list-decimal [&_ol]:space-y-4 [&_ol]:pl-7',
+  '[&_ol>li]:font-bold [&_ol>li]:text-slate-900',
+  '[&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:border-[#4B827E] [&_blockquote]:bg-teal-50 [&_blockquote]:px-5 [&_blockquote]:py-3 [&_blockquote]:text-slate-700',
+  '[&_img]:my-8 [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-lg',
+  '[&_table]:my-8 [&_table]:w-full [&_table]:border-collapse [&_th]:border [&_th]:border-slate-300 [&_th]:bg-slate-100 [&_th]:p-3 [&_th]:text-left',
+  '[&_td]:border [&_td]:border-slate-300 [&_td]:p-3',
+  '[&_sup]:text-xs [&_sub]:text-xs',
+].join(' ');
 
 const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
   const post = findBlogPost(blogId);
@@ -161,9 +184,17 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
           <img src={post.imageUrl} alt={post.title} className="w-full h-auto object-cover" />
         </div>
 
-        <div className="prose prose-lg max-w-none">
+        <div className="max-w-none">
           {post.content ? (
-            <div className="text-slate-700 leading-relaxed space-y-6" dangerouslySetInnerHTML={{ __html: post.content }} />
+            post.contentFormat === 'markdown' ? (
+              <div className={articleContentClassName}>
+                <ReactMarkdown remarkPlugins={[remarkGfm, remarkFrontmatter]} rehypePlugins={[rehypeRaw, rehypeSanitize]}>
+                  {post.content}
+                </ReactMarkdown>
+              </div>
+            ) : (
+              <div className={articleContentClassName} dangerouslySetInnerHTML={{ __html: post.content }} />
+            )
           ) : (
             <div className="text-slate-700 leading-relaxed space-y-6">
               <p>文章内容正在更新中。</p>
@@ -171,6 +202,20 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blogId, onNavigate }) => {
             </div>
           )}
         </div>
+
+        {post.sourceUrl && (
+          <p className="mt-10 border-t border-slate-200 pt-5 text-sm text-slate-500">
+            内容来源：{' '}
+            <a
+              href={post.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#4B827E] underline decoration-teal-200 underline-offset-4 hover:text-[#315f5c]"
+            >
+              Eurofins DiscoverX Support
+            </a>
+          </p>
+        )}
 
         <div className="mt-12 pt-8 border-t border-slate-200">
           <button onClick={() => onNavigate?.(Page.Home)} className="inline-flex items-center text-[#4B827E] font-bold hover:underline transition-colors">
