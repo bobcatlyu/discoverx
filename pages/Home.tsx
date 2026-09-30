@@ -1,5 +1,5 @@
-import React, { useMemo, useState } from 'react';
-import { BLOG_POSTS, DEFAULT_PINNED_BLOG_ID, getBlogPath } from '../constants';
+import React from 'react';
+import HomeUpdates from '../components/HomeUpdates';
 import { Language, Page } from '../types';
 import { getPagePath } from '../utils/routes';
 import { getLocale } from '../locales';
@@ -12,17 +12,6 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
   const locale = getLocale(language);
   const home = locale.home;
-  const latestPosts = useMemo(() => {
-    return [...BLOG_POSTS]
-      .sort((a, b) => {
-        if (a.id === DEFAULT_PINNED_BLOG_ID) return -1;
-        if (b.id === DEFAULT_PINNED_BLOG_ID) return 1;
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
-      })
-      .slice(0, 5);
-  }, []);
-  const [activePostIndex, setActivePostIndex] = useState(0);
-  const activePost = latestPosts[activePostIndex];
   const contentCards = home.cards.filter((card) => card.id !== 'latest');
 
   const handleCardClick = (event: React.MouseEvent<HTMLAnchorElement>, page: Page) => {
@@ -32,19 +21,6 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
 
     event.preventDefault();
     onNavigate(page);
-  };
-
-  const moveLatest = (direction: -1 | 1) => {
-    setActivePostIndex((current) => (current + direction + latestPosts.length) % latestPosts.length);
-  };
-
-  const handleLatestClick = (event: React.MouseEvent<HTMLAnchorElement>, postId: string) => {
-    if (!onNavigate) {
-      return;
-    }
-
-    event.preventDefault();
-    onNavigate(Page.BlogDetail, postId);
   };
 
   return (
@@ -98,81 +74,7 @@ const Home: React.FC<HomeProps> = ({ language, onNavigate }) => {
         </div>
       </section>
 
-      {activePost && (
-        <section className="bg-white">
-          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="border-y border-slate-200 py-8 md:py-10">
-              <div className="mb-6 text-center">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#4B827E]">Latest Update</p>
-                  <h2 className="mt-2 text-2xl font-extrabold text-slate-900 md:text-3xl">最新动态</h2>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-[44px_1fr_44px] items-center gap-3 sm:gap-5">
-                <button
-                  type="button"
-                  onClick={() => moveLatest(-1)}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-[#4B827E] hover:text-[#4B827E]"
-                  aria-label="上一条最新动态"
-                >
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-
-                <a
-                  href={getBlogPath(activePost)}
-                  onClick={(event) => handleLatestClick(event, activePost.id)}
-                  className="group block min-h-[240px] rounded-lg border border-slate-200 bg-slate-50 p-6 text-center shadow-sm transition hover:border-teal-200 hover:bg-white hover:shadow-md md:p-10"
-                >
-                  <div className="mb-5 flex flex-wrap items-center justify-center gap-3">
-                    <span className="rounded-full bg-teal-50 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#4B827E]">
-                      {activePost.category}
-                    </span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-400">{activePost.date}</span>
-                  </div>
-
-                  <h3 className="mx-auto max-w-3xl text-2xl font-extrabold leading-tight text-slate-900 transition-colors group-hover:text-[#4B827E] md:text-3xl">
-                    {activePost.title}
-                  </h3>
-                  <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-slate-600 md:text-lg">{activePost.summary}</p>
-                  <span className="mt-8 flex items-center justify-center text-xs font-bold uppercase tracking-wider text-[#4B827E] transition-transform group-hover:translate-x-1">
-                    READ MORE
-                    <svg className="ml-1 h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </a>
-
-                <button
-                  type="button"
-                  onClick={() => moveLatest(1)}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-[#4B827E] hover:text-[#4B827E]"
-                  aria-label="下一条最新动态"
-                >
-                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-
-              <div className="mt-5 flex justify-center gap-2">
-                {latestPosts.map((post, index) => (
-                  <button
-                    key={post.id}
-                    type="button"
-                    onClick={() => setActivePostIndex(index)}
-                    className={`h-2.5 rounded-full transition-all ${index === activePostIndex ? 'w-8 bg-[#4B827E]' : 'w-2.5 bg-slate-300 hover:bg-slate-400'}`}
-                    aria-label={`查看第 ${index + 1} 条最新动态`}
-                    aria-current={index === activePostIndex}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      <HomeUpdates language={language} onNavigate={onNavigate} />
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 border-b border-slate-200 pb-4">
