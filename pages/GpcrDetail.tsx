@@ -13,7 +13,8 @@ interface FeaturedTarget {
   tag: string;
   description: string;
   details: string[];
-  page: Page;
+  page?: Page;
+  href?: string;
 }
 
 interface MoaItem {
@@ -122,6 +123,13 @@ const localizedContent: Record<Language, {
         description: '葡萄糖依赖性促胰岛素多肽受体检测方案，覆盖 cAMP、β-arrestin、钙流和结合实验，支持 GIP 及 Tirzepatide 相关研究。',
         details: ['GIP / Tirzepatide 与多物种 GIPR 检测', 'Bioassay Kit、稳定细胞系与 eXpress assay', '产品选型、操作手册与资格确认资料'],
         page: Page.Gipr,
+      },
+      {
+        name: 'GCGR / Glucagon Receptor',
+        tag: 'Metabolic disease',
+        description: '胰高血糖素受体功能检测方案，涵盖 cAMP、β-arrestin-2 招募与总受体内化，提供剂量响应曲线、产品选型和技术资料。',
+        details: ['Glucagon 与多物种 GCGR 检测', '检测原理、原始曲线与产品筛选', '产品说明书及平台操作手册'],
+        href: '/gcgr/',
       },
     ],
   },
@@ -397,13 +405,11 @@ const GpcrDetail: React.FC<GpcrDetailProps> = ({ language = 'zh', onNavigate }) 
                     </li>
                   ))}
                 </ul>
-                <button
-                  type="button"
-                  onClick={() => onNavigate?.(target.page)}
-                  className="mt-7 rounded-xl bg-[#4B827E] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#3d6b67]"
-                >
-                  {content.featuredButton}
-                </button>
+                {target.href ? (
+                  <a href={target.href} className="mt-7 inline-flex rounded-xl bg-[#4B827E] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#3d6b67]">{content.featuredButton}</a>
+                ) : (
+                  <button type="button" onClick={() => target.page && onNavigate?.(target.page)} className="mt-7 rounded-xl bg-[#4B827E] px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-0.5 hover:bg-[#3d6b67]">{content.featuredButton}</button>
+                )}
               </article>
             ))}
           </div>
