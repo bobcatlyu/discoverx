@@ -12,6 +12,7 @@ import DocumentsPage from './pages/Documents';
 import Contact from './pages/Contact';
 import GpcrDetail from './pages/GpcrDetail';
 import Glp1rDetail from './pages/Glp1rDetail';
+import GiprDetail from './pages/GiprDetail';
 import CytokineDetail from './pages/CytokineDetail';
 import DatasheetList from './pages/DatasheetList';
 import DatasheetDetail from './pages/DatasheetDetail';
@@ -72,6 +73,7 @@ const PAGE_PARENTS: Record<Page, Page | null> = {
   [Page.Calixar]: Page.Products,
   [Page.Gpcr]: Page.Targets,
   [Page.Glp1r]: Page.Gpcr,
+  [Page.Gipr]: Page.Gpcr,
   [Page.CytokineReceptors]: Page.Targets,
   [Page.CheckpointReceptors]: Page.Targets,
   [Page.KinaseReceptors]: Page.Targets,
@@ -110,6 +112,10 @@ const PAGE_META: Partial<Record<Page, { title: string; description: string }>> =
   [Page.Targets]: {
     title: '靶点选择',
     description: '查看 DiscoverX 在 GPCR、细胞因子受体、检查点受体、RTK、NHR 等方向的产品能力。',
+  },
+  [Page.Gipr]: {
+    title: 'GIPR 靶点方案',
+    description: 'GIPR 靶点背景、cAMP 和 β-arrestin 检测方案、Tirzepatide Bioassay 产品及操作手册。',
   },
   [Page.Glp1r]: {
     title: 'GLP-1R 靶点方案',
@@ -510,6 +516,8 @@ const App: React.FC = () => {
         return <CalixarDetail />;
       case Page.Gpcr:
         return <GpcrDetail language={route.language} onNavigate={navigateTo} />;
+      case Page.Gipr:
+        return <GiprDetail />;
       case Page.Glp1r:
         return <Glp1rDetail />;
       case Page.CytokineReceptors:

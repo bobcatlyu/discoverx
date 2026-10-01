@@ -94,6 +94,7 @@ export const getPrimaryPagePaths = (language: Language = DEFAULT_LANGUAGE) => {
     Page.Documents,
     Page.Contacts,
     Page.Glp1r,
+    Page.Gipr,
     Page.Gpcr,
     Page.CytokineReceptors,
     Page.CheckpointReceptors,

@@ -116,6 +116,13 @@ const localizedContent: Record<Language, {
     details: ['Semaglutide / Tirzepatide / Liraglutide / Exenatide', 'Potency、可比性、稳定性和机制研究', 'Bioassay Kit、稳定细胞系、eXpress assay 和 user manual'],
     page: Page.Glp1r,
   },
+      {
+        name: 'GIPR / GIP Receptor',
+        tag: 'Metabolic disease',
+        description: '葡萄糖依赖性促胰岛素多肽受体检测方案，覆盖 cAMP、β-arrestin、钙流和结合实验，支持 GIP 及 Tirzepatide 相关研究。',
+        details: ['GIP / Tirzepatide 与多物种 GIPR 检测', 'Bioassay Kit、稳定细胞系与 eXpress assay', '产品选型、操作手册与资格确认资料'],
+        page: Page.Gipr,
+      },
     ],
   },
   ja: {
