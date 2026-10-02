@@ -465,7 +465,7 @@ export const locales: Record<Language, SiteLocale> = {
     contact: {
       title: 'お問い合わせ',
       intro: '欧陆生物制品（上海）有限公司はEurofinsグループの中国法人であり、中国市場におけるDiscoverX製品の販売、マーケティング、技術サポートを担当しています。',
-      prompt: '見積、サンプル、製品資料、技術相談については、下記のメールアドレスまたはWeChat QRコードからお問い合わせください。',
+      prompt: '見積、サンプル、製品資料、技術相談については、下記のメールアドレスまたはWeChat QRコードからお問い合わせください。日本および韓国のお客様からのお問い合わせは、それぞれの国の営業担当者へお取り次ぎいたします。',
       officeTitle: '上海オフィス',
       emailTitle: 'メール',
       address: '上海市闵行区浦江镇陈行公路 2168 号 8 号楼',
@@ -653,7 +653,7 @@ export const locales: Record<Language, SiteLocale> = {
     contact: {
       title: '문의',
       intro: '欧陆生物制品（上海）有限公司은 Eurofins 그룹의 중국 법인으로 DiscoverX 제품의 판매, 마케팅, 기술 지원을 담당합니다.',
-      prompt: '견적, 샘플 요청 또는 기술 상담이 필요하시면 아래 이메일로 문의하거나 WeChat QR 코드를 스캔해 주십시오.',
+      prompt: '견적, 샘플 요청 또는 기술 상담이 필요하시면 아래 이메일로 문의하거나 WeChat QR 코드를 스캔해 주십시오. 일본 및 한국 고객님의 문의는 해당 국가의 현지 영업 담당자에게 전달해 드리겠습니다.',
       officeTitle: '상하이 사무소',
       emailTitle: '이메일',
       address: '上海市闵行区浦江镇陈行公路 2168 号 8 号楼',
