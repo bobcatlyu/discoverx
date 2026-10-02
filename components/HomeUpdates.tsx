@@ -45,6 +45,17 @@ export default function HomeUpdates({ language, onNavigate }: HomeUpdatesProps) 
           </div>
           <h3 className="break-words text-2xl font-bold leading-snug text-slate-900 transition group-hover:text-[#4B827E] sm:text-3xl">{latest.title}</h3>
           <p className="mb-8 mt-5 text-base leading-7 text-slate-600">{latest.summary}</p>
+          {latest.imageUrl && (
+            <div className="mb-6 flex w-full items-center justify-center overflow-hidden rounded-lg bg-slate-50 p-3 sm:p-4">
+              <img
+                src={latest.imageUrl}
+                alt={`${latest.title}配图`}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto max-h-64 w-full object-contain sm:max-h-72"
+              />
+            </div>
+          )}
           <span className="mt-auto text-sm font-bold text-[#4B827E]">{labels.read} <span aria-hidden="true">&rarr;</span></span>
         </a>
         <div className="min-w-0 divide-y divide-slate-200 border-y border-slate-200">
