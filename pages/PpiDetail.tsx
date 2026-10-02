@@ -75,7 +75,7 @@ const PpiDetail: React.FC<PpiDetailProps> = ({ onNavigate }) => {
       {/* 2. MOA Section */}
       <section className="bg-slate-50 py-16 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">核心检测模块 (Core PPI Modules)</h2>
+          <h2 className="text-3xl font-bold text-[#1C2C5E] mb-10 text-center">作用机制 (Mechanism of Action)</h2>
           
           <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="divide-y divide-slate-100">
@@ -91,10 +91,6 @@ const PpiDetail: React.FC<PpiDetailProps> = ({ onNavigate }) => {
                 { 
                   title: "辅调节因子招募 (Co-regulator Recruitment)", 
                   desc: "专门针对核受体 (NHR) 设计，监测配体诱导的受体与激动剂或拮抗剂特异性辅助蛋白（如 SRC-1, NCoR1）的物理结合，用于筛选高度特异性的核受体调节剂。" 
-                },
-                { 
-                  title: "伴侣蛋白结合 (Chaperone Binding)", 
-                  desc: "研究蛋白质在折叠与贩运过程中与热休克蛋白（HSP70/90）的动态结合。对于研究蛋白质稳定性、药物诱导的降解（如 PROTAC）以及错配疾病具有重要意义。" 
                 }
               ].map((item, i) => (
                 <div key={i} className="p-10 hover:bg-slate-50 transition-colors">
