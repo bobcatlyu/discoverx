@@ -77,6 +77,7 @@ export const getPagePath = (page: Page, value?: string, language: Language = DEF
 
   if (page === Page.BlogDetail) {
     const post = value ? findBlogPost(value) : undefined;
+    if (post?.standaloneUrl) return post.standaloneUrl;
     return withLanguagePrefix(post ? getBlogPath(post) : `/${Page.BlogList}`, language);
   }
 

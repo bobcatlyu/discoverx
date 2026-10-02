@@ -5,6 +5,18 @@ export const DEFAULT_PINNED_BLOG_ID = '20260304-eurofins-discoverx-intro';
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: '20261002-efc',
+    slug: 'efc',
+    title: 'DiscoverX EFC 酶片段互补技术介绍',
+    category: '技术讨论',
+    date: '2026-10-02',
+    summary: '了解 EFC 酶片段互补技术的原理、优势与检测形式，以及其在靶点研究、药物筛选、效价与质量控制中的应用。',
+    imageUrl: '/blog/efc-assets/ae66e4447acb.jpg',
+    author: 'Eurofins DiscoverX',
+    tags: ['EFC', '酶片段互补', '检测技术'],
+    standaloneUrl: '/blog/efc',
+  },
+  {
     id: '20260815-discoverx-product-faq',
     slug: 'discoverx-product-usage-faq',
     title: 'DiscoverX 产品使用常见问题解答汇总',

@@ -429,6 +429,12 @@ const App: React.FC = () => {
   }, [locale, route]);
 
   const navigateTo = (page: Page, queryOrBlogId?: string) => {
+    const standaloneUrl = page === Page.BlogDetail && queryOrBlogId ? findBlogPost(queryOrBlogId)?.standaloneUrl : undefined;
+    if (standaloneUrl) {
+      window.location.assign(standaloneUrl);
+      return;
+    }
+
     const nextRoute: RouteState = {
       language: route.language,
       page,

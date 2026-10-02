@@ -8,6 +8,7 @@ export interface BlogPost {
   summary: string;
   imageUrl: string;
   content?: string; // Full article content in markdown or HTML
+  standaloneUrl?: string; // Full-page HTML article, outside the React article renderer
   contentFormat?: 'html' | 'markdown';
   author?: string;
   sourceUrl?: string;
